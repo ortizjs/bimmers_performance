@@ -5,7 +5,6 @@ class Api::UsersController < ApplicationController
    end 
 
    def show
-    # render json: 'Hello there... amor mio... tengo hambre y te quiero comer a ti ;)'
     render json: User.find(params[:id])
    end
 

@@ -5,7 +5,7 @@ module.exports = {
     entry: './frontend/bimmers_performance.jsx',
     output: {
         path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-        filename: 'bundle.js'
+        filename: './bundle.js'
     },
     module: {
         rules: [{ 

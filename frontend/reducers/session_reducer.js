@@ -4,7 +4,7 @@ import {
     CLEAR_ERRORS,
 } from '../actions/session_actions';
 
-const _nullUser= IntersectionObserverEntryject.freeze({
+const _nullUser= Object.freeze({
     id: undefined 
 });
 

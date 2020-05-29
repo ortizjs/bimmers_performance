@@ -1,0 +1,36 @@
+.splash-page-main-div {
+    background-color: #999;
+    max-width: 75%;
+    min-height: 500px;;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    position: relative;
+    // overflow:auto; 
+}
+@media (min-width: 1600px) {
+    .splash-page-main-div {
+        max-width: 55%;
+    }
+}
+
+.splash-page-home-div {
+    width: 87%;
+    position: absolute;
+    top: 155px;
+    left: 70px;
+    background-color: transparent;
+    // max-height: 34px;
+    border: 1px solid red;
+}
+
+@media (min-width: 1600px) {
+    .splash-page-home-div {
+        width: 90%;
+        top: 155px;
+        left: 52.5px;
+        border: 1px solid red;
+    }
+}
+

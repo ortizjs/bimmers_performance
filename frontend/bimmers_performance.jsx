@@ -1,14 +1,10 @@
+import configureStore from './store/store';
 import React from "react";
 import ReactDOM from "react-dom";
 import Root from './components/root';
-import configureStore from './store/store';
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     const root = document.getElementById('root');
-//     ReactDOM.render(<h1>Welcome to Bimmers Performance!</h1>, root);
-// });
-
-//Components
+// import * as commands from './util/session_api_util';
+// import * as commands2 from './util/photo_api_util';
+// import { login } from './actions/session_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,4 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch; // just for testing!
+    // window.fetchPhotos = fetchPhotos;
 });

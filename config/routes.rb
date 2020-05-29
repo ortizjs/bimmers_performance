@@ -57,8 +57,9 @@ Rails.application.routes.draw do
     resources :jobs, only: [:index, :show, :new, :create, :update, :destroy]
     resources :parts, only: [:index, :show, :new, :create, :update, :destroy]
     resources :services, only: [:index, :show, :new, :create, :update, :destroy]
+    resources :services_offered, only: [:index]
     resources :users
-    resource :session, only: [:new, :create, :destroy, :show]
+    resource :session, only: [:create, :destroy, :show]
   end
   root "static_pages#root"
 end

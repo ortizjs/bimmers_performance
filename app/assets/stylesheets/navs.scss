@@ -1,0 +1,67 @@
+.splash-nav-main-div {
+    // margin-left:40px;
+    // .splash-nav-container {
+    //     background-color: ;
+    // }
+    // width: 96.8%; if not working revert back to this
+    // left: 54px;
+    width: 87%;
+    position: absolute;
+    top: 115px;
+    left: 70px;
+    background-color: #069;
+    max-height: 34px;
+}
+
+@media (min-width: 1600px) {
+    .splash-nav-main-div {
+        // width: 100%;
+        // top: 115px;
+        // left: 37px;
+        width: 90%;
+        top: 115px;
+        left: 52.5px;
+        background-color: #069;
+    }
+}
+
+.splash-nav-ul {
+    min-width: 90%;
+    display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+    // width: 100%;
+    float: left;
+    margin: 0 0 3em 1em;
+    padding: 0;
+    list-style: none;
+    // background-color: #069;
+}
+
+.splash-nav-ul li {
+    float: left;
+    margin-left: 1em;
+    &.active {
+        background: grey;
+    }
+}
+
+.splash-nav-ul li a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    
+    color: white;
+}
+.splash-nav-ul li a:hover {
+    background: grey;
+}
+// .splash-nav-ul li a {
+//     display: block;
+//     padding: 8px 15px;
+//     text-decoration: none;
+//     font-weight: bold;
+//     // background-color: #069;
+//     color: white;
+// }

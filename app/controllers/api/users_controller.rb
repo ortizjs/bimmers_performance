@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :require_current_user!, except: [:create, :new]
+  # before_action :require_current_user!, except: [:create, :new]
 
   
   def new
@@ -7,13 +7,14 @@ class Api::UsersController < ApplicationController
     render "api/users/new"
   end
   
-  def index 
-    all_users = User.all
-    render json: all_users
-  end 
+  # def index 
+  #   all_users = User.all
+  #   render json: all_users
+  # end 
 
   def show
-    render json: User.find(params[:id])
+    @user = User.find(params[:id])
+    # render json: User.find(params[:id])
   end
 
   def create
@@ -21,12 +22,12 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       login(@user)
-      # render "api/users/show"
-      rederict_to user_url(@user)
+      render "api/users/show"
+      # rederict_to user_url(@user)
     else
-      # render json: @user.errors.full_messages, status: 422
-      flash.now[:errors] = @user.errors.full_messages
-      render :new
+      render json: @user.errors.full_messages, status: 422
+      # flash.now[:errors] = @user.errors.full_messages
+      # render :new
     end
   end
 

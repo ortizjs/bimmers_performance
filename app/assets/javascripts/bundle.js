@@ -686,10 +686,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/splash/splash_home_page.jsx":
-/*!*********************************************************!*\
-  !*** ./frontend/components/splash/splash_home_page.jsx ***!
-  \*********************************************************/
+/***/ "./frontend/components/splash/photo_carousel/carousel.jsx":
+/*!****************************************************************!*\
+  !*** ./frontend/components/splash/photo_carousel/carousel.jsx ***!
+  \****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -697,7 +697,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _carousel_photo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./carousel_photo */ "./frontend/components/splash/photo_carousel/carousel_photo.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -719,6 +719,168 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var Carousel = /*#__PURE__*/function (_React$Component) {
+  _inherits(Carousel, _React$Component);
+
+  function Carousel(props) {
+    var _this;
+
+    _classCallCheck(this, Carousel);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Carousel).call(this, props));
+    _this.state = {
+      slideIndex: 0
+    };
+    return _this;
+  }
+
+  _createClass(Carousel, [{
+    key: "fetchPhotos",
+    value: function fetchPhotos() {// return 
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // slideIndex = 0;
+      this.carouseulFunction();
+    } // startCarousel = () => {
+    //     this.car
+    // }
+
+  }, {
+    key: "carouseulFunction",
+    value: function carouseulFunction() {
+      debugger; // var slideIndex = 0;
+
+      var slideIndex = this.props.slideIndex;
+      var i;
+      var showSlides = document.getElementsByClassName("slides");
+      var dots = document.getElementsByClassName("dot");
+
+      for (i = 0; i < showSlides.length; i++) {
+        debugger;
+        showSlides[i].style.display = "none";
+      }
+
+      slideIndex++;
+
+      if (slideIndex > showSlides.length) {
+        slideIndex = 1;
+      }
+
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      } // debugger
+
+
+      showSlides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(this.carouseulFunction, 2000); // Change image every 2 seconds
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      // debugger;
+      var photos = window.images.carousel_images_array.map(function (photo_url, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "carousel-ul"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_carousel_photo__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          id: i,
+          key: i,
+          photo_url: photo_url
+        }));
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slideshow-container"
+      }, photos, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dot-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dot"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dot"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dot"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dot"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dot"
+      })));
+    }
+  }]);
+
+  return Carousel;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Carousel);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/photo_carousel/carousel_photo.jsx":
+/*!**********************************************************************!*\
+  !*** ./frontend/components/splash/photo_carousel/carousel_photo.jsx ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ // import { Link, withRouter } from 'react-router-dom';
+
+var CarouselPhoto = function CarouselPhoto(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "slides",
+    className: "slides fade"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "number-text"
+  }, "1 / ", props.id + 1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.photo_url,
+    alt: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "caption-text"
+  }, "caption text"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CarouselPhoto);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_home_page.jsx":
+/*!*********************************************************!*\
+  !*** ./frontend/components/splash/splash_home_page.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _photo_carousel_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./photo_carousel/carousel */ "./frontend/components/splash/photo_carousel/carousel.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
 var SplashHomePage = /*#__PURE__*/function (_React$Component) {
   _inherits(SplashHomePage, _React$Component);
 
@@ -729,11 +891,19 @@ var SplashHomePage = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(SplashHomePage, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {// debugger
+    }
+  }, {
     key: "render",
     value: function render() {
+      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-page-home-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis assumenda laborum ipsam soluta molestiae iste, sapiente maiores repellendus ipsa dicta eligendi quasi minus? Deserunt et eius sit excepturi reprehenderit minus."));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photo_carousel_carousel__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        slideIndex: 0,
+        photos: window.images.carousel_images_array
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis assumenda laborum ipsam soluta molestiae iste, sapiente maiores repellendus ipsa dicta eligendi quasi minus? Deserunt et eius sit excepturi reprehenderit minus."));
     }
   }]);
 
@@ -906,12 +1076,8 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         alt: "Logo",
         className: "site-banner-inbody"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-nav-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_nav__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-home-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_home_page__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")));
+        className: "splash-body-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_nav__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_home_page__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
     }
   }]);
 

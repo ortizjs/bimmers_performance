@@ -697,7 +697,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _carousel_photo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./carousel_photo */ "./frontend/components/splash/photo_carousel/carousel_photo.jsx");
+/* harmony import */ var _carouselLogic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./carouselLogic */ "./frontend/components/splash/photo_carousel/carouselLogic.js");
+/* harmony import */ var _carousel_photo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./carousel_photo */ "./frontend/components/splash/photo_carousel/carousel_photo.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -715,6 +716,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -740,70 +742,69 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "componentDidMount",
-    value: function componentDidMount() {
-      // slideIndex = 0;
-      this.carouseulFunction();
-    } // startCarousel = () => {
+    value: function componentDidMount() {} // slideIndex = 0;
+    // this.startSlide();
+    // startCarousel = () => {
     //     this.car
     // }
 
   }, {
     key: "carouseulFunction",
-    value: function carouseulFunction() {
-      debugger; // var slideIndex = 0;
+    value: function carouseulFunction() {} // var slideIndex = 0;
+    // // debugger
+    // carouselLogic(slideIndex);
+    // metaslider_25 = function ($) {
 
-      var slideIndex = this.props.slideIndex;
-      var i;
-      var showSlides = document.getElementsByClassName("slides");
-      var dots = document.getElementsByClassName("dot");
+  }, {
+    key: "fetchCarousel",
+    value: function fetchCarousel($) {
+      debugger;
+      $('.slideshow-container').addClass('flexslider'); // theme/plugin conflict avoidance
 
-      for (i = 0; i < showSlides.length; i++) {
-        debugger;
-        showSlides[i].style.display = "none";
-      }
-
-      slideIndex++;
-
-      if (slideIndex > showSlides.length) {
-        slideIndex = 1;
-      }
-
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      } // debugger
-
-
-      showSlides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      setTimeout(this.carouseulFunction, 2000); // Change image every 2 seconds
+      $('.slideshow-container').flexslider({
+        slideshowSpeed: 3000,
+        animation: "fade",
+        controlNav: false,
+        directionNav: false,
+        pauseOnHover: false,
+        direction: "horizontal",
+        reverse: false,
+        animationSpeed: 600,
+        prevText: "&lt;",
+        nextText: "&gt;",
+        slideshow: true
+      });
     }
+  }, {
+    key: "startSlide",
+    value: function startSlide() {
+      var slider = !window.jQuery ? window.setTimeout(this.startSlide(), 100) : !jQuery.isReady ? window.setTimeout(this.startSlide(), 1) : fetchCarousel(window.jQuery);
+    } // startSlide();
+
   }, {
     key: "render",
     value: function render() {
       // debugger;
-      var photos = window.images.carousel_images_array.map(function (photo_url, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "carousel-ul"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_carousel_photo__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          id: i,
-          key: i,
-          photo_url: photo_url
-        }));
-      });
+      // let photos = window.images.carousel_images_array.map((photo_url,i) => {
+      //     return (
+      //         <div className="carousel-ul">
+      //             <CarouselPhoto 
+      //                 id={i}
+      //                 key={i}
+      //                 photo_url={photo_url}
+      //             />
+      //         </div>
+      //     );
+      // });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "slideshow-container"
-      }, photos, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dot-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "dot"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "dot"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "dot"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "dot"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "dot"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "carousel-ul"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_carousel_photo__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        id: 1,
+        key: 1,
+        photo_url: window.images.carousel_images_array[0] // photo_url={photo_url}
+
       })));
     }
   }]);
@@ -812,6 +813,46 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Carousel);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/photo_carousel/carouselLogic.js":
+/*!********************************************************************!*\
+  !*** ./frontend/components/splash/photo_carousel/carouselLogic.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return carouselLogic; });
+function carouselLogic(slideIndex) {
+  //  debugger
+  var i;
+  var showSlides = document.getElementsByClassName("slides");
+  var dots = document.getElementsByClassName("dot");
+
+  for (i = 0; i < showSlides.length; i++) {
+    // debugger
+    showSlides[i].style.display = "none";
+  }
+
+  debugger;
+  slideIndex++;
+
+  if (slideIndex > showSlides.length) {
+    slideIndex = 1;
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  debugger;
+  showSlides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  setTimeout(carouselLogic(slideIndex), 2000); // Change image every 2 seconds
+}
 
 /***/ }),
 

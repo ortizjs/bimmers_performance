@@ -1,4 +1,5 @@
 import React from 'react';
+import carouselLogic from './carouselLogic';
 import CarouselPhoto from './carousel_photo';
 
 class Carousel extends React.Component {
@@ -15,7 +16,7 @@ class Carousel extends React.Component {
 
     componentDidMount() {
         // slideIndex = 0;
-        this.carouseulFunction();
+        // this.startSlide();
     }
 
     // startCarousel = () => {
@@ -23,53 +24,69 @@ class Carousel extends React.Component {
     // }
 
     carouseulFunction() {
-        debugger
         // var slideIndex = 0;
-        var slideIndex = this.props.slideIndex;
-        var i;
-        var showSlides = document.getElementsByClassName("slides");
-        var dots = document.getElementsByClassName("dot");
-        for (i = 0; i < showSlides.length; i++) {
-            debugger
-            showSlides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > showSlides.length) { slideIndex = 1; }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        // debugger
-        showSlides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(this.carouseulFunction, 2000); // Change image every 2 seconds
+        // // debugger
+        // carouselLogic(slideIndex);
     }
+
+    // metaslider_25 = function ($) {
+    fetchCarousel($) {
+        debugger
+        $('.slideshow-container').addClass('flexslider'); // theme/plugin conflict avoidance
+        $('.slideshow-container').flexslider({
+            slideshowSpeed: 3000,
+            animation: "fade",
+            controlNav: false,
+            directionNav: false,
+            pauseOnHover: false,
+            direction: "horizontal",
+            reverse: false,
+            animationSpeed: 600,
+            prevText: "&lt;",
+            nextText: "&gt;",
+            slideshow: true
+        });
+    }
+
+    startSlide() {
+        var slider = !window.jQuery ? window.setTimeout(this.startSlide(), 100) : !jQuery.isReady ? window.setTimeout(this.startSlide(), 1) : fetchCarousel(window.jQuery);
+    }
+    // startSlide();
 
     render() {
         // debugger;
-        let photos = window.images.carousel_images_array.map((photo_url,i) => {
-            return (
-                <div className="carousel-ul">
-                    <CarouselPhoto 
-                        id={i}
-                        key={i}
-                        photo_url={photo_url}
-                    />
+        // let photos = window.images.carousel_images_array.map((photo_url,i) => {
+        //     return (
+        //         <div className="carousel-ul">
+        //             <CarouselPhoto 
+        //                 id={i}
+        //                 key={i}
+        //                 photo_url={photo_url}
+        //             />
                     
 
-                </div>
-            );
-        });
+        //         </div>
+        //     );
+        // });
         return(
             <div className="slideshow-container">
-                {photos}
-                {/* {this.carouseulFunction()} */}
-                <div className="dot-container">
-                    <span className="dot"></span>
-                    <span className="dot"></span>
-                    <span className="dot"></span>
-                    <span className="dot"></span>
-                    <span className="dot"></span>
+                {/* {photos} */}
+                <div className="carousel-ul">
+                    <CarouselPhoto
+                        id={1}
+                        key={1}
+                        photo_url={window.images.carousel_images_array[0]}
+                        // photo_url={photo_url}
+                    />
                 </div>
+                {/* {this.carouseulFunction()} */}
+                {/* <div className="dot-container">
+                    <span className="dot"></span>
+                    <span className="dot"></span>
+                    <span className="dot"></span>
+                    <span className="dot"></span>
+                    <span className="dot"></span>
+                </div> */}
             </div>
         )
     }

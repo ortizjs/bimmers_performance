@@ -17,12 +17,15 @@
 }
 
 .splash-body-div {
-    min-height: 400px;
+    min-height: 800px;
     // overflow: hidden;
     border: 2px solid purple;
 }
 
 .splash-page-home-div {
+    // min-height: 800px; 
+    //cannot set determined height in this div.
+    //keep in .splash-body-div to mantain grey background height(.splash-page-main-div)
     width: 87%;
     position: absolute;
     top: 155px;
@@ -30,6 +33,9 @@
     background-color: transparent;
     // max-height: 34px;
     border: 1px solid red;
+    p {
+        margin-bottom: 24px;
+    }
 }
 
 @media (min-width: 1600px) {
@@ -41,6 +47,11 @@
     }
 }
 
+.splash-page-home-left {
+    border: 2px solid lime;
+    max-width: 640px;
+    max-height: 933px;
+}
 
 .logo-inbody-container-div {
     border: 2px solid pink;
@@ -51,4 +62,22 @@
     width: 640px;
     height: 275px;;   
    } 
+}
+
+.splash-home-business-intro {
+    color: #000000;
+    font-family: Tahoma,
+        tahoma-w01-regular,
+        tahoma-w02-regular,
+        tahoma-w10-regular,
+        tahoma-w15--regular,
+        tahoma-w99-regular,
+        sans-serif;
+    line-height: 20.8px
+}
+
+.splash-home-business-intro {
+    color: black;
+    font-family: Tahoma,sans-serif;
+    line-height: 1.5;
 }

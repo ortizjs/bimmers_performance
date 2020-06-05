@@ -941,10 +941,52 @@ var SplashHomePage = /*#__PURE__*/function (_React$Component) {
       // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-page-home-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-page-home-left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photo_carousel_carousel__WEBPACK_IMPORTED_MODULE_2__["default"], {
         slideIndex: 0,
         photos: window.images.carousel_images_array
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis assumenda laborum ipsam soluta molestiae iste, sapiente maiores repellendus ipsa dicta eligendi quasi minus? Deserunt et eius sit excepturi reprehenderit minus."));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-welcome-span"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fontSize: "24px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Welcome to ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fontSize: "18px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: ({
+          color: '#ff0000'
+        }, {
+          fontSize: '24px'
+        })
+      }, "Bimmers")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fonSize: "24px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: ({
+          color: '#0000ff'
+        }, {
+          fontSize: '24px'
+        })
+      }, "Performance")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fontSize: "24px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: ({
+          color: "#ff0000"
+        }, {
+          fontSize: "24px"
+        })
+      }, "Auto Service"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        "class": "splash-home-business-intro"
+      }, "Bimmers Performance Auto Service has been providing superior automotive repair and maintenance services in East Bay area for over 15 years"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro"
+      }, "specializing", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "in BMW and Mercedes Benz vehicle repairs."))));
     }
   }]);
 

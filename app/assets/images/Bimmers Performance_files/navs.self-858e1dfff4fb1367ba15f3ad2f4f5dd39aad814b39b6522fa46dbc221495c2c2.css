@@ -1,0 +1,54 @@
+/* line 2, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/navs.scss */
+.splash-nav-main-div {
+  width: 87%;
+  position: absolute;
+  top: 115px;
+  left: 70px;
+  background-color: #069;
+  max-height: 34px;
+  border: 2px solid yellow;
+}
+
+@media (min-width: 1600px) {
+  /* line 15, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/navs.scss */
+  .splash-nav-main-div {
+    width: 90%;
+    height: 100px;
+    top: 115px;
+    left: 52.5px;
+    background-color: #069;
+  }
+}
+/* line 27, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/navs.scss */
+.splash-nav-ul {
+  min-width: 90%;
+  display: block;
+  float: left;
+  margin: 0 0 3em 1em;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 40, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/navs.scss */
+.splash-nav-ul li {
+  float: left;
+  margin-left: 1em;
+}
+/* line 43, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/navs.scss */
+.splash-nav-ul li.active {
+  background: grey;
+}
+
+/* line 48, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/navs.scss */
+.splash-nav-ul li a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+/* line 56, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/navs.scss */
+.splash-nav-ul li a:hover {
+  -webkit-filter: brightness(50%);
+}

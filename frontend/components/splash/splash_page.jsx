@@ -17,7 +17,13 @@ class Splash extends React.Component {
                 </div>
                 <div className="splash-body-div">
                     <SplashNav />
-                    <SplashHome />
+                    <div className="splash-body-left">
+                        <SplashHome 
+                        images={window.images}/> 
+                    </div>
+                    <div className="splash-body-right">
+
+                    </div>
                 </div>
                 {/* <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis aliquam magni quis modi assumenda totam exercitationem odit maiores sed sapiente, mollitia voluptates, doloremque velit, eos nesciunt alias delectus quia a.</p> */}
 

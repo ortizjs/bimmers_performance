@@ -4,9 +4,12 @@ import React from 'react';
 const CarouselPhoto = props => {
     return (
         <div id="slides" className="slides fade">
-            <div className="number-text">1 / {props.id+1}</div>
+            <br/>
+            <br/>
+            {/* <div className="number-text">1 / {props.id+1}</div> */}
             <img src={props.photo_url} alt="" />
-            <div className="caption-text">caption text</div>
+            <br/>
+            {/* <div className="caption-text">caption text</div> */}
             {/* <Link to={`/photos/${props.photo.id}`}> */}
             {/* </Link> */}
             {/* <div className="photo-title">

@@ -1,0 +1,91 @@
+/* line 1, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+.splash-page-main-div {
+  background-color: #999;
+  border: 5px solid green;
+  max-width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  position: relative;
+}
+
+@media (min-width: 1600px) {
+  /* line 14, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+  .splash-page-main-div {
+    max-width: 55%;
+  }
+}
+/* line 19, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+.splash-body-div {
+  min-height: 1000px;
+  border: 2px solid purple;
+}
+
+/* line 25, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+.splash-page-home-div {
+  width: 87%;
+  position: absolute;
+  top: 155px;
+  left: 70px;
+  background-color: transparent;
+  border: 1px solid red;
+}
+/* line 36, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+.splash-page-home-div p {
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1600px) {
+  /* line 42, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+  .splash-page-home-div {
+    width: 90%;
+    top: 155px;
+    left: 52.5px;
+    border: 1px solid red;
+  }
+}
+/* line 50, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+.splash-body-left {
+  border: 2px solid lime;
+  width: 300px;
+  height: 1000px;
+}
+
+/* line 57, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+.splash-page-home-right {
+  border: 2px solid lightseagreen;
+  max-width: 640px;
+  max-height: 333px;
+}
+
+/* line 63, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+.logo-inbody-container-div {
+  border: 2px solid pink;
+}
+
+/* line 68, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+.slideshow-container img {
+  width: 640px;
+  height: 275px;
+}
+
+/* line 74, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+.splash-home-business-intro {
+  color: #000000;
+  font-family: Tahoma, tahoma-w01-regular, tahoma-w02-regular, tahoma-w10-regular, tahoma-w15--regular, tahoma-w99-regular, sans-serif;
+  line-height: 20.8px;
+}
+
+/* line 86, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+.splash-home-business-intro-2 {
+  color: black;
+  font-family: Tahoma,sans-serif;
+  line-height: 1.5;
+}
+
+/* line 92, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/splash.scss */
+.cars-logo-centered {
+  margin-left: auto;
+  margin-right: auto;
+}

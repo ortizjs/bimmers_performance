@@ -65,9 +65,9 @@ class Splash extends React.Component {
                                 </strong>		
                                 <div className="textwidget">
                                     <hr style={{ height: "2px" }, { borderWidth: "0" }, { color: "gray" }, { backgroundColor: "gray" }} />
-                                    <strong style={{color:"black"}}>Monday:  8:00 AM - 6:00 PM</strong>
+                                    <strong style={{color:"black"}}>Monday: 8:00 AM - 6:00 PM</strong>
                                     <br/>
-                                        <strong style={{color:"black"}}>Tuesday:     8 :00 AM - 6:00 PM</strong>
+                                        <strong style={{color:"black"}}>Tuesday: 8:00 AM - 6:00 PM</strong>
                                         <br/>
                                         <strong style={{color:"black"}}>Wednesday: 8:00 AM - 6:00 PM</strong>
                                         <br/>
@@ -77,7 +77,7 @@ class Splash extends React.Component {
                                         <br/>
                                         <strong style={{color:"black"}}>Saturday: 9:00 AM - 3:00 PM</strong>
                                         <br/>
-                                        <strong style={{color:"black"}}>Sunday:  Close</strong>
+                                        <strong style={{color:"black"}}>Sunday: Close</strong>
                                 </div>
                             </li>
                         </ul>

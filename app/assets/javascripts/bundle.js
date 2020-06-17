@@ -1300,11 +1300,11 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         style: {
           color: "black"
         }
-      }, "Monday:  8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+      }, "Monday: 8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         style: {
           color: "black"
         }
-      }, "Tuesday:     8 :00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+      }, "Tuesday: 8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         style: {
           color: "black"
         }
@@ -1324,7 +1324,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         style: {
           color: "black"
         }
-      }, "Sunday:  Close")))))));
+      }, "Sunday: Close")))))));
     }
   }]);
 

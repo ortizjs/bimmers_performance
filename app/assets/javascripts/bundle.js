@@ -828,30 +828,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return carouselLogic; });
 function carouselLogic(slideIndex) {
   //  debugger
-  var i;
-  var showSlides = document.getElementsByClassName("slides");
-  var dots = document.getElementsByClassName("dot");
+  //  var i;
+  //  var showSlides = document.getElementsByClassName("slides");
+  //  var dots = document.getElementsByClassName("dot");
+  //  for (i = 0; i < showSlides.length; i++) {
+  //      // debugger
+  //      showSlides[i].style.display = "none";
+  //  }
+  //  debugger
+  //  slideIndex++;
+  //  if (slideIndex > showSlides.length) {
+  //      slideIndex = 1;
+  //  }
+  //  for (i = 0; i < dots.length; i++) {
+  //      dots[i].className = dots[i].className.replace(" active", "");
+  //  }
+  //  debugger
+  //  showSlides[slideIndex - 1].style.display = "block";
+  //  dots[slideIndex - 1].className += " active";
+  //  setTimeout(carouselLogic(slideIndex), 2000); // Change image every 2 seconds
+  var metaslider_25 = function metaslider_25($) {
+    $('#metaslider_25').addClass('flexslider'); // theme/plugin conflict avoidance
 
-  for (i = 0; i < showSlides.length; i++) {
-    // debugger
-    showSlides[i].style.display = "none";
-  }
+    $('#metaslider_25').flexslider({
+      slideshowSpeed: 3000,
+      animation: "fade",
+      controlNav: false,
+      directionNav: false,
+      pauseOnHover: false,
+      direction: "horizontal",
+      reverse: false,
+      animationSpeed: 600,
+      prevText: "&lt;",
+      nextText: "&gt;",
+      slideshow: true
+    });
+  };
 
-  debugger;
-  slideIndex++;
+  var timer_metaslider_25 = function timer_metaslider_25() {
+    var slider = !window.jQuery ? window.setTimeout(timer_metaslider_25, 100) : !jQuery.isReady ? window.setTimeout(timer_metaslider_25, 1) : metaslider_25(window.jQuery);
+  };
 
-  if (slideIndex > showSlides.length) {
-    slideIndex = 1;
-  }
-
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-
-  debugger;
-  showSlides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-  setTimeout(carouselLogic(slideIndex), 2000); // Change image every 2 seconds
+  timer_metaslider_25();
 }
 
 /***/ }),
@@ -1174,7 +1192,139 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         images: window.images
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-body-right"
-      })));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "xoxo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "text-7",
+        className: "widget-container widget_text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "widget-title"
+      }, "Our Address:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "textwidget"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+        style: ({
+          height: "2px"
+        }, {
+          borderWidth: "0"
+        }, {
+          color: "gray"
+        }, {
+          backgroundColor: "gray"
+        })
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "1090 D Detroit Ave", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Concord, CA 94518"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "text-10",
+        className: "widget-container widget_text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "widget-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Contact Us:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "textwidget"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+        style: ({
+          height: "2px"
+        }, {
+          borderWidth: "0"
+        }, {
+          color: "gray"
+        }, {
+          backgroundColor: "gray"
+        })
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Call Us: (925) 682-3232", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Email Us at:  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "mailto:saulortiz40@gmail.com>?Subject=Thank%20you%20for%20emailing%20us",
+        target: "_top"
+      }, "Bimmers Support"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "text-5",
+        className: "widget-container widget_text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "widget-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Hours of Operation:"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "textwidget"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+        style: ({
+          height: "2px"
+        }, {
+          borderWidth: "0"
+        }, {
+          color: "gray"
+        }, {
+          backgroundColor: "gray"
+        })
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Monday:  8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Tuesday:     8 :00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Wednesday: 8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Thursday: 8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Friday: 8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Saturday: 9:00 AM - 3:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        style: {
+          color: "black"
+        }
+      }, "Sunday:  Close")))))));
     }
   }]);
 

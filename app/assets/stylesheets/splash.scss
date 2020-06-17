@@ -38,6 +38,44 @@
     position: absolute;
     right: 66px;
 }
+.hours-location-container {
+    margin-top: 50px;
+    // float: right;
+    overflow: hidden;
+    width: 250px;
+    
+}
+
+.widget-container {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    margin: 0 0 18px 0;
+}
+
+.widget-container .wp-caption img {
+    margin: auto;
+}
+
+// .widget-container img {
+//     max-width: 100%;
+//     /* When images are too wide for containing element, force them to fit. */
+//     height: auto;
+//     /* Override height to match resized width for correct aspect ratio. */
+// }
+
+
+.widget-title {
+    color: #222;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.widget-title,
+.wp-caption-text {
+    font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+}
 
 .splash-page-home-div {
     // min-height: 800px; 

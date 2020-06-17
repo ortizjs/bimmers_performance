@@ -969,33 +969,30 @@ var SplashHomePage = /*#__PURE__*/function (_React$Component) {
           fontSize: "18px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        style: ({
-          color: '#ff0000'
-        }, {
+        style: {
+          color: '#ff0000',
           fontSize: '24px'
-        })
+        }
       }, "Bimmers")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         style: {
           fonSize: "24px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        style: ({
-          color: '#0000ff'
-        }, {
+        style: {
+          color: '#0000ff',
           fontSize: '24px'
-        })
+        }
       }, "Performance")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         style: {
           fontSize: "24px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        style: ({
-          color: "#ff0000"
-        }, {
+        style: {
+          color: "#ff0000",
           fontSize: "24px"
-        })
+        }
       }, "Auto Service"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "splash-home-business-intro"
+        className: "splash-home-business-intro"
       }, "Bimmers Performance Auto Service has been providing superior automotive repair and maintenance services in East Bay area for over 15 years \xA0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-home-business-intro-2"
       }, "specializing", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "in BMW and Mercedes Benz vehicle repairs.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1141,6 +1138,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splash_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./splash_nav */ "./frontend/components/splash/splash_nav.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _splash_home_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash_home_page */ "./frontend/components/splash/splash_home_page.jsx");
+/* harmony import */ var _splash_right__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./splash_right */ "./frontend/components/splash/splash_right.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1158,6 +1156,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1192,8 +1191,64 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         images: window.images
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-body-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_right__WEBPACK_IMPORTED_MODULE_4__["default"], null))));
+    }
+  }]);
+
+  return Splash;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Splash);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_right.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/splash/splash_right.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var SplashRight = /*#__PURE__*/function (_React$Component) {
+  _inherits(SplashRight, _React$Component);
+
+  function SplashRight(props) {
+    _classCallCheck(this, SplashRight);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SplashRight).call(this, props));
+  }
+
+  _createClass(SplashRight, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hours-location-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "xoxo"
+        className: "hours-ul"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "text-7",
         className: "widget-container widget_text"
@@ -1202,15 +1257,12 @@ var Splash = /*#__PURE__*/function (_React$Component) {
       }, "Our Address:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "textwidget"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-        style: ({
-          height: "2px"
-        }, {
-          borderWidth: "0"
-        }, {
-          color: "gray"
-        }, {
+        style: {
+          height: "2px",
+          borderWidth: "0",
+          color: "gray",
           backgroundColor: "gray"
-        })
+        }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         style: {
           color: "black"
@@ -1239,15 +1291,12 @@ var Splash = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "textwidget"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-        style: ({
-          height: "2px"
-        }, {
-          borderWidth: "0"
-        }, {
-          color: "gray"
-        }, {
+        style: {
+          height: "2px",
+          borderWidth: "0",
+          color: "gray",
           backgroundColor: "gray"
-        })
+        }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         style: {
           color: "black"
@@ -1287,15 +1336,12 @@ var Splash = /*#__PURE__*/function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "textwidget"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
-        style: ({
-          height: "2px"
-        }, {
-          borderWidth: "0"
-        }, {
-          color: "gray"
-        }, {
+        style: {
+          height: "2px",
+          borderWidth: "0",
+          color: "gray",
           backgroundColor: "gray"
-        })
+        }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         style: {
           color: "black"
@@ -1324,14 +1370,14 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         style: {
           color: "black"
         }
-      }, "Sunday: Close")))))));
+      }, "Sunday: Close")))));
     }
   }]);
 
-  return Splash;
+  return SplashRight;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Splash);
+/* harmony default export */ __webpack_exports__["default"] = (SplashRight);
 
 /***/ }),
 

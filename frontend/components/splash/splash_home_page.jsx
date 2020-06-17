@@ -28,19 +28,19 @@ class SplashHomePage extends React.Component {
                     <span style={{fontSize:"18px"}}>
                         <em>
                             <strong>
-                                <span style={{color:'#ff0000'},{fontSize:'24px'}}>Bimmers</span>
+                                <span style={{color:'#ff0000', fontSize:'24px'}}>Bimmers</span>
                             </strong>
                             <span style={{fonSize:"24px"}}>
                                 <strong> </strong>
                             </span>
                             <strong>
-                                <span style={{color:'#0000ff'},{fontSize:'24px'}}>Performance</span>
+                                <span style={{color:'#0000ff', fontSize:'24px'}}>Performance</span>
                             </strong>
                             <span style={{fontSize:"24px"}}>
                                 <strong> </strong>
                             </span>
                             <strong>
-                                <span style={{color:"#ff0000"},{fontSize:"24px"}}>Auto Service</span>
+                                <span style={{color:"#ff0000", fontSize:"24px"}}>Auto Service</span>
                             </strong>
                         </em>
                     </span>
@@ -52,7 +52,7 @@ class SplashHomePage extends React.Component {
                 </p> */}
                 <p>
                     &nbsp;
-                    <span class="splash-home-business-intro">
+                    <span className="splash-home-business-intro">
                         Bimmers Performance Auto Service has been providing superior automotive repair and maintenance services in 
                         East Bay area for over 15 years
                         &nbsp;

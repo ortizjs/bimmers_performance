@@ -2,10 +2,10 @@ import configureStore from './store/store';
 import React from "react";
 import ReactDOM from "react-dom";
 import Root from './components/root';
+
 // import * as commands from './util/session_api_util';
 // import * as commands2 from './util/photo_api_util';
 // import { login } from './actions/session_actions';
-
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;

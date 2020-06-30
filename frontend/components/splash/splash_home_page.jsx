@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Redirect, Switch, Link, HashRoutes} from 'react-router-dom';
-import Carousel from './photo_carousel/carousel';
+import CarouselPhotos from './photo_carousel/carousel';
+import "css-loader!react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 class SplashHomePage extends React.Component {
     constructor(props) {
@@ -8,19 +10,15 @@ class SplashHomePage extends React.Component {
         
     }
 
-    componentDidMount() {
-        // debugger
+    // componentDidMount() {
 
-    }
+    // }
+
     render() {
-        // debugger
         return (
             <div className="splash-page-home-div">
                 {/* <div className="splash-page-home-left"> */}
-                <Carousel 
-                slideIndex={0}
-                photos={window.images.carousel_images_array}
-                />
+                <CarouselPhotos />
                 <span className="splash-home-welcome-span">
                     <span style={{fontSize:"24px"}}>
                         <strong>Welcome to </strong>

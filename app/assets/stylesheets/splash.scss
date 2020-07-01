@@ -38,12 +38,31 @@
     position: absolute;
     right: 66px;
 }
+
 .hours-location-container {
     margin-top: 50px;
-    // float: right;
     overflow: hidden;
-    width: 300px;
-    
+    width: 305px;
+    float: right;
+    font-family: Georgia,"Bitstream Charter",serif;
+}
+
+.hours-location-hr {
+    height: 2px;
+    border-width: 0;
+    color: gray;
+    background-color: gray;
+    margin-bottom: 15px;
+}
+
+.splash-right-textwidget-strong,
+.splash-right-textwidget-strong-days {
+    color: black;
+    // line-height: 25px;
+}
+
+.splash-right-textwidget-strong-days {
+    line-height: 25px;
 }
 
 .widget-container {
@@ -53,7 +72,10 @@
     hyphens: auto;
     margin: 0 0 18px 0;
 }
-
+.shuttle-img {
+    max-width: 100%;
+    height: auto;
+}
 .widget-container .wp-caption img {
     margin: auto;
 }
@@ -158,4 +180,19 @@
     margin-left: auto;
     margin-right: auto;
     // width: 50%;
+}
+.temp-car {
+    margin: 50px 0 30px;
+    img {
+        width: 100%;
+    }
+}
+
+.splash-page-main-div-hr {
+    // border-width: 2.5px;
+    height: 5px;
+    border-width: 0;
+    color: black;
+    background-color: black;
+    width: 87%;
 }

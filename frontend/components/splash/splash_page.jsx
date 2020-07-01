@@ -34,6 +34,7 @@ class Splash extends React.Component {
                 <div className="splash-home-container">
                     <SplashHome/>
                 </div> */}
+                <hr className="splash-page-main-div-hr" align="center"/>
             </div>
         )
     }

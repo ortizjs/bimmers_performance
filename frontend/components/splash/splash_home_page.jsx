@@ -10,15 +10,14 @@ class SplashHomePage extends React.Component {
         
     }
 
-    // componentDidMount() {
-
-    // }
-
     render() {
         return (
             <div className="splash-page-home-div">
                 {/* <div className="splash-page-home-left"> */}
-                <CarouselPhotos />
+                {/* <CarouselPhotos /> */}
+                <div className="temp-car">
+                    <img src={window.images.carousel_images_array[0]} />
+                </div>
                 <span className="splash-home-welcome-span">
                     <span style={{fontSize:"24px"}}>
                         <strong>Welcome to </strong>

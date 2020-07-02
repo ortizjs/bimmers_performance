@@ -4,26 +4,36 @@ import Geocode from 'react-geocode';
 class LocationMap extends React.Component {
     constructor(props) {
         super(props);
-    }
-    
-    setMapElementReference(mapElementReference) {
-        this.mapElement = mapElementReference;
-    }
-    
-    componentDidMount() {
-        const mapOptions = {
-            zoom: 8,
-            center: {
-                lat: 51.5085300,
-                lng: -0.1257400
+        this.state = {
+            mapOptions: {
+                zoom: 18,
+                center: {
+                    lat: 37.959607,
+                    lng: -122.032699
+                }
             }
         };
-        this.map = new google.maps.Map(this.mapElement, mapOptions);
+    }
+
+    // setMapElementReference(mapElementReference) {
+    //     this.mapElement = mapElementReference;
+    // }
+    
+    componentDidMount() {
+        this.map = new google.maps.Map(this.mapNode, this.state.mapOptions);
+        this.marker = new google.maps.Marker({
+            position: {
+                lat: this.state.mapOptions.center.lat,
+                lng: this.state.mapOptions.center.lng
+            },
+            map: this.map
+        });
+        this.geocoder = new google.maps.Geocoder();
     }
 
     render() {
         return (
-            <div className="map" ref={this.setMapElementReference}>
+            <div className="map-container" ref={map => this.mapNode = map}>
 
             </div>
         )

@@ -76,8 +76,16 @@
     max-width: 100%;
     height: auto;
 }
+
 .widget-container .wp-caption img {
     margin: auto;
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    width: 260px;
 }
 
 // .widget-container img {

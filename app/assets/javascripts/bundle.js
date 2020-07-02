@@ -724,34 +724,49 @@ var LocationMap = /*#__PURE__*/function (_React$Component) {
   _inherits(LocationMap, _React$Component);
 
   function LocationMap(props) {
+    var _this;
+
     _classCallCheck(this, LocationMap);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(LocationMap).call(this, props));
-  }
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LocationMap).call(this, props));
+    _this.state = {
+      mapOptions: {
+        zoom: 18,
+        center: {
+          lat: 37.959607,
+          lng: -122.032699
+        }
+      }
+    };
+    return _this;
+  } // setMapElementReference(mapElementReference) {
+  //     this.mapElement = mapElementReference;
+  // }
+
 
   _createClass(LocationMap, [{
-    key: "setMapElementReference",
-    value: function setMapElementReference(mapElementReference) {
-      this.mapElement = mapElementReference;
-    }
-  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      var mapOptions = {
-        zoom: 8,
-        center: {
-          lat: 51.5085300,
-          lng: -0.1257400
-        }
-      };
-      this.map = new google.maps.Map(this.mapElement, mapOptions);
+      this.map = new google.maps.Map(this.mapNode, this.state.mapOptions);
+      this.marker = new google.maps.Marker({
+        position: {
+          lat: this.state.mapOptions.center.lat,
+          lng: this.state.mapOptions.center.lng
+        },
+        map: this.map
+      });
+      this.geocoder = new google.maps.Geocoder();
     }
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "map",
-        ref: this.setMapElementReference
+        className: "map-container",
+        ref: function ref(map) {
+          return _this2.mapNode = map;
+        }
       });
     }
   }]);

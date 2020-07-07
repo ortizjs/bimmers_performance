@@ -3,7 +3,6 @@ import { Route, Redirect, Switch, Link, HashRoutes} from 'react-router-dom';
 import CarouselPhotos from './photo_carousel/carousel';
 import "css-loader!react-responsive-carousel/lib/styles/carousel.min.css";
 
-
 class SplashHomePage extends React.Component {
     constructor(props) {
         super(props);
@@ -87,7 +86,7 @@ class SplashHomePage extends React.Component {
                 </p>
                 <div>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img alt="car_logos" src={this.props.images.car_logos} className="cars-logo-centered"></img>
+                    <img alt="car_logos" src={window.images.car_logos} className="cars-logo-centered"></img>
                 
                 </div>
                 {/* </div> */}

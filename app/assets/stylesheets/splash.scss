@@ -84,7 +84,7 @@
 .map-container {
     position: relative;
     overflow: hidden;
-    height: 250px;
+    height: 270px;
     width: 260px;
 }
 
@@ -203,4 +203,56 @@
     color: black;
     background-color: black;
     width: 87%;
+}
+
+.splash-service-span-1 {
+    color: #000000;
+    font-family: 'Lucida Sans Unicode',
+    'Lucida Grande',
+    Arial;
+    font-size: 14px;
+    line-height: 20px
+}
+
+.splash-service-span-2 {
+    color: #000000;
+    font-family: 'Lucida Sans Unicode',
+    'Lucida Grande',
+    Arial;
+    line-height: 20px;
+    font-size:16px
+}
+.splash-service-span-3 {
+    font-size:14px;
+    color:#0000ff;
+}
+
+.splash-page-service-div {
+    // min-height: 800px; 
+    //cannot set determined height in this div.
+    //keep in .splash-body-div to mantain grey background height(.splash-page-main-div)
+    width: 95%;
+    position: relative;
+    top: 35px;
+    left: 30px;
+    background-color: transparent;
+    border: 1px solid red;
+
+    // p {
+    //     margin-bottom: 24px;
+    // }
+}
+
+.entry-title {
+    color: #000;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.3em;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+.entry-content {
+    // color: #333;
+    font-size: 16px;
+    line-height: 24px;
 }

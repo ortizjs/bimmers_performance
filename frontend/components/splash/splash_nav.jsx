@@ -7,6 +7,7 @@ class SplashNav extends React.Component {
         this.state = {active: "home"};
         this.handleClick = this.handleClick.bind(this);
     }
+
     handleClick(menuItem) {
         this.setState({active: menuItem});
     }
@@ -14,29 +15,30 @@ class SplashNav extends React.Component {
     render() {
         return (
             <div className="splash-nav-main-div">
-                <ul className="splash-nav-ul">
-                    <li className={this.state.active === "home" ? "active" : ""}>
+                <ul id="splashnav-ul" className="splash-nav-ul">
+                    {/* <li id="home" className={this.state.active === "home" ? "active" : ""}> */}
+                    <li id="home" className="home">
                         <Link to="/" onClick={() => this.handleClick("home")} >
                             {/* <a> Home </a> */}
                             Home
                         </Link>
                     </li>
                     
-                    <li className={this.state.active === "services" ? "active" : ""}>
+                    <li id="services" className={this.state.active === "services" ? "active" : ""}>
                         <Link to="/services" onClick={() => this.handleClick("services")} >
                             {/* <a> Services </a> */}
                             Services
                         </Link>
                     </li>
 
-                    <li className={this.state.active === "specials" ? "active" : ""}>
+                    <li id="specials" className={this.state.active === "specials" ? "active" : ""}>
                         <Link to="/specials" onClick={() => this.handleClick("specials")} >
                             {/* <a> Specials </a> */}
                             Specials
                         </Link>
                     </li>
 
-                    <li className={this.state.active === "contactus" ? "active" : ""}>
+                    <li id="contactus" className={this.state.active === "contactus" ? "active" : ""}>
                         <Link to="/contactus" onClick={() => this.handleClick("contactus")} >
                             {/* <a> Contact Us </a> */}
                             Contact Us

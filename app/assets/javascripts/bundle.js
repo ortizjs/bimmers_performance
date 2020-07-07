@@ -969,7 +969,7 @@ var SplashHomePage = /*#__PURE__*/function (_React$Component) {
         className: "splash-home-business-intro"
       }, "as your go-to Auto Center! \xA0")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         alt: "car_logos",
-        src: this.props.images.car_logos,
+        src: window.images.car_logos,
         className: "cars-logo-centered"
       })));
     }
@@ -1046,15 +1046,18 @@ var SplashNav = /*#__PURE__*/function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-nav-main-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        id: "splashnav-ul",
         className: "splash-nav-ul"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: this.state.active === "home" ? "active" : ""
+        id: "home",
+        className: "home"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         onClick: function onClick() {
           return _this2.handleClick("home");
         }
       }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "services",
         className: this.state.active === "services" ? "active" : ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/services",
@@ -1062,6 +1065,7 @@ var SplashNav = /*#__PURE__*/function (_React$Component) {
           return _this2.handleClick("services");
         }
       }, "Services")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "specials",
         className: this.state.active === "specials" ? "active" : ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/specials",
@@ -1069,6 +1073,7 @@ var SplashNav = /*#__PURE__*/function (_React$Component) {
           return _this2.handleClick("specials");
         }
       }, "Specials")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "contactus",
         className: this.state.active === "contactus" ? "active" : ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/contactus",
@@ -1101,6 +1106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _splash_home_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash_home_page */ "./frontend/components/splash/splash_home_page.jsx");
 /* harmony import */ var _splash_right__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./splash_right */ "./frontend/components/splash/splash_right.jsx");
+/* harmony import */ var _splash_service_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./splash_service_page */ "./frontend/components/splash/splash_service_page.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1125,16 +1131,41 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Splash = /*#__PURE__*/function (_React$Component) {
   _inherits(Splash, _React$Component);
 
   function Splash(props) {
+    var _this;
+
     _classCallCheck(this, Splash);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Splash).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Splash).call(this, props));
+    _this.state = {
+      active: "home"
+    };
+    return _this;
   }
 
   _createClass(Splash, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {} // debugger
+    // let navbar = $(".splash-nav-ul .active")[0].id
+    // this.setState({avtive: navbar});
+    // this.componentToRender(navbar);
+    // componentToRender() {
+    //     let component = this.state.active;
+    //     switch(component) {
+    //         case "home":
+    //             return <SplashHome/>;
+    //         case "sevices":
+    //             return <SplashService/>;
+    //         default:
+    //             return null;
+    //     }
+    // }
+
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1147,11 +1178,19 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "site-banner-inbody"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-body-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_nav__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        active: "home"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-body-left"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_home_page__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        images: window.images
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        exact: true,
+        path: "/",
+        component: _splash_home_page__WEBPACK_IMPORTED_MODULE_3__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        exact: true,
+        path: "/services",
+        component: _splash_service_page__WEBPACK_IMPORTED_MODULE_5__["default"]
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-body-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_right__WEBPACK_IMPORTED_MODULE_4__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
         className: "splash-page-main-div-hr",
@@ -1286,13 +1325,13 @@ var SplashRight = /*#__PURE__*/function (_React$Component) {
         className: "splash-right-textwidget-strong-days"
       }, "Sunday: Closed"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "text-12",
-        "class": "widget-container widget_text"
+        className: "widget-container widget_text"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         className: "splash-right-textwidget-strong"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         className: "splash-right-textwidget-strong"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "textwidget"
+        className: "textwidget"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "shuttle-img",
         alt: "",
@@ -1323,6 +1362,164 @@ var SplashRight = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (SplashRight);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_service_page.jsx":
+/*!************************************************************!*\
+  !*** ./frontend/components/splash/splash_service_page.jsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var SplashServicePage = /*#__PURE__*/function (_React$Component) {
+  _inherits(SplashServicePage, _React$Component);
+
+  function SplashServicePage(props) {
+    _classCallCheck(this, SplashServicePage);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SplashServicePage).call(this, props));
+  }
+
+  _createClass(SplashServicePage, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-page-service-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "entry-title"
+      }, "Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "entry-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          color: "#ff0000"
+        }
+      }, "Bimmers ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          color: "#0000ff"
+        }
+      }, "Performance ")), "will\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-1"
+      }, "perform Diagnosis, and Service & Repair on your BMW and Mercedes Automobile, SUV or Light Truck.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-2"
+      }, "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0Our Services Include, But Are Not Limited To:"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        border: "1",
+        cellSpacing: "2",
+        cellPadding: "2",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "200px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Standard Maintenance Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "162px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Transmission"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "162px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Engine Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "162px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Heating & Air Conditioner Repair")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Mercedes Flex Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "BMW Inspection I, II and CBS (Condition Based Services)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "30/60/90/120 Mile Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Computer Diagnostics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Oil Changes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tune Ups"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Filter Replacements"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Safety Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Windshield Wiper Blades"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fluid Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Trip Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Maintenance Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Check Engine Light Diagnostics & Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Brake Repair & Antilock Braking System (ABS) Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Shocks & Struts Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Suspension & Steering Repair"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        style: {
+          width: "200px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Driveline Repair & Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Axle Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Clutch Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Fluid Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Driveshaft & U-Joint Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Differential Diagnosis"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Performance Check"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Belt Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Hose Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Cooling System Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Radiator  Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Water Pump Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Drivability Diagnostics & Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fuel Injection Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fuel System Repair & Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Ignition System Repair & Maintenance"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Heating & Cooling System Diagnostics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Auto Air Conditioning Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Heating System Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Belt Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Compressor Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Evaporator Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Refrigerant Replacement")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        border: "1",
+        cellSpacing: "2",
+        cellPadding: "2",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Auto Electrical Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Tire Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Exhaust Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Other Services")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Electrical System Diagnostics & Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Alternator Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Starter Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Windshield Wiper Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Power Lock Repairv"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Power Antenna Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Power Steering Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Power Window Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Power Accessory Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Light Repair & Bulb Replacements"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        style: {
+          width: "200px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tire Rotation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tire Air Pressure Checks"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Exhaust Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Muffler Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tailpipe Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Catalytic Converter Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Exhaust Manifold Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Exhaust Upgrades"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Factory Scheduled Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Preventive Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Pre-Purchase Inspections"))))))));
+    }
+  }]);
+
+  return SplashServicePage;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SplashServicePage);
 
 /***/ }),
 

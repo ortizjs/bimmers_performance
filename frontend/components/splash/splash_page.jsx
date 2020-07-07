@@ -3,11 +3,34 @@ import SplashNav from './splash_nav';
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import SplashHome from './splash_home_page';
 import SplashRight from './splash_right';
+import SplashService from './splash_service_page';
 
 class Splash extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            active: "home"
+        };
     }
+
+    componentDidMount() {
+        // debugger
+        // let navbar = $(".splash-nav-ul .active")[0].id
+        // this.setState({avtive: navbar});
+        // this.componentToRender(navbar);
+    }
+
+    // componentToRender() {
+    //     let component = this.state.active;
+    //     switch(component) {
+    //         case "home":
+    //             return <SplashHome/>;
+    //         case "sevices":
+    //             return <SplashService/>;
+    //         default:
+    //             return null;
+    //     }
+    // }
 
     render() {
         return (
@@ -17,10 +40,19 @@ class Splash extends React.Component {
                     <img src={window.images.splash_banner_logo} alt="Logo" className="site-banner-inbody"></img>
                 </div>
                 <div className="splash-body-div">
-                    <SplashNav />
+                    <SplashNav 
+                        active="home"/>
                     <div className="splash-body-left">
-                        <SplashHome 
-                        images={window.images}/> 
+                        {/* <SplashHome 
+                        images={window.images}
+                        />  */}
+                        <Switch>
+                            <Route exact path="/" component={SplashHome} />
+                            <Route exact path="/services" component={SplashService} />
+                        </Switch>
+
+                        {/* <SplashService/> */}
+
                     </div>
                     <div className="splash-body-right">
                         <SplashRight/>

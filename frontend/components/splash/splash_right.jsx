@@ -66,10 +66,10 @@ class SplashRight extends React.Component {
                             <strong className="splash-right-textwidget-strong-days" >Sunday: Closed</strong>
                         </div>
                     </li>
-                    <li id="text-12" class="widget-container widget_text">
+                    <li id="text-12" className="widget-container widget_text">
                         <strong className="splash-right-textwidget-strong">
                             <strong className="splash-right-textwidget-strong">			
-                                <div class="textwidget">
+                                <div className="textwidget">
                                     <img className="shuttle-img" alt="" src={window.images.shuttle_img} align="middle"/>
                                     &nbsp;
                                     <p></p>

@@ -17,7 +17,9 @@ class SplashNav extends React.Component {
             <div className="splash-nav-main-div">
                 <ul className="splash-nav-ul">
                     <li id="home" className={this.state.active === "home" ? "active" : "inactive"}>
-                        <Link to="/" onClick={() => this.handleClick("home")}>Home</Link>
+                        <Link to="/" onClick={() => this.handleClick("home")}>
+                            Home
+                        </Link>
                     </li>
                     
                     <li id="services" className={this.state.active === "services" ? "active" : "inactive"}>

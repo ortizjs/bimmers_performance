@@ -40,11 +40,13 @@ class Splash extends React.Component {
                     <img src={window.images.splash_banner_logo} alt="Logo" className="site-banner-inbody"></img>
                 </div>
                 <div className="splash-body-div">
-                    <SplashNav/>
+                    <div className="splash-nav-container">
+                        <SplashNav/>
+                    </div>
+                    {/* <SplashHome 
+                    images={window.images}
+                    />  */}
                     <div className="splash-body-left">
-                        {/* <SplashHome 
-                        images={window.images}
-                        />  */}
                         <Switch>
                             <Route exact path="/" component={SplashHome} />
                             <Route exact path="/services" component={SplashService} />

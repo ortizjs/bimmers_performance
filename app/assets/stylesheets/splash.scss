@@ -2,6 +2,7 @@
     background-color: #999;
     border: 5px solid green;
     max-width: 75%;
+    min-height: 1150px;;
     // min-height: 500px;
     display: block;
     margin-left: auto;
@@ -37,6 +38,8 @@
     height: 1000px;
     position: absolute;
     right: 66px;
+    // top: 115px; // add this for repositioning to remove position:absolute on splash-body-left as it makes links unclickable? adding position to that 
+    // div makes the links unclickable messes up css.
 }
 
 .hours-location-container {

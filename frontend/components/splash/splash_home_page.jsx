@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Switch, Link, HashRoutes} from 'react-router-dom';
 import CarouselPhotos from './photo_carousel/carousel';
-import "css-loader!react-responsive-carousel/lib/styles/carousel.min.css";
+// import "css-loader!react-responsive-carousel/lib/styles/carousel.min.css";
 
 class SplashHomePage extends React.Component {
     constructor(props) {

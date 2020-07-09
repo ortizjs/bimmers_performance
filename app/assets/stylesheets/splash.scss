@@ -26,10 +26,11 @@
 .splash-body-left {
     border: 2px solid lime;
     width: 59%;
-    height: 1000px;
-    position: absolute;
-    left: 70px // max-width: 640px;
-        // max-height: 933px;
+    min-height: 1000px;
+    margin-left: 68px;
+    // position: absolute; //removing this makes the splash-page-main-div grey backgound to resize based on content?
+    // left: 70px // max-width: 640px;
+    // max-height: 933px;
 }
 
 .splash-body-right {
@@ -38,7 +39,7 @@
     height: 1000px;
     position: absolute;
     right: 66px;
-    // top: 115px; // add this for repositioning to remove position:absolute on splash-body-left as it makes links unclickable? adding position to that 
+    top: 115px; // add this for repositioning to remove position:absolute on splash-body-left as it makes links unclickable? adding position to that 
     // div makes the links unclickable messes up css.
 }
 
@@ -118,9 +119,11 @@
     //cannot set determined height in this div.
     //keep in .splash-body-div to mantain grey background height(.splash-page-main-div)
     width: 95%;
-    position: relative;
-    top: 35px;
-    left: 30px;
+    // position: relative;
+    // top: 35px;
+    // left: 30px; removing positioning makes grand-parent grey div expand to cover all content;
+    margin-top: 35px;
+    margin-left: 30px;
     background-color: transparent;
     border: 1px solid red;
 

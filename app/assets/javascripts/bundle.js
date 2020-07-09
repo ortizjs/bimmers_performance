@@ -1046,11 +1046,10 @@ var SplashNav = /*#__PURE__*/function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-nav-main-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        id: "splashnav-ul",
         className: "splash-nav-ul"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "home",
-        className: "home"
+        className: this.state.active === "home" ? "active" : "inactive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         onClick: function onClick() {
@@ -1058,7 +1057,7 @@ var SplashNav = /*#__PURE__*/function (_React$Component) {
         }
       }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "services",
-        className: this.state.active === "services" ? "active" : ""
+        className: this.state.active === "services" ? "active" : "inactive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/services",
         onClick: function onClick() {
@@ -1066,7 +1065,7 @@ var SplashNav = /*#__PURE__*/function (_React$Component) {
         }
       }, "Services")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "specials",
-        className: this.state.active === "specials" ? "active" : ""
+        className: this.state.active === "specials" ? "active" : "inactive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/specials",
         onClick: function onClick() {
@@ -1074,7 +1073,7 @@ var SplashNav = /*#__PURE__*/function (_React$Component) {
         }
       }, "Specials")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "contactus",
-        className: this.state.active === "contactus" ? "active" : ""
+        className: this.state.active === "contactus" ? "active" : "inactive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/contactus",
         onClick: function onClick() {
@@ -1178,9 +1177,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "site-banner-inbody"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-body-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        active: "home"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_nav__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-body-left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,

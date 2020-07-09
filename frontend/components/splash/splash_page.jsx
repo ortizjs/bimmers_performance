@@ -40,8 +40,7 @@ class Splash extends React.Component {
                     <img src={window.images.splash_banner_logo} alt="Logo" className="site-banner-inbody"></img>
                 </div>
                 <div className="splash-body-div">
-                    <SplashNav 
-                        active="home"/>
+                    <SplashNav/>
                     <div className="splash-body-left">
                         {/* <SplashHome 
                         images={window.images}

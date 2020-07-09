@@ -15,30 +15,26 @@ class SplashNav extends React.Component {
     render() {
         return (
             <div className="splash-nav-main-div">
-                <ul id="splashnav-ul" className="splash-nav-ul">
-                    {/* <li id="home" className={this.state.active === "home" ? "active" : ""}> */}
-                    <li id="home" className="home">
-                        <Link to="/" onClick={() => this.handleClick("home")} >
-                            {/* <a> Home </a> */}
-                            Home
-                        </Link>
+                <ul className="splash-nav-ul">
+                    <li id="home" className={this.state.active === "home" ? "active" : "inactive"}>
+                        <Link to="/" onClick={() => this.handleClick("home")}>Home</Link>
                     </li>
                     
-                    <li id="services" className={this.state.active === "services" ? "active" : ""}>
+                    <li id="services" className={this.state.active === "services" ? "active" : "inactive"}>
                         <Link to="/services" onClick={() => this.handleClick("services")} >
                             {/* <a> Services </a> */}
                             Services
                         </Link>
                     </li>
 
-                    <li id="specials" className={this.state.active === "specials" ? "active" : ""}>
+                    <li id="specials" className={this.state.active === "specials" ? "active" : "inactive"}>
                         <Link to="/specials" onClick={() => this.handleClick("specials")} >
                             {/* <a> Specials </a> */}
                             Specials
                         </Link>
                     </li>
 
-                    <li id="contactus" className={this.state.active === "contactus" ? "active" : ""}>
+                    <li id="contactus" className={this.state.active === "contactus" ? "active" : "inactive"}>
                         <Link to="/contactus" onClick={() => this.handleClick("contactus")} >
                             {/* <a> Contact Us </a> */}
                             Contact Us

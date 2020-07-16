@@ -686,10 +686,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/splash/splash_home_page.jsx":
-/*!*********************************************************!*\
-  !*** ./frontend/components/splash/splash_home_page.jsx ***!
-  \*********************************************************/
+/***/ "./frontend/components/splash/location_map.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/splash/location_map.jsx ***!
+  \*****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -697,7 +697,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_geocode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-geocode */ "./node_modules/react-geocode/lib/index.js");
+/* harmony import */ var react_geocode__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_geocode__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -719,6 +720,185 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var LocationMap = /*#__PURE__*/function (_React$Component) {
+  _inherits(LocationMap, _React$Component);
+
+  function LocationMap(props) {
+    var _this;
+
+    _classCallCheck(this, LocationMap);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LocationMap).call(this, props));
+    _this.state = {
+      mapOptions: {
+        zoom: 18,
+        center: {
+          lat: 37.959607,
+          lng: -122.032699
+        }
+      }
+    };
+    return _this;
+  } // setMapElementReference(mapElementReference) {
+  //     this.mapElement = mapElementReference;
+  // }
+
+
+  _createClass(LocationMap, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.map = new google.maps.Map(this.mapNode, this.state.mapOptions);
+      this.marker = new google.maps.Marker({
+        position: {
+          lat: this.state.mapOptions.center.lat,
+          lng: this.state.mapOptions.center.lng
+        },
+        map: this.map
+      });
+      this.geocoder = new google.maps.Geocoder();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "map-container",
+        ref: function ref(map) {
+          return _this2.mapNode = map;
+        }
+      });
+    }
+  }]);
+
+  return LocationMap;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (LocationMap);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/photo_carousel/carousel.jsx":
+/*!****************************************************************!*\
+  !*** ./frontend/components/splash/photo_carousel/carousel.jsx ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CarouselComponent; });
+// import React, { PropTypes, Component } from 'react';
+// import { Carousel } from 'react-responsive-carousel';
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var Carousel = __webpack_require__(/*! react-responsive-carousel */ "./node_modules/react-responsive-carousel/lib/es/index.js").Carousel; // class CarouselPhotos extends Component {
+//     render() {
+//         return (
+//             // <Carousel showArrows={true}>
+//             <Carousel autoPlay>
+//                 <div>
+//                     <img alt="" src={window.images.carousel_images_array[0]} />
+//                     <p className="legend">Legend 1</p>
+//                 </div>
+//                 <div>
+//                     <img alt="" src={window.images.carousel_images_array[1]} />
+//                     <p className="legend">Legend 2</p>
+//                 </div>
+//                 <div>
+//                     <img alt="" src={window.images.carousel_images_array[2]} />
+//                     <p className="legend">Legend 3</p>
+//                 </div>
+//                 <div>
+//                     <img alt="" src={window.images.carousel_images_array[3]} />
+//                     <p className="legend">Legend 4</p>
+//                 </div>
+//                 <div>
+//                     <img alt="" src={window.images.carousel_images_array[4]} />
+//                     <p className="legend">Legend 5</p>
+//                 </div>
+//             </Carousel>
+//         );
+//     }
+// }
+// export default CarouselPhotos;
+
+
+function CarouselComponent() {
+  return React.createElement("div", {
+    className: "carousel-wrapper"
+  }, React.createElement(Carousel, {
+    axis: "horizontal",
+    infiniteLoop: true,
+    useKeyboardArrows: true,
+    autoPlay: true
+  }, React.createElement("div", null, React.createElement("img", {
+    alt: "",
+    src: window.images.carousel_images_array[0]
+  }), React.createElement("p", {
+    className: "legend"
+  }, "Legend 1")), React.createElement("div", null, React.createElement("img", {
+    alt: "",
+    src: window.images.carousel_images_array[1]
+  }), React.createElement("p", {
+    className: "legend"
+  }, "Legend 2")), React.createElement("div", null, React.createElement("img", {
+    alt: "",
+    src: window.images.carousel_images_array[2]
+  }), React.createElement("p", {
+    className: "legend"
+  }, "Legend 3")), React.createElement("div", null, React.createElement("img", {
+    alt: "",
+    src: window.images.carousel_images_array[3]
+  }), React.createElement("p", {
+    className: "legend"
+  }, "Legend 4")), React.createElement("div", null, React.createElement("img", {
+    alt: "",
+    src: window.images.carousel_images_array[4]
+  }), React.createElement("p", {
+    className: "legend"
+  }, "Legend 5"))));
+}
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_home_page.jsx":
+/*!*********************************************************!*\
+  !*** ./frontend/components/splash/splash_home_page.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _photo_carousel_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./photo_carousel/carousel */ "./frontend/components/splash/photo_carousel/carousel.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+ // import "css-loader!react-responsive-carousel/lib/styles/carousel.min.css";
+
 var SplashHomePage = /*#__PURE__*/function (_React$Component) {
   _inherits(SplashHomePage, _React$Component);
 
@@ -733,7 +913,62 @@ var SplashHomePage = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-page-home-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis assumenda laborum ipsam soluta molestiae iste, sapiente maiores repellendus ipsa dicta eligendi quasi minus? Deserunt et eius sit excepturi reprehenderit minus."));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "temp-car"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: window.images.carousel_images_array[0]
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-welcome-span"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fontSize: "24px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Welcome to ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fontSize: "18px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          color: '#ff0000',
+          fontSize: '24px'
+        }
+      }, "Bimmers")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fonSize: "24px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          color: '#0000ff',
+          fontSize: '24px'
+        }
+      }, "Performance")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fontSize: "24px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          color: "#ff0000",
+          fontSize: "24px"
+        }
+      }, "Auto Service"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro"
+      }, "Bimmers Performance Auto Service has been providing superior automotive repair and maintenance services in East Bay area for over 15 years \xA0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro-2"
+      }, "specializing", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "in BMW and Mercedes Benz vehicle repairs.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro-2"
+      }, "Our specialty is in BMW and Mercedes Benz vehicle repairs and we also provide full service general repairs and \xA0proudly service all other types of vehicles; foreign or domestic. Our technicians are highly trained and \xA0experienced, with the knowledge and skills necessary to handle all of your auto repairs.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro-2"
+      }, "Our team is dedicated to providing you and your vehicle with professional service and exceptional customer care. \xA0 THANK YOU for choosing \xA0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro"
+      }, "Bimmers Performance Auto Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro"
+      }, "Great"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro"
+      }, "as your go-to Auto Center! \xA0")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        alt: "car_logos",
+        src: window.images.car_logos,
+        className: "cars-logo-centered"
+      })));
     }
   }]);
 
@@ -810,28 +1045,32 @@ var SplashNav = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "splash-nav-ul"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: this.state.active === "home" ? "active" : ""
+        id: "home",
+        className: this.state.active === "home" ? "active" : "inactive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         onClick: function onClick() {
           return _this2.handleClick("home");
         }
       }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: this.state.active === "services" ? "active" : ""
+        id: "services",
+        className: this.state.active === "services" ? "active" : "inactive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/services",
         onClick: function onClick() {
           return _this2.handleClick("services");
         }
       }, "Services")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: this.state.active === "specials" ? "active" : ""
+        id: "specials",
+        className: this.state.active === "specials" ? "active" : "inactive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/specials",
         onClick: function onClick() {
           return _this2.handleClick("specials");
         }
       }, "Specials")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: this.state.active === "contactus" ? "active" : ""
+        id: "contactus",
+        className: this.state.active === "contactus" ? "active" : "inactive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/contactus",
         onClick: function onClick() {
@@ -862,6 +1101,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splash_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./splash_nav */ "./frontend/components/splash/splash_nav.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _splash_home_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash_home_page */ "./frontend/components/splash/splash_home_page.jsx");
+/* harmony import */ var _splash_right__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./splash_right */ "./frontend/components/splash/splash_right.jsx");
+/* harmony import */ var _splash_service_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./splash_service_page */ "./frontend/components/splash/splash_service_page.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -885,16 +1126,42 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var Splash = /*#__PURE__*/function (_React$Component) {
   _inherits(Splash, _React$Component);
 
   function Splash(props) {
+    var _this;
+
     _classCallCheck(this, Splash);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Splash).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Splash).call(this, props));
+    _this.state = {
+      active: "home"
+    };
+    return _this;
   }
 
   _createClass(Splash, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {} // debugger
+    // let navbar = $(".splash-nav-ul .active")[0].id
+    // this.setState({avtive: navbar});
+    // this.componentToRender(navbar);
+    // componentToRender() {
+    //     let component = this.state.active;
+    //     switch(component) {
+    //         case "home":
+    //             return <SplashHome/>;
+    //         case "sevices":
+    //             return <SplashService/>;
+    //         default:
+    //             return null;
+    //     }
+    // }
+
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -906,12 +1173,25 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         alt: "Logo",
         className: "site-banner-inbody"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-body-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-nav-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_nav__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-home-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_home_page__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WE ARE IN THE SPLASH")));
+        className: "splash-body-left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        exact: true,
+        path: "/",
+        component: _splash_home_page__WEBPACK_IMPORTED_MODULE_3__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        exact: true,
+        path: "/services",
+        component: _splash_service_page__WEBPACK_IMPORTED_MODULE_5__["default"]
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-body-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_right__WEBPACK_IMPORTED_MODULE_4__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+        className: "splash-page-main-div-hr",
+        align: "center"
+      }));
     }
   }]);
 
@@ -919,6 +1199,323 @@ var Splash = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_right.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/splash/splash_right.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _location_map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./location_map */ "./frontend/components/splash/location_map.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var SplashRight = /*#__PURE__*/function (_React$Component) {
+  _inherits(SplashRight, _React$Component);
+
+  function SplashRight(props) {
+    _classCallCheck(this, SplashRight);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SplashRight).call(this, props));
+  }
+
+  _createClass(SplashRight, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hours-location-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "hours-ul"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "text-7",
+        className: "widget-container widget_text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "widget-title"
+      }, "Our Address:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "textwidget"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+        className: "hours-location-hr"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, "1090 D Detroit Ave", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, "Concord, CA 94518"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "text-10",
+        className: "widget-container widget_text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "widget-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, "Contact Us:")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "textwidget"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+        className: "hours-location-hr"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, "Call Us: (925) 682-3232", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, "Email Us at:  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "mailto:saulortiz40@gmail.com>?Subject=Thank%20you%20for%20emailing%20us",
+        target: "_top"
+      }, "Bimmers Support"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "text-5",
+        className: "widget-container widget_text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "widget-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, "Hours of Operation:"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "textwidget"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+        className: "hours-location-hr"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong-days"
+      }, "Monday: 8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong-days"
+      }, "Tuesday: 8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong-days"
+      }, "Wednesday: 8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong-days"
+      }, "Thursday: 8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong-days"
+      }, "Friday: 8:00 AM - 6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong-days"
+      }, "Saturday: 9:00 AM - 3:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong-days"
+      }, "Sunday: Closed"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "text-12",
+        className: "widget-container widget_text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "textwidget"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "shuttle-img",
+        alt: "",
+        src: window.images.shuttle_img,
+        align: "middle"
+      }), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "text-8",
+        className: "widget-container widget_text"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "widget-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, "Our Location:"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+        className: "splash-right-textwidget-strong"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "textwidget"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+        className: "hours-location-hr"
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_location_map__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+    }
+  }]);
+
+  return SplashRight;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SplashRight);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_service_page.jsx":
+/*!************************************************************!*\
+  !*** ./frontend/components/splash/splash_service_page.jsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var SplashServicePage = /*#__PURE__*/function (_React$Component) {
+  _inherits(SplashServicePage, _React$Component);
+
+  function SplashServicePage(props) {
+    _classCallCheck(this, SplashServicePage);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SplashServicePage).call(this, props));
+  }
+
+  _createClass(SplashServicePage, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-page-service-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "entry-title"
+      }, "Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "entry-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          color: "#ff0000"
+        }
+      }, "Bimmers ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          color: "#0000ff"
+        }
+      }, "Performance ")), "will\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-1"
+      }, "perform Diagnosis, and Service & Repair on your BMW and Mercedes Automobile, SUV or Light Truck.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-2"
+      }, "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0Our Services Include, But Are Not Limited To:"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        border: "1",
+        cellSpacing: "2",
+        cellPadding: "2",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "200px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Standard Maintenance Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "162px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Transmission"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "162px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Engine Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "162px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Heating & Air Conditioner Repair")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Mercedes Flex Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "BMW Inspection I, II and CBS (Condition Based Services)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "30/60/90/120 Mile Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Computer Diagnostics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Oil Changes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tune Ups"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Filter Replacements"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Safety Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Windshield Wiper Blades"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fluid Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Trip Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Maintenance Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Check Engine Light Diagnostics & Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Brake Repair & Antilock Braking System (ABS) Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Shocks & Struts Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Suspension & Steering Repair"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        style: {
+          width: "200px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Driveline Repair & Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Axle Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Clutch Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Fluid Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Driveshaft & U-Joint Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Differential Diagnosis"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Performance Check"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Belt Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Hose Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Cooling System Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Radiator  Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Water Pump Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Drivability Diagnostics & Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fuel Injection Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fuel System Repair & Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Ignition System Repair & Maintenance"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Heating & Cooling System Diagnostics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Auto Air Conditioning Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Heating System Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Belt Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Compressor Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Evaporator Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Refrigerant Replacement")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        border: "1",
+        cellSpacing: "2",
+        cellPadding: "2",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Auto Electrical Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Tire Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Exhaust Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        width: "162px",
+        align: "center",
+        style: {
+          width: "650px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-service-span-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Other Services")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Electrical System Diagnostics & Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Alternator Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Starter Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Windshield Wiper Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Power Lock Repairv"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Power Antenna Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Power Steering Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Power Window Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Power Accessory Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Light Repair & Bulb Replacements"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        style: {
+          width: "200px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tire Rotation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tire Air Pressure Checks"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Exhaust Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Muffler Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tailpipe Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Catalytic Converter Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Exhaust Manifold Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Exhaust Upgrades"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Factory Scheduled Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Preventive Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Pre-Purchase Inspections"))))))));
+    }
+  }]);
+
+  return SplashServicePage;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SplashServicePage);
 
 /***/ }),
 
@@ -1306,6 +1903,68 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
   return target;
 }
+
+/***/ }),
+
+/***/ "./node_modules/classnames/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/classnames/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg) && arg.length) {
+				var inner = classNames.apply(null, arg);
+				if (inner) {
+					classes.push(inner);
+				}
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if ( true && module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return classNames;
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+}());
+
 
 /***/ }),
 
@@ -32463,6 +33122,417 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-easy-swipe/lib/index.js":
+/*!****************************************************!*\
+  !*** ./node_modules/react-easy-swipe/lib/index.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports, __webpack_require__(/*! ./react-swipe */ "./node_modules/react-easy-swipe/lib/react-swipe.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else { var mod; }
+})(this, function (exports, _reactSwipe) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _reactSwipe2 = _interopRequireDefault(_reactSwipe);
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  exports.default = _reactSwipe2.default;
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-easy-swipe/lib/react-swipe.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-easy-swipe/lib/react-swipe.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports, __webpack_require__(/*! react */ "./node_modules/react/index.js"), __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else { var mod; }
+})(this, function (exports, _react, _propTypes) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.setHasSupportToCaptureOption = setHasSupportToCaptureOption;
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  var _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  function _objectWithoutProperties(obj, keys) {
+    var target = {};
+
+    for (var i in obj) {
+      if (keys.indexOf(i) >= 0) continue;
+      if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+      target[i] = obj[i];
+    }
+
+    return target;
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var supportsCaptureOption = false;
+  function setHasSupportToCaptureOption(hasSupport) {
+    supportsCaptureOption = hasSupport;
+  }
+
+  try {
+    addEventListener('test', null, Object.defineProperty({}, 'capture', { get: function get() {
+        setHasSupportToCaptureOption(true);
+      } }));
+  } catch (e) {} // eslint-disable-line no-empty
+
+  function getSafeEventHandlerOpts() {
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { capture: true };
+
+    return supportsCaptureOption ? options : options.capture;
+  }
+
+  /**
+   * [getPosition returns a position element that works for mouse or touch events]
+   * @param  {[Event]} event [the received event]
+   * @return {[Object]}      [x and y coords]
+   */
+  function getPosition(event) {
+    if ('touches' in event) {
+      var _event$touches$ = event.touches[0],
+          pageX = _event$touches$.pageX,
+          pageY = _event$touches$.pageY;
+
+      return { x: pageX, y: pageY };
+    }
+
+    var screenX = event.screenX,
+        screenY = event.screenY;
+
+    return { x: screenX, y: screenY };
+  }
+
+  var ReactSwipe = function (_Component) {
+    _inherits(ReactSwipe, _Component);
+
+    function ReactSwipe() {
+      var _ref;
+
+      _classCallCheck(this, ReactSwipe);
+
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      var _this = _possibleConstructorReturn(this, (_ref = ReactSwipe.__proto__ || Object.getPrototypeOf(ReactSwipe)).call.apply(_ref, [this].concat(args)));
+
+      _this._handleSwipeStart = _this._handleSwipeStart.bind(_this);
+      _this._handleSwipeMove = _this._handleSwipeMove.bind(_this);
+      _this._handleSwipeEnd = _this._handleSwipeEnd.bind(_this);
+
+      _this._onMouseDown = _this._onMouseDown.bind(_this);
+      _this._onMouseMove = _this._onMouseMove.bind(_this);
+      _this._onMouseUp = _this._onMouseUp.bind(_this);
+
+      _this._setSwiperRef = _this._setSwiperRef.bind(_this);
+      return _this;
+    }
+
+    _createClass(ReactSwipe, [{
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+        if (this.swiper) {
+          this.swiper.addEventListener('touchmove', this._handleSwipeMove, getSafeEventHandlerOpts({
+            capture: true,
+            passive: false
+          }));
+        }
+      }
+    }, {
+      key: 'componentWillUnmount',
+      value: function componentWillUnmount() {
+        if (this.swiper) {
+          this.swiper.removeEventListener('touchmove', this._handleSwipeMove, getSafeEventHandlerOpts({
+            capture: true,
+            passive: false
+          }));
+        }
+      }
+    }, {
+      key: '_onMouseDown',
+      value: function _onMouseDown(event) {
+        if (!this.props.allowMouseEvents) {
+          return;
+        }
+
+        this.mouseDown = true;
+
+        document.addEventListener('mouseup', this._onMouseUp);
+        document.addEventListener('mousemove', this._onMouseMove);
+
+        this._handleSwipeStart(event);
+      }
+    }, {
+      key: '_onMouseMove',
+      value: function _onMouseMove(event) {
+        if (!this.mouseDown) {
+          return;
+        }
+
+        this._handleSwipeMove(event);
+      }
+    }, {
+      key: '_onMouseUp',
+      value: function _onMouseUp(event) {
+        this.mouseDown = false;
+
+        document.removeEventListener('mouseup', this._onMouseUp);
+        document.removeEventListener('mousemove', this._onMouseMove);
+
+        this._handleSwipeEnd(event);
+      }
+    }, {
+      key: '_handleSwipeStart',
+      value: function _handleSwipeStart(event) {
+        var _getPosition = getPosition(event),
+            x = _getPosition.x,
+            y = _getPosition.y;
+
+        this.moveStart = { x: x, y: y };
+        this.props.onSwipeStart(event);
+      }
+    }, {
+      key: '_handleSwipeMove',
+      value: function _handleSwipeMove(event) {
+        if (!this.moveStart) {
+          return;
+        }
+
+        var _getPosition2 = getPosition(event),
+            x = _getPosition2.x,
+            y = _getPosition2.y;
+
+        var deltaX = x - this.moveStart.x;
+        var deltaY = y - this.moveStart.y;
+        this.moving = true;
+
+        // handling the responsability of cancelling the scroll to
+        // the component handling the event
+        var shouldPreventDefault = this.props.onSwipeMove({
+          x: deltaX,
+          y: deltaY
+        }, event);
+
+        if (shouldPreventDefault) {
+          event.preventDefault();
+        }
+
+        this.movePosition = { deltaX: deltaX, deltaY: deltaY };
+      }
+    }, {
+      key: '_handleSwipeEnd',
+      value: function _handleSwipeEnd(event) {
+        this.props.onSwipeEnd(event);
+
+        var tolerance = this.props.tolerance;
+
+
+        if (this.moving && this.movePosition) {
+          if (this.movePosition.deltaX < -tolerance) {
+            this.props.onSwipeLeft(1, event);
+          } else if (this.movePosition.deltaX > tolerance) {
+            this.props.onSwipeRight(1, event);
+          }
+          if (this.movePosition.deltaY < -tolerance) {
+            this.props.onSwipeUp(1, event);
+          } else if (this.movePosition.deltaY > tolerance) {
+            this.props.onSwipeDown(1, event);
+          }
+        }
+
+        this.moveStart = null;
+        this.moving = false;
+        this.movePosition = null;
+      }
+    }, {
+      key: '_setSwiperRef',
+      value: function _setSwiperRef(node) {
+        this.swiper = node;
+        this.props.innerRef(node);
+      }
+    }, {
+      key: 'render',
+      value: function render() {
+        var _props = this.props,
+            tagName = _props.tagName,
+            className = _props.className,
+            style = _props.style,
+            children = _props.children,
+            allowMouseEvents = _props.allowMouseEvents,
+            onSwipeUp = _props.onSwipeUp,
+            onSwipeDown = _props.onSwipeDown,
+            onSwipeLeft = _props.onSwipeLeft,
+            onSwipeRight = _props.onSwipeRight,
+            onSwipeStart = _props.onSwipeStart,
+            onSwipeMove = _props.onSwipeMove,
+            onSwipeEnd = _props.onSwipeEnd,
+            innerRef = _props.innerRef,
+            tolerance = _props.tolerance,
+            props = _objectWithoutProperties(_props, ['tagName', 'className', 'style', 'children', 'allowMouseEvents', 'onSwipeUp', 'onSwipeDown', 'onSwipeLeft', 'onSwipeRight', 'onSwipeStart', 'onSwipeMove', 'onSwipeEnd', 'innerRef', 'tolerance']);
+
+        return _react2.default.createElement(
+          this.props.tagName,
+          _extends({
+            ref: this._setSwiperRef,
+            onMouseDown: this._onMouseDown,
+            onTouchStart: this._handleSwipeStart,
+            onTouchEnd: this._handleSwipeEnd,
+            className: className,
+            style: style
+          }, props),
+          children
+        );
+      }
+    }]);
+
+    return ReactSwipe;
+  }(_react.Component);
+
+  ReactSwipe.displayName = 'ReactSwipe';
+  ReactSwipe.propTypes = {
+    tagName: _propTypes2.default.string,
+    className: _propTypes2.default.string,
+    style: _propTypes2.default.object,
+    children: _propTypes2.default.node,
+    allowMouseEvents: _propTypes2.default.bool,
+    onSwipeUp: _propTypes2.default.func,
+    onSwipeDown: _propTypes2.default.func,
+    onSwipeLeft: _propTypes2.default.func,
+    onSwipeRight: _propTypes2.default.func,
+    onSwipeStart: _propTypes2.default.func,
+    onSwipeMove: _propTypes2.default.func,
+    onSwipeEnd: _propTypes2.default.func,
+    innerRef: _propTypes2.default.func,
+    tolerance: _propTypes2.default.number.isRequired
+  };
+  ReactSwipe.defaultProps = {
+    tagName: 'div',
+    allowMouseEvents: false,
+    onSwipeUp: function onSwipeUp() {},
+    onSwipeDown: function onSwipeDown() {},
+    onSwipeLeft: function onSwipeLeft() {},
+    onSwipeRight: function onSwipeRight() {},
+    onSwipeStart: function onSwipeStart() {},
+    onSwipeMove: function onSwipeMove() {},
+    onSwipeEnd: function onSwipeEnd() {},
+    innerRef: function innerRef() {},
+
+    tolerance: 0
+  };
+  exports.default = ReactSwipe;
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-geocode/lib/index.js":
+/*!*************************************************!*\
+  !*** ./node_modules/react-geocode/lib/index.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var regeneratorRuntime = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");function asyncGeneratorStep(e,r,n,t,o,a,c){try{var s=e[a](c),u=s.value}catch(e){return void n(e)}s.done?r(u):Promise.resolve(u).then(t,o)}function _asyncToGenerator(e){return function(){var r=this,n=arguments;return new Promise(function(t,o){var a=e.apply(r,n);function c(e){asyncGeneratorStep(a,t,o,c,s,"next",e)}function s(e){asyncGeneratorStep(a,t,o,c,s,"throw",e)}c(void 0)})}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var DEBUG=!1,API_KEY=null,LANGUAGE="en",REGION=null,GOOGLE_API="https://maps.google.com/maps/api/geocode/json";function log(e){var r=arguments.length>1&&void 0!==arguments[1]&&arguments[1];DEBUG&&(r?console.warn(e):console.log(e))}function handleUrl(e){return _handleUrl.apply(this,arguments)}function _handleUrl(){return(_handleUrl=_asyncToGenerator(regeneratorRuntime.mark(function e(r){var n,t;return regeneratorRuntime.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,fetch(r).catch(function(){return Promise.reject(new Error("Error fetching data"))});case 2:return n=e.sent,e.next=5,n.json().catch(function(){return log("Error parsing server response"),Promise.reject(new Error("Error parsing server response"))});case 5:if("OK"!==(t=e.sent).status){e.next=9;break}return log(t),e.abrupt("return",t);case 9:return log("".concat(t.error_message,".\nServer returned status code ").concat(t.status),!0),e.abrupt("return",Promise.reject(new Error("".concat(t.error_message,".\nServer returned status code ").concat(t.status))));case 11:case"end":return e.stop()}},e)}))).apply(this,arguments)}var _default={setApiKey:function(apiKey){API_KEY=apiKey},setLanguage:function(language){LANGUAGE=language},setRegion:function(region){REGION=region},enableDebug:function(){var e=!(arguments.length>0&&void 0!==arguments[0])||arguments[0];DEBUG=e},fromLatLng:function(lat,lng,apiKey,language,region){return _asyncToGenerator(regeneratorRuntime.mark(function a(){var c,s;return regeneratorRuntime.wrap(function(a){for(;;)switch(a.prev=a.next){case 0:if(lat&&lng){a.next=3;break}return log("Provided coordinates are invalid",!0),a.abrupt("return",Promise.reject(new Error("Provided coordinates are invalid")));case 3:return c="".concat(lat,",").concat(lng),s="".concat(GOOGLE_API,"?latlng=").concat(encodeURIComponent(c)),(apiKey||API_KEY)&&(s+="&key=".concat(API_KEY=apiKey||API_KEY)),(language||LANGUAGE)&&(s+="&language=".concat(LANGUAGE=language||LANGUAGE)),(region||REGION)&&(REGION=region||REGION,s+="&region=".concat(encodeURIComponent(REGION))),a.abrupt("return",handleUrl(s));case 9:case"end":return a.stop()}},a)}))()},fromAddress:function(address,apiKey,language,region){return _asyncToGenerator(regeneratorRuntime.mark(function o(){var a;return regeneratorRuntime.wrap(function(o){for(;;)switch(o.prev=o.next){case 0:if(address){o.next=3;break}return log("Provided address is invalid",!0),o.abrupt("return",Promise.reject(new Error("Provided address is invalid")));case 3:return a="".concat(GOOGLE_API,"?address=").concat(encodeURIComponent(address)),(apiKey||API_KEY)&&(a+="&key=".concat(API_KEY=apiKey||API_KEY)),(language||LANGUAGE)&&(a+="&language=".concat(LANGUAGE=language||LANGUAGE)),(region||REGION)&&(REGION=region||REGION,a+="&region=".concat(encodeURIComponent(REGION))),o.abrupt("return",handleUrl(a));case 8:case"end":return o.stop()}},o)}))()}};exports.default=_default;
+
+/***/ }),
+
 /***/ "./node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -34320,6 +35390,1516 @@ function warning(message) {
   /* eslint-enable no-empty */
 
 }
+
+/***/ }),
+
+/***/ "./node_modules/react-responsive-carousel/lib/es/CSSTranslate.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-responsive-carousel/lib/es/CSSTranslate.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _default = function _default(position, metric, axis) {
+  var positionPercent = position === 0 ? position : position + metric;
+  var positionCss = axis === 'horizontal' ? [positionPercent, 0, 0] : [0, positionPercent, 0];
+  var transitionProp = 'translate3d';
+  var translatedPosition = '(' + positionCss.join(',') + ')';
+  return transitionProp + translatedPosition;
+};
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/react-responsive-carousel/lib/es/components/Carousel.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/react-responsive-carousel/lib/es/components/Carousel.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _reactDom = _interopRequireDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
+
+var _reactEasySwipe = _interopRequireDefault(__webpack_require__(/*! react-easy-swipe */ "./node_modules/react-easy-swipe/lib/index.js"));
+
+var _cssClasses = _interopRequireDefault(__webpack_require__(/*! ../cssClasses */ "./node_modules/react-responsive-carousel/lib/es/cssClasses.js"));
+
+var _CSSTranslate = _interopRequireDefault(__webpack_require__(/*! ../CSSTranslate */ "./node_modules/react-responsive-carousel/lib/es/CSSTranslate.js"));
+
+var _Thumbs = _interopRequireDefault(__webpack_require__(/*! ./Thumbs */ "./node_modules/react-responsive-carousel/lib/es/components/Thumbs.js"));
+
+var _document = _interopRequireDefault(__webpack_require__(/*! ../shims/document */ "./node_modules/react-responsive-carousel/lib/es/shims/document.js"));
+
+var _window = _interopRequireDefault(__webpack_require__(/*! ../shims/window */ "./node_modules/react-responsive-carousel/lib/es/shims/window.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var noop = function noop() {};
+
+var defaultStatusFormatter = function defaultStatusFormatter(current, total) {
+  return "".concat(current, " of ").concat(total);
+};
+
+var isKeyboardEvent = function isKeyboardEvent(e) {
+  return e ? e.hasOwnProperty('key') : false;
+};
+
+var Carousel = /*#__PURE__*/function (_React$Component) {
+  _inherits(Carousel, _React$Component);
+
+  var _super = _createSuper(Carousel);
+
+  function Carousel(props) {
+    var _this;
+
+    _classCallCheck(this, Carousel);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "thumbsRef", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "carouselWrapperRef", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "listRef", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "itemsRef", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "timer", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "setThumbsRef", function (node) {
+      _this.thumbsRef = node;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setCarouselWrapperRef", function (node) {
+      _this.carouselWrapperRef = node;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setListRef", function (node) {
+      _this.listRef = node;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setItemsRef", function (node, index) {
+      if (!_this.itemsRef) {
+        _this.itemsRef = [];
+      }
+
+      _this.itemsRef[index] = node;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "autoPlay", function () {
+      if (!_this.state.autoPlay || _react.Children.count(_this.props.children) <= 1) {
+        return;
+      }
+
+      if (_this.timer) clearTimeout(_this.timer);
+      _this.timer = setTimeout(function () {
+        _this.increment();
+      }, _this.props.interval);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "clearAutoPlay", function () {
+      if (!_this.state.autoPlay) {
+        return;
+      }
+
+      if (_this.timer) clearTimeout(_this.timer);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "resetAutoPlay", function () {
+      _this.clearAutoPlay();
+
+      _this.autoPlay();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "stopOnHover", function () {
+      _this.setState({
+        isMouseEntered: true
+      }, _this.clearAutoPlay);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "startOnLeave", function () {
+      _this.setState({
+        isMouseEntered: false
+      }, _this.autoPlay);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "isFocusWithinTheCarousel", function () {
+      if (!_this.carouselWrapperRef) {
+        return false;
+      }
+
+      if ((0, _document.default)().activeElement === _this.carouselWrapperRef || _this.carouselWrapperRef.contains((0, _document.default)().activeElement)) {
+        return true;
+      }
+
+      return false;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "navigateWithKeyboard", function (e) {
+      if (!_this.isFocusWithinTheCarousel()) {
+        return;
+      }
+
+      var axis = _this.props.axis;
+      var isHorizontal = axis === 'horizontal';
+      var keyNames = {
+        ArrowUp: 38,
+        ArrowRight: 39,
+        ArrowDown: 40,
+        ArrowLeft: 37
+      };
+      var nextKey = isHorizontal ? keyNames.ArrowRight : keyNames.ArrowDown;
+      var prevKey = isHorizontal ? keyNames.ArrowLeft : keyNames.ArrowUp;
+
+      if (nextKey === e.keyCode) {
+        _this.increment();
+      } else if (prevKey === e.keyCode) {
+        _this.decrement();
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "updateSizes", function () {
+      if (!_this.state.initialized || !_this.itemsRef || _this.itemsRef.length === 0) {
+        return;
+      }
+
+      var isHorizontal = _this.props.axis === 'horizontal';
+      var firstItem = _this.itemsRef[0];
+      var itemSize = isHorizontal ? firstItem.clientWidth : firstItem.clientHeight;
+
+      _this.setState({
+        itemSize: itemSize
+      });
+
+      if (_this.thumbsRef) {
+        _this.thumbsRef.updateSizes();
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setMountState", function () {
+      _this.setState({
+        hasMount: true
+      });
+
+      _this.updateSizes();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleClickItem", function (index, item) {
+      if (_react.Children.count(_this.props.children) === 0) {
+        return;
+      }
+
+      if (_this.state.cancelClick) {
+        _this.setState({
+          cancelClick: false
+        });
+
+        return;
+      }
+
+      _this.props.onClickItem(index, item);
+
+      if (index !== _this.state.selectedItem) {
+        _this.setState({
+          selectedItem: index
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleOnChange", function (index, item) {
+      if (_react.Children.count(_this.props.children) <= 1) {
+        return;
+      }
+
+      _this.props.onChange(index, item);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleClickThumb", function (index, item) {
+      _this.props.onClickThumb(index, item);
+
+      _this.selectItem({
+        selectedItem: index
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSwipeStart", function (event) {
+      _this.setState({
+        swiping: true
+      });
+
+      _this.props.onSwipeStart(event);
+
+      _this.clearAutoPlay();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSwipeEnd", function (event) {
+      _this.setState({
+        swiping: false,
+        cancelClick: false
+      });
+
+      _this.props.onSwipeEnd(event);
+
+      _this.autoPlay();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSwipeMove", function (delta, event) {
+      _this.props.onSwipeMove(event);
+
+      var isHorizontal = _this.props.axis === 'horizontal';
+
+      var childrenLength = _react.Children.count(_this.props.children);
+
+      var initialBoundry = 0;
+
+      var currentPosition = _this.getPosition(_this.state.selectedItem);
+
+      var finalBoundry = _this.props.infiniteLoop ? _this.getPosition(childrenLength - 1) - 100 : _this.getPosition(childrenLength - 1);
+      var axisDelta = isHorizontal ? delta.x : delta.y;
+      var handledDelta = axisDelta; // prevent user from swiping left out of boundaries
+
+      if (currentPosition === initialBoundry && axisDelta > 0) {
+        handledDelta = 0;
+      } // prevent user from swiping right out of boundaries
+
+
+      if (currentPosition === finalBoundry && axisDelta < 0) {
+        handledDelta = 0;
+      }
+
+      var position = currentPosition + 100 / (_this.state.itemSize / handledDelta);
+
+      var hasMoved = Math.abs(axisDelta) > _this.props.swipeScrollTolerance;
+
+      if (_this.props.infiniteLoop && hasMoved) {
+        // When allowing infinite loop, if we slide left from position 0 we reveal the cloned last slide that appears before it
+        // if we slide even further we need to jump to other side so it can continue - and vice versa for the last slide
+        if (_this.state.selectedItem === 0 && position > -100) {
+          position -= childrenLength * 100;
+        } else if (_this.state.selectedItem === childrenLength - 1 && position < -childrenLength * 100) {
+          position += childrenLength * 100;
+        }
+      }
+
+      _this.setPosition(position); // allows scroll if the swipe was within the tolerance
+
+
+      if (hasMoved && !_this.state.cancelClick) {
+        _this.setState({
+          cancelClick: true
+        });
+      }
+
+      return hasMoved;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setPosition", function (position, forceReflow) {
+      var list = _reactDom.default.findDOMNode(_this.listRef);
+
+      if (list instanceof HTMLElement) {
+        ['WebkitTransform', 'MozTransform', 'MsTransform', 'OTransform', 'transform', 'msTransform'].forEach(function (prop) {
+          list.style[prop] = (0, _CSSTranslate.default)(position, '%', _this.props.axis);
+        });
+
+        if (forceReflow) {
+          list.offsetLeft;
+        }
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "resetPosition", function () {
+      var currentPosition = _this.getPosition(_this.state.selectedItem);
+
+      _this.setPosition(currentPosition);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "decrement", function () {
+      var positions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      var fromSwipe = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      _this.moveTo(_this.state.selectedItem - (typeof positions === 'number' ? positions : 1), fromSwipe);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "increment", function () {
+      var positions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      var fromSwipe = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      _this.moveTo(_this.state.selectedItem + (typeof positions === 'number' ? positions : 1), fromSwipe);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "moveTo", function (position, fromSwipe) {
+      if (typeof position !== 'number') {
+        return;
+      }
+
+      var lastPosition = _react.Children.count(_this.props.children) - 1;
+      var needClonedSlide = _this.props.infiniteLoop && !fromSwipe && (position < 0 || position > lastPosition);
+      var oldPosition = position;
+
+      if (position < 0) {
+        position = _this.props.infiniteLoop ? lastPosition : 0;
+      }
+
+      if (position > lastPosition) {
+        position = _this.props.infiniteLoop ? 0 : lastPosition;
+      }
+
+      if (needClonedSlide) {
+        // set swiping true would disable transition time, then we set slider to cloned position and force a reflow
+        // this is only needed for non-swiping situation
+        _this.setState({
+          swiping: true
+        }, function () {
+          if (oldPosition < 0) {
+            if (_this.props.centerMode && _this.props.centerSlidePercentage && _this.props.axis === 'horizontal') {
+              _this.setPosition(-(lastPosition + 2) * _this.props.centerSlidePercentage - (100 - _this.props.centerSlidePercentage) / 2, true);
+            } else {
+              _this.setPosition(-(lastPosition + 2) * 100, true);
+            }
+          } else if (oldPosition > lastPosition) {
+            _this.setPosition(0, true);
+          }
+
+          _this.selectItem({
+            selectedItem: position,
+            swiping: false
+          });
+        });
+      } else {
+        _this.selectItem({
+          // if it's not a slider, we don't need to set position here
+          selectedItem: position
+        });
+      } // don't reset auto play when stop on hover is enabled, doing so will trigger a call to auto play more than once
+      // and will result in the interval function not being cleared correctly.
+
+
+      if (_this.state.autoPlay && _this.state.isMouseEntered === false) {
+        _this.resetAutoPlay();
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onClickNext", function () {
+      _this.increment(1, false);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onClickPrev", function () {
+      _this.decrement(1, false);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSwipeForward", function () {
+      _this.increment(1, true);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSwipeBackwards", function () {
+      _this.decrement(1, true);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "changeItem", function (newIndex) {
+      return function (e) {
+        if (!isKeyboardEvent(e) || e.key === 'Enter') {
+          _this.selectItem({
+            selectedItem: newIndex
+          });
+        }
+      };
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "selectItem", function (state, cb) {
+      _this.setState(state, cb);
+
+      _this.handleOnChange(state.selectedItem, _react.Children.toArray(_this.props.children)[state.selectedItem]);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getInitialImage", function () {
+      var selectedItem = _this.props.selectedItem;
+      var item = _this.itemsRef && _this.itemsRef[selectedItem];
+      var images = item && item.getElementsByTagName('img');
+      return images && images[selectedItem];
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getVariableImageHeight", function (position) {
+      var item = _this.itemsRef && _this.itemsRef[position];
+      var images = item && item.getElementsByTagName('img') || [];
+
+      if (_this.state.hasMount && images.length > 0) {
+        var image = images[0];
+
+        if (!image.complete) {
+          // if the image is still loading, the size won't be available so we trigger a new render after it's done
+          var onImageLoad = function onImageLoad() {
+            _this.forceUpdate();
+
+            image.removeEventListener('load', onImageLoad);
+          };
+
+          image.addEventListener('load', onImageLoad);
+        }
+
+        var height = image.clientHeight;
+        return height > 0 ? height : null;
+      }
+
+      return null;
+    });
+
+    _this.state = {
+      initialized: false,
+      selectedItem: props.selectedItem,
+      hasMount: false,
+      isMouseEntered: false,
+      autoPlay: props.autoPlay,
+      swiping: false,
+      cancelClick: false,
+      itemSize: 1
+    };
+    return _this;
+  }
+
+  _createClass(Carousel, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (!this.props.children) {
+        return;
+      }
+
+      this.setupCarousel();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (!prevProps.children && this.props.children && !this.state.initialized) {
+        this.setupCarousel();
+      }
+
+      if (prevState.swiping && !this.state.swiping) {
+        // We stopped swiping, ensure we are heading to the new/current slide and not stuck
+        this.resetPosition();
+      }
+
+      if (prevProps.selectedItem !== this.props.selectedItem || prevProps.centerMode !== this.props.centerMode) {
+        this.updateSizes();
+        this.moveTo(this.props.selectedItem);
+      }
+
+      if (prevProps.autoPlay !== this.props.autoPlay) {
+        if (this.props.autoPlay) {
+          this.setupAutoPlay();
+        } else {
+          this.destroyAutoPlay();
+        }
+
+        this.setState({
+          autoPlay: this.props.autoPlay
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.destroyCarousel();
+    }
+  }, {
+    key: "setupCarousel",
+    value: function setupCarousel() {
+      this.bindEvents();
+
+      if (this.state.autoPlay && _react.Children.count(this.props.children) > 1) {
+        this.setupAutoPlay();
+      }
+
+      this.setState({
+        initialized: true
+      });
+      var initialImage = this.getInitialImage();
+
+      if (initialImage) {
+        // if it's a carousel of images, we set the mount state after the first image is loaded
+        initialImage.addEventListener('load', this.setMountState);
+      } else {
+        this.setMountState();
+      }
+    }
+  }, {
+    key: "destroyCarousel",
+    value: function destroyCarousel() {
+      if (this.state.initialized) {
+        this.unbindEvents();
+        this.destroyAutoPlay();
+      }
+    }
+  }, {
+    key: "setupAutoPlay",
+    value: function setupAutoPlay() {
+      this.autoPlay();
+      var carouselWrapper = this.carouselWrapperRef;
+
+      if (this.props.stopOnHover && carouselWrapper) {
+        carouselWrapper.addEventListener('mouseenter', this.stopOnHover);
+        carouselWrapper.addEventListener('mouseleave', this.startOnLeave);
+      }
+    }
+  }, {
+    key: "destroyAutoPlay",
+    value: function destroyAutoPlay() {
+      this.clearAutoPlay();
+      var carouselWrapper = this.carouselWrapperRef;
+
+      if (this.props.stopOnHover && carouselWrapper) {
+        carouselWrapper.removeEventListener('mouseenter', this.stopOnHover);
+        carouselWrapper.removeEventListener('mouseleave', this.startOnLeave);
+      }
+    }
+  }, {
+    key: "bindEvents",
+    value: function bindEvents() {
+      // as the widths are calculated, we need to resize
+      // the carousel when the window is resized
+      (0, _window.default)().addEventListener('resize', this.updateSizes); // issue #2 - image loading smaller
+
+      (0, _window.default)().addEventListener('DOMContentLoaded', this.updateSizes);
+
+      if (this.props.useKeyboardArrows) {
+        (0, _document.default)().addEventListener('keydown', this.navigateWithKeyboard);
+      }
+    }
+  }, {
+    key: "unbindEvents",
+    value: function unbindEvents() {
+      // removing listeners
+      (0, _window.default)().removeEventListener('resize', this.updateSizes);
+      (0, _window.default)().removeEventListener('DOMContentLoaded', this.updateSizes);
+      var initialImage = this.getInitialImage();
+
+      if (initialImage) {
+        initialImage.removeEventListener('load', this.setMountState);
+      }
+
+      if (this.props.useKeyboardArrows) {
+        (0, _document.default)().removeEventListener('keydown', this.navigateWithKeyboard);
+      }
+    }
+  }, {
+    key: "getPosition",
+    value: function getPosition(index) {
+      if (this.props.infiniteLoop) {
+        // index has to be added by 1 because of the first cloned slide
+        ++index;
+      }
+
+      if (index === 0) {
+        return 0;
+      }
+
+      var childrenLength = _react.Children.count(this.props.children);
+
+      if (this.props.centerMode && this.props.axis === 'horizontal') {
+        var currentPosition = -index * this.props.centerSlidePercentage;
+        var lastPosition = childrenLength - 1;
+
+        if (index && (index !== lastPosition || this.props.infiniteLoop)) {
+          currentPosition += (100 - this.props.centerSlidePercentage) / 2;
+        } else if (index === lastPosition) {
+          currentPosition += 100 - this.props.centerSlidePercentage;
+        }
+
+        return currentPosition;
+      }
+
+      return -index * 100;
+    }
+  }, {
+    key: "renderItems",
+    value: function renderItems(isClone) {
+      var _this2 = this;
+
+      if (!this.props.children) {
+        return [];
+      }
+
+      return _react.Children.map(this.props.children, function (item, index) {
+        var slideProps = {
+          ref: function ref(e) {
+            return _this2.setItemsRef(e, index);
+          },
+          key: 'itemKey' + index + (isClone ? 'clone' : ''),
+          className: _cssClasses.default.ITEM(true, index === _this2.state.selectedItem),
+          onClick: _this2.handleClickItem.bind(_this2, index, item)
+        };
+        var extraProps = {};
+
+        if (_this2.props.centerMode && _this2.props.axis === 'horizontal') {
+          extraProps.style = {
+            minWidth: _this2.props.centerSlidePercentage + '%'
+          };
+        }
+
+        return /*#__PURE__*/_react.default.createElement("li", _extends({}, slideProps, extraProps), _this2.props.renderItem(item, {
+          isSelected: index === _this2.state.selectedItem
+        }));
+      });
+    }
+  }, {
+    key: "renderControls",
+    value: function renderControls() {
+      var _this3 = this;
+
+      var _this$props = this.props,
+          showIndicators = _this$props.showIndicators,
+          labels = _this$props.labels,
+          renderIndicator = _this$props.renderIndicator,
+          children = _this$props.children;
+
+      if (!showIndicators) {
+        return null;
+      }
+
+      return /*#__PURE__*/_react.default.createElement("ul", {
+        className: "control-dots"
+      }, _react.Children.map(children, function (_, index) {
+        return renderIndicator && renderIndicator(_this3.changeItem(index), index === _this3.state.selectedItem, index, labels.item);
+      }));
+    }
+  }, {
+    key: "renderStatus",
+    value: function renderStatus() {
+      if (!this.props.showStatus) {
+        return null;
+      }
+
+      return /*#__PURE__*/_react.default.createElement("p", {
+        className: "carousel-status"
+      }, this.props.statusFormatter(this.state.selectedItem + 1, _react.Children.count(this.props.children)));
+    }
+  }, {
+    key: "renderThumbs",
+    value: function renderThumbs() {
+      if (!this.props.showThumbs || !this.props.children || _react.Children.count(this.props.children) === 0) {
+        return null;
+      }
+
+      return /*#__PURE__*/_react.default.createElement(_Thumbs.default, {
+        ref: this.setThumbsRef,
+        onSelectItem: this.handleClickThumb,
+        selectedItem: this.state.selectedItem,
+        transitionTime: this.props.transitionTime,
+        thumbWidth: this.props.thumbWidth,
+        labels: this.props.labels
+      }, this.props.renderThumbs(this.props.children));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      if (!this.props.children || _react.Children.count(this.props.children) === 0) {
+        return null;
+      }
+
+      var isHorizontal = this.props.axis === 'horizontal';
+      var canShowArrows = this.props.showArrows && _react.Children.count(this.props.children) > 1; // show left arrow?
+
+      var hasPrev = canShowArrows && (this.state.selectedItem > 0 || this.props.infiniteLoop) || false; // show right arrow
+
+      var hasNext = canShowArrows && (this.state.selectedItem < _react.Children.count(this.props.children) - 1 || this.props.infiniteLoop) || false; // obj to hold the transformations and styles
+
+      var itemListStyles = {};
+      var currentPosition = this.getPosition(this.state.selectedItem); // if 3d is available, let's take advantage of the performance of transform
+
+      var transformProp = (0, _CSSTranslate.default)(currentPosition, '%', this.props.axis);
+      var transitionTime = this.props.transitionTime + 'ms';
+      itemListStyles = {
+        WebkitTransform: transformProp,
+        MozTransform: transformProp,
+        MsTransform: transformProp,
+        OTransform: transformProp,
+        transform: transformProp,
+        msTransform: transformProp
+      };
+
+      if (!this.state.swiping) {
+        itemListStyles = _objectSpread({}, itemListStyles, {
+          WebkitTransitionDuration: transitionTime,
+          MozTransitionDuration: transitionTime,
+          MsTransitionDuration: transitionTime,
+          OTransitionDuration: transitionTime,
+          transitionDuration: transitionTime,
+          msTransitionDuration: transitionTime
+        });
+      }
+
+      var itemsClone = this.renderItems(true);
+      var firstClone = itemsClone.shift();
+      var lastClone = itemsClone.pop();
+      var swiperProps = {
+        className: _cssClasses.default.SLIDER(true, this.state.swiping),
+        onSwipeMove: this.onSwipeMove,
+        onSwipeStart: this.onSwipeStart,
+        onSwipeEnd: this.onSwipeEnd,
+        style: itemListStyles,
+        tolerance: this.props.swipeScrollTolerance
+      };
+      var containerStyles = {};
+
+      if (isHorizontal) {
+        swiperProps.onSwipeLeft = this.onSwipeForward;
+        swiperProps.onSwipeRight = this.onSwipeBackwards;
+
+        if (this.props.dynamicHeight) {
+          var itemHeight = this.getVariableImageHeight(this.state.selectedItem);
+          swiperProps.style.height = itemHeight || 'auto';
+          containerStyles.height = itemHeight || 'auto';
+        }
+      } else {
+        swiperProps.onSwipeUp = this.props.verticalSwipe === 'natural' ? this.onSwipeBackwards : this.onSwipeForward;
+        swiperProps.onSwipeDown = this.props.verticalSwipe === 'natural' ? this.onSwipeForward : this.onSwipeBackwards;
+        swiperProps.style.height = this.state.itemSize;
+        containerStyles.height = this.state.itemSize;
+      }
+
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: _cssClasses.default.ROOT(this.props.className),
+        ref: this.setCarouselWrapperRef,
+        tabIndex: 0
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: _cssClasses.default.CAROUSEL(true),
+        style: {
+          width: this.props.width
+        }
+      }, this.props.renderArrowPrev(this.onClickPrev, hasPrev, this.props.labels.leftArrow), /*#__PURE__*/_react.default.createElement("div", {
+        className: _cssClasses.default.WRAPPER(true, this.props.axis),
+        style: containerStyles
+      }, this.props.swipeable ? /*#__PURE__*/_react.default.createElement(_reactEasySwipe.default, _extends({
+        tagName: "ul",
+        innerRef: this.setListRef
+      }, swiperProps, {
+        allowMouseEvents: this.props.emulateTouch
+      }), this.props.infiniteLoop && lastClone, this.renderItems(), this.props.infiniteLoop && firstClone) : /*#__PURE__*/_react.default.createElement("ul", {
+        className: _cssClasses.default.SLIDER(true, this.state.swiping),
+        ref: function ref(node) {
+          return _this4.setListRef(node);
+        },
+        style: itemListStyles
+      }, this.props.infiniteLoop && lastClone, this.renderItems(), this.props.infiniteLoop && firstClone)), this.props.renderArrowNext(this.onClickNext, hasNext, this.props.labels.rightArrow), this.renderControls(), this.renderStatus()), this.renderThumbs());
+    }
+  }]);
+
+  return Carousel;
+}(_react.default.Component);
+
+exports.default = Carousel;
+
+_defineProperty(Carousel, "displayName", 'Carousel');
+
+_defineProperty(Carousel, "defaultProps", {
+  axis: 'horizontal',
+  centerSlidePercentage: 80,
+  interval: 3000,
+  labels: {
+    leftArrow: 'previous slide / item',
+    rightArrow: 'next slide / item',
+    item: 'slide item'
+  },
+  onClickItem: noop,
+  onClickThumb: noop,
+  onChange: noop,
+  onSwipeStart: function onSwipeStart() {},
+  onSwipeEnd: function onSwipeEnd() {},
+  onSwipeMove: function onSwipeMove() {},
+  renderArrowPrev: function renderArrowPrev(onClickHandler, hasPrev, label) {
+    return /*#__PURE__*/_react.default.createElement("button", {
+      type: "button",
+      "aria-label": label,
+      className: _cssClasses.default.ARROW_PREV(!hasPrev),
+      onClick: onClickHandler
+    });
+  },
+  renderArrowNext: function renderArrowNext(onClickHandler, hasNext, label) {
+    return /*#__PURE__*/_react.default.createElement("button", {
+      type: "button",
+      "aria-label": label,
+      className: _cssClasses.default.ARROW_NEXT(!hasNext),
+      onClick: onClickHandler
+    });
+  },
+  renderIndicator: function renderIndicator(onClickHandler, isSelected, index, label) {
+    return /*#__PURE__*/_react.default.createElement("li", {
+      className: _cssClasses.default.DOT(isSelected),
+      onClick: onClickHandler,
+      onKeyDown: onClickHandler,
+      value: index,
+      key: index,
+      role: "button",
+      tabIndex: 0,
+      "aria-label": "".concat(label, " ").concat(index + 1)
+    });
+  },
+  renderItem: function renderItem(item) {
+    return item;
+  },
+  renderThumbs: function renderThumbs(children) {
+    var images = _react.Children.map(children, function (item) {
+      var img = item; // if the item is not an image, try to find the first image in the item's children.
+
+      if (item.type !== 'img') {
+        img = _react.Children.toArray(item.props.children).find(function (children) {
+          return children.type === 'img';
+        });
+      }
+
+      if (!img) {
+        return undefined;
+      }
+
+      return img;
+    });
+
+    if (images.filter(function (image) {
+      return image;
+    }).length === 0) {
+      console.warn("No images found! Can't build the thumb list without images. If you don't need thumbs, set showThumbs={false} in the Carousel. Note that it's not possible to get images rendered inside custom components. More info at https://github.com/leandrowd/react-responsive-carousel/blob/master/TROUBLESHOOTING.md");
+      return [];
+    }
+
+    return images;
+  },
+  statusFormatter: defaultStatusFormatter,
+  selectedItem: 0,
+  showArrows: true,
+  showIndicators: true,
+  showStatus: true,
+  showThumbs: true,
+  stopOnHover: true,
+  swipeScrollTolerance: 5,
+  swipeable: true,
+  transitionTime: 350,
+  verticalSwipe: 'standard',
+  width: '100%'
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-responsive-carousel/lib/es/components/Thumbs.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/react-responsive-carousel/lib/es/components/Thumbs.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _cssClasses = _interopRequireDefault(__webpack_require__(/*! ../cssClasses */ "./node_modules/react-responsive-carousel/lib/es/cssClasses.js"));
+
+var _dimensions = __webpack_require__(/*! ../dimensions */ "./node_modules/react-responsive-carousel/lib/es/dimensions.js");
+
+var _CSSTranslate = _interopRequireDefault(__webpack_require__(/*! ../CSSTranslate */ "./node_modules/react-responsive-carousel/lib/es/CSSTranslate.js"));
+
+var _reactEasySwipe = _interopRequireDefault(__webpack_require__(/*! react-easy-swipe */ "./node_modules/react-easy-swipe/lib/index.js"));
+
+var _window = _interopRequireDefault(__webpack_require__(/*! ../shims/window */ "./node_modules/react-responsive-carousel/lib/es/shims/window.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var isKeyboardEvent = function isKeyboardEvent(e) {
+  return e.hasOwnProperty('key');
+};
+
+var Thumbs = /*#__PURE__*/function (_Component) {
+  _inherits(Thumbs, _Component);
+
+  var _super = _createSuper(Thumbs);
+
+  function Thumbs(_props) {
+    var _this;
+
+    _classCallCheck(this, Thumbs);
+
+    _this = _super.call(this, _props);
+
+    _defineProperty(_assertThisInitialized(_this), "itemsWrapperRef", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "itemsListRef", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "thumbsRef", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "setItemsWrapperRef", function (node) {
+      _this.itemsWrapperRef = node;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setItemsListRef", function (node) {
+      _this.itemsListRef = node;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setThumbsRef", function (node, index) {
+      if (!_this.thumbsRef) {
+        _this.thumbsRef = [];
+      }
+
+      _this.thumbsRef[index] = node;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "updateSizes", function () {
+      if (!_this.props.children || !_this.itemsWrapperRef || !_this.thumbsRef) {
+        return;
+      }
+
+      var total = _react.Children.count(_this.props.children);
+
+      var wrapperSize = _this.itemsWrapperRef.clientWidth;
+      var itemSize = _this.props.thumbWidth ? _this.props.thumbWidth : (0, _dimensions.outerWidth)(_this.thumbsRef[0]);
+      var visibleItems = Math.floor(wrapperSize / itemSize);
+      var lastPosition = total - visibleItems;
+      var showArrows = visibleItems < total;
+
+      _this.setState(function (_state, props) {
+        return {
+          itemSize: itemSize,
+          visibleItems: visibleItems,
+          firstItem: showArrows ? _this.getFirstItem(props.selectedItem) : 0,
+          lastPosition: lastPosition,
+          showArrows: showArrows
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleClickItem", function (index, item, e) {
+      if (!isKeyboardEvent(e) || e.key === 'Enter') {
+        var handler = _this.props.onSelectItem;
+
+        if (typeof handler === 'function') {
+          handler(index, item);
+        }
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSwipeStart", function () {
+      _this.setState({
+        swiping: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSwipeEnd", function () {
+      _this.setState({
+        swiping: false
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSwipeMove", function (delta) {
+      var deltaX = delta.x;
+
+      if (!_this.state.itemSize || !_this.itemsWrapperRef) {
+        return false;
+      }
+
+      var leftBoundary = 0;
+      var currentPosition = -_this.state.firstItem * _this.state.itemSize;
+      var lastLeftBoundary = -_this.state.visibleItems * _this.state.itemSize; // prevent user from swiping left out of boundaries
+
+      if (currentPosition === leftBoundary && deltaX > 0) {
+        deltaX = 0;
+      } // prevent user from swiping right out of boundaries
+
+
+      if (currentPosition === lastLeftBoundary && deltaX < 0) {
+        deltaX = 0;
+      }
+
+      var wrapperSize = _this.itemsWrapperRef.clientWidth;
+      var position = currentPosition + 100 / (wrapperSize / deltaX); // if 3d isn't available we will use left to move
+
+      if (_this.itemsListRef) {
+        ['WebkitTransform', 'MozTransform', 'MsTransform', 'OTransform', 'transform', 'msTransform'].forEach(function (prop) {
+          _this.itemsListRef.style[prop] = (0, _CSSTranslate.default)(position, '%', _this.props.axis);
+        });
+      }
+
+      return true;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "slideRight", function (positions) {
+      _this.moveTo(_this.state.firstItem - (typeof positions === 'number' ? positions : 1));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "slideLeft", function (positions) {
+      _this.moveTo(_this.state.firstItem + (typeof positions === 'number' ? positions : 1));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "moveTo", function (position) {
+      // position can't be lower than 0
+      position = position < 0 ? 0 : position; // position can't be higher than last postion
+
+      position = position >= _this.state.lastPosition ? _this.state.lastPosition : position;
+
+      _this.setState({
+        firstItem: position
+      });
+    });
+
+    _this.state = {
+      selectedItem: _props.selectedItem,
+      swiping: false,
+      showArrows: false,
+      firstItem: 0,
+      visibleItems: 0,
+      lastPosition: 0
+    };
+    return _this;
+  }
+
+  _createClass(Thumbs, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.setupThumbs();
+    }
+  }, {
+    key: "UNSAFE_componentWillReceiveProps",
+    value: function UNSAFE_componentWillReceiveProps(props) {
+      if (props.selectedItem !== this.state.selectedItem) {
+        this.setState({
+          selectedItem: props.selectedItem,
+          firstItem: this.getFirstItem(props.selectedItem)
+        });
+      }
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.children === prevProps.children) {
+        return;
+      } // This will capture any size changes for arrow adjustments etc.
+      // usually in the same render cycle so we don't see any flickers
+
+
+      this.updateSizes();
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.destroyThumbs();
+    }
+  }, {
+    key: "setupThumbs",
+    value: function setupThumbs() {
+      // as the widths are calculated, we need to resize
+      // the carousel when the window is resized
+      (0, _window.default)().addEventListener('resize', this.updateSizes); // issue #2 - image loading smaller
+
+      (0, _window.default)().addEventListener('DOMContentLoaded', this.updateSizes); // when the component is rendered we need to calculate
+      // the container size to adjust the responsive behaviour
+
+      this.updateSizes();
+    }
+  }, {
+    key: "destroyThumbs",
+    value: function destroyThumbs() {
+      // removing listeners
+      (0, _window.default)().removeEventListener('resize', this.updateSizes);
+      (0, _window.default)().removeEventListener('DOMContentLoaded', this.updateSizes);
+    }
+  }, {
+    key: "getFirstItem",
+    value: function getFirstItem(selectedItem) {
+      var firstItem = selectedItem;
+
+      if (selectedItem >= this.state.lastPosition) {
+        firstItem = this.state.lastPosition;
+      }
+
+      if (selectedItem < this.state.firstItem + this.state.visibleItems) {
+        firstItem = this.state.firstItem;
+      }
+
+      if (selectedItem < this.state.firstItem) {
+        firstItem = selectedItem;
+      }
+
+      return firstItem;
+    }
+  }, {
+    key: "renderItems",
+    value: function renderItems() {
+      var _this2 = this;
+
+      return this.props.children.map(function (img, index) {
+        var itemClass = _cssClasses.default.ITEM(false, index === _this2.state.selectedItem);
+
+        var thumbProps = {
+          key: index,
+          ref: function ref(e) {
+            return _this2.setThumbsRef(e, index);
+          },
+          className: itemClass,
+          onClick: _this2.handleClickItem.bind(_this2, index, _this2.props.children[index]),
+          onKeyDown: _this2.handleClickItem.bind(_this2, index, _this2.props.children[index]),
+          'aria-label': "".concat(_this2.props.labels.item, " ").concat(index + 1),
+          style: {
+            width: _this2.props.thumbWidth
+          }
+        };
+        return /*#__PURE__*/_react.default.createElement("li", _extends({}, thumbProps, {
+          role: "button",
+          tabIndex: 0
+        }), img);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      if (!this.props.children) {
+        return null;
+      } // show left arrow?
+
+
+      var hasPrev = this.state.showArrows && this.state.firstItem > 0; // show right arrow
+
+      var hasNext = this.state.showArrows && this.state.firstItem < this.state.lastPosition; // obj to hold the transformations and styles
+
+      var itemListStyles = {};
+      var currentPosition = -this.state.firstItem * (this.state.itemSize || 0);
+      var transformProp = (0, _CSSTranslate.default)(currentPosition, 'px', this.props.axis);
+      var transitionTime = this.props.transitionTime + 'ms';
+      itemListStyles = {
+        WebkitTransform: transformProp,
+        MozTransform: transformProp,
+        MsTransform: transformProp,
+        OTransform: transformProp,
+        transform: transformProp,
+        msTransform: transformProp,
+        WebkitTransitionDuration: transitionTime,
+        MozTransitionDuration: transitionTime,
+        MsTransitionDuration: transitionTime,
+        OTransitionDuration: transitionTime,
+        transitionDuration: transitionTime,
+        msTransitionDuration: transitionTime
+      };
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: _cssClasses.default.CAROUSEL(false)
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: _cssClasses.default.WRAPPER(false),
+        ref: this.setItemsWrapperRef
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: _cssClasses.default.ARROW_PREV(!hasPrev),
+        onClick: function onClick() {
+          return _this3.slideRight();
+        },
+        "aria-label": this.props.labels.leftArrow
+      }), /*#__PURE__*/_react.default.createElement(_reactEasySwipe.default, {
+        tagName: "ul",
+        className: _cssClasses.default.SLIDER(false, this.state.swiping),
+        onSwipeLeft: this.slideLeft,
+        onSwipeRight: this.slideRight,
+        onSwipeMove: this.onSwipeMove,
+        onSwipeStart: this.onSwipeStart,
+        onSwipeEnd: this.onSwipeEnd,
+        style: itemListStyles,
+        innerRef: this.setItemsListRef
+      }, this.renderItems()), /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: _cssClasses.default.ARROW_NEXT(!hasNext),
+        onClick: function onClick() {
+          return _this3.slideLeft();
+        },
+        "aria-label": this.props.labels.rightArrow
+      })));
+    }
+  }]);
+
+  return Thumbs;
+}(_react.Component);
+
+exports.default = Thumbs;
+
+_defineProperty(Thumbs, "displayName", 'Thumbs');
+
+_defineProperty(Thumbs, "defaultProps", {
+  axis: 'horizontal',
+  labels: {
+    leftArrow: 'previous slide / item',
+    rightArrow: 'next slide / item',
+    item: 'slide item'
+  },
+  selectedItem: 0,
+  thumbWidth: 80,
+  transitionTime: 350
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-responsive-carousel/lib/es/cssClasses.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-responsive-carousel/lib/es/cssClasses.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _default = {
+  ROOT: function ROOT(customClassName) {
+    return (0, _classnames.default)(_defineProperty({
+      'carousel-root': true
+    }, customClassName || '', !!customClassName));
+  },
+  CAROUSEL: function CAROUSEL(isSlider) {
+    return (0, _classnames.default)({
+      carousel: true,
+      'carousel-slider': isSlider
+    });
+  },
+  WRAPPER: function WRAPPER(isSlider, axis) {
+    return (0, _classnames.default)({
+      'thumbs-wrapper': !isSlider,
+      'slider-wrapper': isSlider,
+      'axis-horizontal': axis === 'horizontal',
+      'axis-vertical': axis !== 'horizontal'
+    });
+  },
+  SLIDER: function SLIDER(isSlider, isSwiping) {
+    return (0, _classnames.default)({
+      thumbs: !isSlider,
+      slider: isSlider,
+      animated: !isSwiping
+    });
+  },
+  ITEM: function ITEM(isSlider, selected) {
+    return (0, _classnames.default)({
+      thumb: !isSlider,
+      slide: isSlider,
+      selected: selected
+    });
+  },
+  ARROW_PREV: function ARROW_PREV(disabled) {
+    return (0, _classnames.default)({
+      'control-arrow control-prev': true,
+      'control-disabled': disabled
+    });
+  },
+  ARROW_NEXT: function ARROW_NEXT(disabled) {
+    return (0, _classnames.default)({
+      'control-arrow control-next': true,
+      'control-disabled': disabled
+    });
+  },
+  DOT: function DOT(selected) {
+    return (0, _classnames.default)({
+      dot: true,
+      selected: selected
+    });
+  }
+};
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/react-responsive-carousel/lib/es/dimensions.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-responsive-carousel/lib/es/dimensions.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.outerWidth = void 0;
+
+var outerWidth = function outerWidth(el) {
+  var width = el.offsetWidth;
+  var style = getComputedStyle(el);
+  width += parseInt(style.marginLeft) + parseInt(style.marginRight);
+  return width;
+};
+
+exports.outerWidth = outerWidth;
+
+/***/ }),
+
+/***/ "./node_modules/react-responsive-carousel/lib/es/index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-responsive-carousel/lib/es/index.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Carousel", {
+  enumerable: true,
+  get: function get() {
+    return _Carousel.default;
+  }
+});
+Object.defineProperty(exports, "Thumbs", {
+  enumerable: true,
+  get: function get() {
+    return _Thumbs.default;
+  }
+});
+
+var _Carousel = _interopRequireDefault(__webpack_require__(/*! ./components/Carousel */ "./node_modules/react-responsive-carousel/lib/es/components/Carousel.js"));
+
+var _Thumbs = _interopRequireDefault(__webpack_require__(/*! ./components/Thumbs */ "./node_modules/react-responsive-carousel/lib/es/components/Thumbs.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ "./node_modules/react-responsive-carousel/lib/es/shims/document.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/react-responsive-carousel/lib/es/shims/document.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _default = function _default() {
+  return document;
+};
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/react-responsive-carousel/lib/es/shims/window.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-responsive-carousel/lib/es/shims/window.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _default = function _default() {
+  return window;
+};
+
+exports.default = _default;
 
 /***/ }),
 
@@ -38177,6 +40757,746 @@ if ( true && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed
 }
 
 
+
+
+/***/ }),
+
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var runtime = (function (exports) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  exports.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunctionPrototype[toStringTagSymbol] =
+    GeneratorFunction.displayName = "GeneratorFunction";
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      prototype[method] = function(arg) {
+        return this._invoke(method, arg);
+      };
+    });
+  }
+
+  exports.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  exports.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      if (!(toStringTagSymbol in genFun)) {
+        genFun[toStringTagSymbol] = "GeneratorFunction";
+      }
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  exports.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator, PromiseImpl) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return PromiseImpl.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return PromiseImpl.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new PromiseImpl(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+  exports.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    if (PromiseImpl === void 0) PromiseImpl = Promise;
+
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList),
+      PromiseImpl
+    );
+
+    return exports.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  Gp[toStringTagSymbol] = "Generator";
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  Gp[iteratorSymbol] = function() {
+    return this;
+  };
+
+  Gp.toString = function() {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  exports.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+
+  // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
+  return exports;
+
+}(
+  // If this script is executing as a CommonJS module, use module.exports
+  // as the regeneratorRuntime namespace. Otherwise create a new empty
+  // object. Either way, the resulting object will be used to initialize
+  // the regeneratorRuntime variable at the top of this file.
+   true ? module.exports : undefined
+));
+
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  Function("r", "regeneratorRuntime = r")(runtime);
+}
 
 
 /***/ }),

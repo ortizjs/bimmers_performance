@@ -1,8 +1,10 @@
+
+.splash-nav-container {
+    height: 35px;
+    border: 1px solid pink;
+}
+
 .splash-nav-main-div {
-    // margin-left:40px;
-    // .splash-nav-container {
-    //     background-color: ;
-    // }
     // width: 96.8%; if not working revert back to this
     // left: 54px;
     width: 87%;
@@ -11,6 +13,7 @@
     left: 70px;
     background-color: #069;
     max-height: 34px;
+    border: 2px solid yellow;
 }
 
 @media (min-width: 1600px) {
@@ -18,7 +21,8 @@
         // width: 100%;
         // top: 115px;
         // left: 37px;
-        width: 90%;
+        width: 89.6%;
+        height: 100px;
         top: 115px;
         left: 52.5px;
         background-color: #069;
@@ -56,6 +60,8 @@
 }
 .splash-nav-ul li a:hover {
     background: grey;
+    // -webkit-filter: brightness(50%);
+   
 }
 // .splash-nav-ul li a {
 //     display: block;

@@ -1,0 +1,66 @@
+/* line 9, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/base/reset.scss */
+div {
+  display: auto;
+}
+
+/* line 14, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/base/reset.scss */
+header .site-banner-header {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+@media (min-width: 1990px) {
+  /* line 25, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/base/reset.scss */
+  header .site-banner-header {
+    min-width: 90%;
+  }
+}
+/* line 32, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/base/reset.scss */
+.splash-page-main-div .site-banner-inbody {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1900px) {
+  /* line 43, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/base/reset.scss */
+  .splash-page-main-div .site-banner-inbody {
+    min-width: 90%;
+  }
+}
+/* line 51, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/base/reset.scss */
+body {
+  margin: 0;
+  background-color: #1a005b;
+}
+
+/* line 63, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/base/reset.scss */
+html, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+}
+
+/* line 81, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/base/reset.scss */
+ul {
+  list-style: none;
+  padding: 0 auto;
+}
+
+/* line 86, /Users/jonnatanortiz/Desktop/bimmers_performance/app/assets/stylesheets/base/reset.scss */
+img {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+/* Clearfix */

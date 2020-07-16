@@ -17,13 +17,17 @@
 /storage/*
 !/storage/.keep
 
-/node_modules/
+/node_modules
 /yarn-error.log
-/bundle.js
-/bundle.js.map
 
-/public/assets
+
+/public/assets*
 .byebug_history
+
+# /app/assets/javascripts/*
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+bundle.js
+bundle.js.map

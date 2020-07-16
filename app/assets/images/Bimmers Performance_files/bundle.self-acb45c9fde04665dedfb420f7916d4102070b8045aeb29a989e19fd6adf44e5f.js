@@ -174,22 +174,20 @@ var logout = function logout() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
-/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
- // document.addEventListener("DOMContentLoaded", () => {
-//     const root = document.getElementById('root');
-//     ReactDOM.render(<h1>Welcome to Bimmers Performance!</h1>, root);
-// });
-//Components
+ // import * as commands from './util/session_api_util';
+// import * as commands2 from './util/photo_api_util';
+// import { login } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', function () {
   var store;
@@ -203,16 +201,18 @@ document.addEventListener('DOMContentLoaded', function () {
         users: _defineProperty({}, window.currentUser.id, window.currentUser)
       }
     };
-    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])(preloadedState);
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_0__["default"])(preloadedState);
     delete window.currentUser;
   } else {
-    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])();
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_0__["default"])();
   }
 
   var root = document.getElementById('root');
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
-  }), root);
+  }), root); // window.getState = store.getState;
+  // window.dispatch = store.dispatch; // just for testing!
+  // window.fetchPhotos = fetchPhotos;
 });
 
 /***/ }),
@@ -233,14 +233,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_route_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/route_util */ "./frontend/utils/route_util.jsx");
 /* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
 /* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
+/* harmony import */ var _splash_splash_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./splash/splash_page */ "./frontend/components/splash/splash_page.jsx");
 
 
 
  // import GreetingContainer from './greeting/greeting_container';
 
 
- // import SplashContainer from './splash/splash_page';
-// import PhotoIndexContainer from './photos/photos_index_container';
+
+ // import PhotoIndexContainer from './photos/photos_index_container';
 // import UserPhotosContainer from './photos/user_photos_container';
 // import UploadPhotoFormContainer from './photos/upload_photo_form_container';
 // import PhotoShowContainer from './photos/photo_show_container';
@@ -248,28 +249,23 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app-master-div"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "banner-logo-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/",
     className: "header-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: window.images.splash_banner_logo,
-    alt: "Logo",
-    className: "global-site-banner"
-  })))) // <div className="app-parent-div">
-  //     <Switch>
-  //         <Route path="/" component={GreetingContainer} />
-  //     </Switch>
-  //     <ProtectedRoute exact path="/users" component={AdminLandingContainer} />
-  //     <ProtectedRoute exact path="/users/:id" component={UserServicesContainer} />
-  //         {/* <div className="photo-upload-form-div">
-  //                 <ProtectedRoute exact path="/users/:id" component={UploadPhotoFormContainer} />
-  //             </div> */}
-  //     <ProtectedRoute path="/services/:Id" component={PhotoShowContainer} />
-  //     <AuthRoute exact path="/" component={SplashContainer} />
-  //     <AuthRoute exact path="/login" component={LogInFormContainer} />
-  //     <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-  // </div>
-  ;
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/",
+    component: _splash_splash_page__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_3__["AuthRoute"], {
+    exact: true,
+    path: "/login",
+    component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_3__["AuthRoute"], {
+    exact: true,
+    path: "/signup",
+    component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -688,6 +684,505 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_session_form__WEBPACK_IMPORTED_MODULE_4__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/splash/photo_carousel/carousel.jsx":
+/*!****************************************************************!*\
+  !*** ./frontend/components/splash/photo_carousel/carousel.jsx ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _carouselLogic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./carouselLogic */ "./frontend/components/splash/photo_carousel/carouselLogic.js");
+/* harmony import */ var _carousel_photo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./carousel_photo */ "./frontend/components/splash/photo_carousel/carousel_photo.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var Carousel = /*#__PURE__*/function (_React$Component) {
+  _inherits(Carousel, _React$Component);
+
+  function Carousel(props) {
+    var _this;
+
+    _classCallCheck(this, Carousel);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Carousel).call(this, props));
+    _this.state = {
+      slideIndex: 0
+    };
+    return _this;
+  }
+
+  _createClass(Carousel, [{
+    key: "fetchPhotos",
+    value: function fetchPhotos() {// return 
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {} // slideIndex = 0;
+    // this.startSlide();
+    // startCarousel = () => {
+    //     this.car
+    // }
+
+  }, {
+    key: "carouseulFunction",
+    value: function carouseulFunction() {} // var slideIndex = 0;
+    // // debugger
+    // carouselLogic(slideIndex);
+    // metaslider_25 = function ($) {
+
+  }, {
+    key: "fetchCarousel",
+    value: function fetchCarousel($) {
+      debugger;
+      $('.slideshow-container').addClass('flexslider'); // theme/plugin conflict avoidance
+
+      $('.slideshow-container').flexslider({
+        slideshowSpeed: 3000,
+        animation: "fade",
+        controlNav: false,
+        directionNav: false,
+        pauseOnHover: false,
+        direction: "horizontal",
+        reverse: false,
+        animationSpeed: 600,
+        prevText: "&lt;",
+        nextText: "&gt;",
+        slideshow: true
+      });
+    }
+  }, {
+    key: "startSlide",
+    value: function startSlide() {
+      var slider = !window.jQuery ? window.setTimeout(this.startSlide(), 100) : !jQuery.isReady ? window.setTimeout(this.startSlide(), 1) : fetchCarousel(window.jQuery);
+    } // startSlide();
+
+  }, {
+    key: "render",
+    value: function render() {
+      // debugger;
+      // let photos = window.images.carousel_images_array.map((photo_url,i) => {
+      //     return (
+      //         <div className="carousel-ul">
+      //             <CarouselPhoto 
+      //                 id={i}
+      //                 key={i}
+      //                 photo_url={photo_url}
+      //             />
+      //         </div>
+      //     );
+      // });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slideshow-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "carousel-ul"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_carousel_photo__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        id: 1,
+        key: 1,
+        photo_url: window.images.carousel_images_array[0] // photo_url={photo_url}
+
+      })));
+    }
+  }]);
+
+  return Carousel;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Carousel);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/photo_carousel/carouselLogic.js":
+/*!********************************************************************!*\
+  !*** ./frontend/components/splash/photo_carousel/carouselLogic.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return carouselLogic; });
+function carouselLogic(slideIndex) {
+  //  debugger
+  var i;
+  var showSlides = document.getElementsByClassName("slides");
+  var dots = document.getElementsByClassName("dot");
+
+  for (i = 0; i < showSlides.length; i++) {
+    // debugger
+    showSlides[i].style.display = "none";
+  }
+
+  debugger;
+  slideIndex++;
+
+  if (slideIndex > showSlides.length) {
+    slideIndex = 1;
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  debugger;
+  showSlides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  setTimeout(carouselLogic(slideIndex), 2000); // Change image every 2 seconds
+}
+
+/***/ }),
+
+/***/ "./frontend/components/splash/photo_carousel/carousel_photo.jsx":
+/*!**********************************************************************!*\
+  !*** ./frontend/components/splash/photo_carousel/carousel_photo.jsx ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ // import { Link, withRouter } from 'react-router-dom';
+
+var CarouselPhoto = function CarouselPhoto(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "slides",
+    className: "slides fade"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.photo_url,
+    alt: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CarouselPhoto);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_home_page.jsx":
+/*!*********************************************************!*\
+  !*** ./frontend/components/splash/splash_home_page.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _photo_carousel_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./photo_carousel/carousel */ "./frontend/components/splash/photo_carousel/carousel.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var SplashHomePage = /*#__PURE__*/function (_React$Component) {
+  _inherits(SplashHomePage, _React$Component);
+
+  function SplashHomePage(props) {
+    _classCallCheck(this, SplashHomePage);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SplashHomePage).call(this, props));
+  }
+
+  _createClass(SplashHomePage, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {// debugger
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      // debugger
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-page-home-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photo_carousel_carousel__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        slideIndex: 0,
+        photos: window.images.carousel_images_array
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-welcome-span"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fontSize: "24px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Welcome to ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fontSize: "18px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: ({
+          color: '#ff0000'
+        }, {
+          fontSize: '24px'
+        })
+      }, "Bimmers")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fonSize: "24px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: ({
+          color: '#0000ff'
+        }, {
+          fontSize: '24px'
+        })
+      }, "Performance")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: {
+          fontSize: "24px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: ({
+          color: "#ff0000"
+        }, {
+          fontSize: "24px"
+        })
+      }, "Auto Service"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        "class": "splash-home-business-intro"
+      }, "Bimmers Performance Auto Service has been providing superior automotive repair and maintenance services in East Bay area for over 15 years \xA0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro-2"
+      }, "specializing", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "in BMW and Mercedes Benz vehicle repairs.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro-2"
+      }, "Our specialty is in BMW and Mercedes Benz vehicle repairs and we also provide full service general repairs and \xA0proudly service all other types of vehicles; foreign or domestic. Our technicians are highly trained and \xA0experienced, with the knowledge and skills necessary to handle all of your auto repairs.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro-2"
+      }, "Our team is dedicated to providing you and your vehicle with professional service and exceptional customer care. \xA0 THANK YOU for choosing \xA0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro"
+      }, "Bimmers Performance Auto Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro"
+      }, "Great"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "splash-home-business-intro"
+      }, "as your go-to Auto Center! \xA0")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        alt: "car_logos",
+        src: this.props.images.car_logos,
+        className: "cars-logo-centered"
+      })));
+    }
+  }]);
+
+  return SplashHomePage;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SplashHomePage);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_nav.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/splash/splash_nav.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var SplashNav = /*#__PURE__*/function (_React$Component) {
+  _inherits(SplashNav, _React$Component);
+
+  function SplashNav(props) {
+    var _this;
+
+    _classCallCheck(this, SplashNav);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SplashNav).call(this, props));
+    _this.state = {
+      active: "home"
+    };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(SplashNav, [{
+    key: "handleClick",
+    value: function handleClick(menuItem) {
+      this.setState({
+        active: menuItem
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-nav-main-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "splash-nav-ul"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: this.state.active === "home" ? "active" : ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/",
+        onClick: function onClick() {
+          return _this2.handleClick("home");
+        }
+      }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: this.state.active === "services" ? "active" : ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/services",
+        onClick: function onClick() {
+          return _this2.handleClick("services");
+        }
+      }, "Services")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: this.state.active === "specials" ? "active" : ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/specials",
+        onClick: function onClick() {
+          return _this2.handleClick("specials");
+        }
+      }, "Specials")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: this.state.active === "contactus" ? "active" : ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/contactus",
+        onClick: function onClick() {
+          return _this2.handleClick("contactus");
+        }
+      }, "Contact Us"))));
+    }
+  }]);
+
+  return SplashNav;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SplashNav);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_page.jsx":
+/*!****************************************************!*\
+  !*** ./frontend/components/splash/splash_page.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _splash_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./splash_nav */ "./frontend/components/splash/splash_nav.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _splash_home_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash_home_page */ "./frontend/components/splash/splash_home_page.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var Splash = /*#__PURE__*/function (_React$Component) {
+  _inherits(Splash, _React$Component);
+
+  function Splash(props) {
+    _classCallCheck(this, Splash);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Splash).call(this, props));
+  }
+
+  _createClass(Splash, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-page-main-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "logo-inbody-container-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: window.images.splash_banner_logo,
+        alt: "Logo",
+        className: "site-banner-inbody"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-body-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_nav__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-body-left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_home_page__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        images: window.images
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-body-right"
+      })));
+    }
+  }]);
+
+  return Splash;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Splash);
 
 /***/ }),
 

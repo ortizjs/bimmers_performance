@@ -36,6 +36,7 @@
 //         extensions: [".js", ".jsx", "*"]
 //     }
 // };
+
 const path = require('path');
 
 module.exports = {

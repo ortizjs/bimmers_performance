@@ -1423,12 +1423,10 @@ var SplashServicePage = /*#__PURE__*/function (_React$Component) {
       }, "perform Diagnosis, and Service & Repair on your BMW and Mercedes Automobile, SUV or Light Truck.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-2"
       }, "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0Our Services Include, But Are Not Limited To:"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "splash-service-tables",
         border: "1",
         cellSpacing: "2",
-        cellPadding: "2",
-        style: {
-          width: "650px"
-        }
+        cellPadding: "2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         width: "162px",
         align: "center",
@@ -1461,22 +1459,16 @@ var SplashServicePage = /*#__PURE__*/function (_React$Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Heating & Air Conditioner Repair")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Mercedes Flex Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "BMW Inspection I, II and CBS (Condition Based Services)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "30/60/90/120 Mile Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Computer Diagnostics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Oil Changes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tune Ups"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Filter Replacements"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Safety Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Windshield Wiper Blades"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fluid Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Trip Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Maintenance Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Check Engine Light Diagnostics & Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Brake Repair & Antilock Braking System (ABS) Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Shocks & Struts Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Suspension & Steering Repair"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        style: {
-          width: "200px"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Driveline Repair & Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Axle Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Clutch Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Fluid Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Driveshaft & U-Joint Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Differential Diagnosis"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Performance Check"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Belt Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Hose Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Cooling System Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Radiator  Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Water Pump Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Drivability Diagnostics & Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fuel Injection Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fuel System Repair & Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Ignition System Repair & Maintenance"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Heating & Cooling System Diagnostics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Auto Air Conditioning Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Heating System Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Belt Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Compressor Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Evaporator Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Refrigerant Replacement")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Heating & Air Conditioner Repair")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Mercedes Flex Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "BMW Inspection I, II and CBS (Condition Based Services)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "30/60/90/120 Mile Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Computer Diagnostics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Oil Changes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tune Ups"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Filter Replacements"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Safety Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Windshield Wiper Blades"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fluid Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Trip Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Maintenance Inspections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Check Engine Light Diagnostics & Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Brake Repair & Antilock Braking System (ABS) Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Shocks & Struts Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Suspension & Steering Repair"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Driveline Repair & Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Axle Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Clutch Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Transmission Fluid Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Driveshaft & U-Joint Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Differential Diagnosis"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Engine Performance Check"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Belt Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Hose Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Cooling System Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Radiator  Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Water Pump Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Drivability Diagnostics & Repair"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fuel Injection Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Fuel System Repair & Maintenance"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Ignition System Repair & Maintenance"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Heating & Cooling System Diagnostics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Auto Air Conditioning Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Heating System Repair & Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Belt Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Compressor Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Evaporator Repair & Replacement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Refrigerant Replacement")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "splash-service-tables",
         border: "1",
         cellSpacing: "2",
-        cellPadding: "2",
-        style: {
-          width: "650px"
-        }
+        cellPadding: "2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         width: "162px",
         align: "center",
         style: {
-          width: "650px"
+          width: "600px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
@@ -1484,7 +1476,7 @@ var SplashServicePage = /*#__PURE__*/function (_React$Component) {
         width: "162px",
         align: "center",
         style: {
-          width: "650px"
+          width: "600px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
@@ -1492,7 +1484,7 @@ var SplashServicePage = /*#__PURE__*/function (_React$Component) {
         width: "162px",
         align: "center",
         style: {
-          width: "650px"
+          width: "600px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
@@ -1500,7 +1492,7 @@ var SplashServicePage = /*#__PURE__*/function (_React$Component) {
         width: "162px",
         align: "center",
         style: {
-          width: "650px"
+          width: "600px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"

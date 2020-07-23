@@ -32,22 +32,22 @@ class SplashServicePage extends React.Component {
                     <table className="splash-service-tables" border="1" cellSpacing="2" cellPadding="2" >
                         <tbody>
                             <tr>
-                                <td width="162px" align="center" style={{width:"200px"}}>
+                                <td align="center" style={{ width: "200px" }}>
                                     <span className="splash-service-span-3">
                                         <strong>Standard Maintenance Services</strong>
                                     </span>
                                 </td>
-                                <td width= "162px" align="center" style={{width:"162px"}}> 
+                                <td align="center" style={{ width: "162px" }}> 
                                     <span className="splash-service-span-3">
                                         <strong>Transmission</strong>
                                     </span>
                                 </td>
-                                <td width= "162px" align="center" style={{width:"162px"}}> 
+                                <td align="center" style={{ width: "162px" }}> 
                                     <span className="splash-service-span-3">
                                         <strong>Engine Services</strong>
                                     </span>
                                 </td>
-                                <td width= "162px" align="center" style={{width:"162px"}}> 
+                                <td align="center" style={{ width: "162px" }, {borderRight: "0px"}}> 
                                     <span className="splash-service-span-3">
                                         <strong>Heating &amp; Air Conditioner Repair</strong>
                                     </span>
@@ -55,7 +55,7 @@ class SplashServicePage extends React.Component {
                             </tr>
 
                             <tr>
-                                <td>
+                                <td className="initial-td">
                                     <ul>
                                         <li>Mercedes Flex Services</li>
                                         <li>BMW Inspection I, II and CBS (Condition Based Services)</li>
@@ -75,7 +75,7 @@ class SplashServicePage extends React.Component {
                                         <li>Suspension &amp; Steering Repair</li>
                                     </ul>
                                 </td>
-                                <td >
+                                <td className="initial-td">
                                     <ul>
                                         <li>Transmission Repair &amp; Service</li>
                                         <li>Transmission Replacement</li>
@@ -87,7 +87,7 @@ class SplashServicePage extends React.Component {
                                         <li>Differential Diagnosis</li>
                                     </ul>
                                 </td>
-                                <td>
+                                <td className="initial-td">
                                     <ul>
                                         <li>Engine Repair</li>
                                         <li>Engine Replacement</li>
@@ -103,7 +103,7 @@ class SplashServicePage extends React.Component {
                                         <li>Ignition System Repair &amp; Maintenance</li>
                                     </ul>
                                 </td>
-                                <td>
+                                <td className="end-td">
                                     <ul>
                                         <li>Heating &amp; Cooling System Diagnostics</li>
                                         <li>Auto Air Conditioning Repair &amp; Service</li>
@@ -117,33 +117,33 @@ class SplashServicePage extends React.Component {
                             </tr>
                         </tbody >
                     </table >
-
+                    <br/>
                     <table className="splash-service-tables" border="1" cellSpacing="2" cellPadding="2">
                         <tbody>
                             <tr>
-                                <td width="162px" align="center" style={{ width:"600px"}}> 
+                                <td align="center" style={{ width: "600px" }}> 
                                     <span className="splash-service-span-3">
                                         <strong>Auto Electrical Services</strong>
                                     </span>
                                 </td>
-                                <td width="162px" align="center" style={{ width:"600px"}}> 
+                                <td align="center" style={{ width: "600px" }}> 
                                     <span className="splash-service-span-3">
                                         <strong>Tire Services</strong>
                                     </span>
                                 </td>
-                                <td width="162px" align="center" style={{ width:"600px"}}> 
+                                <td align="center" style={{ width: "600px" }}> 
                                     <span className="splash-service-span-3">
                                         <strong>Exhaust Services</strong>
                                     </span>
                                 </td>
-                                <td width="162px" align="center" style={{width:"600px"}}>
+                                <td align="center" style={{ width: "600px" }, {borderRight:"0px"}}>
                                     <span className="splash-service-span-3">
                                         <strong>Other Services</strong>
                                     </span>
                                 </td >
                             </tr >
                             <tr>
-                                <td>
+                                <td className="initial-td">
                                     <ul>
                                         <li>Electrical System Diagnostics &amp; Repair</li>
                                         <li>Alternator Repair &amp; Replacement</li>
@@ -157,13 +157,13 @@ class SplashServicePage extends React.Component {
                                         <li>Light Repair &amp; Bulb Replacements</li>
                                     </ul>
                                 </td>
-                                <td style={{width:"200px"}}>
+                                <td className="initial-td" style={{width:"200px"}}>
                                     <ul>
                                         <li>Tire Rotation</li>
                                         <li>Tire Air Pressure Checks</li>
                                     </ul>
                                 </td>
-                                <td>
+                                <td className="initial-td">
                                     <ul>
                                         <li>Exhaust Repair &amp; Replacement</li>
                                         <li>Muffler Repair &amp; Replacement</li>
@@ -173,7 +173,7 @@ class SplashServicePage extends React.Component {
                                         <li>Exhaust Upgrades</li>
                                     </ul>
                                 </td>
-                                <td>
+                                <td className="end-td">
                                     <ul>
                                         <li>Factory Scheduled Maintenance</li>
                                         <li>Preventive Maintenance</li>

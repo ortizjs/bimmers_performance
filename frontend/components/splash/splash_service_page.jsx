@@ -29,7 +29,7 @@ class SplashServicePage extends React.Component {
                             </strong>
                     </p>
 
-                    <table border="1" cellSpacing="2" cellPadding="2" style={{width:"600px"}}>
+                    <table border="1" cellSpacing="2" cellPadding="2" style={{width:"600px"}, {marginBottom: "20px"}}>
                         <tbody>
                             <tr>
                                 <td width="200px" align="center">
@@ -47,7 +47,7 @@ class SplashServicePage extends React.Component {
                                         <strong>Engine Services</strong>
                                     </span>
                                 </td>
-                                <td width="162px" align="center"> 
+                                <td width="162px" align="center" style={{borderRight: "none"}}> 
                                     <span className="splash-service-span-3">
                                         <strong>Heating &amp; Air Conditioner Repair</strong>
                                     </span>
@@ -104,7 +104,7 @@ class SplashServicePage extends React.Component {
                                         <li>Ignition System Repair &amp; Maintenance</li>
                                     </ul>
                                 </td>
-                                <td className="splash-services-td">
+                                <td className="splash-services-td" style={{ borderRight: "none" }}>
                                     <ul>
                                         <li>Heating &amp; Cooling System Diagnostics</li>
                                         <li>Auto Air Conditioning Repair &amp; Service</li>
@@ -137,7 +137,7 @@ class SplashServicePage extends React.Component {
                                         <strong>Exhaust Services</strong>
                                     </span>
                                 </td>
-                                <td width="162px" align="center">
+                                <td width="162px" align="center" style={{ borderRight: "none" }}>
                                     <span className="splash-service-span-3">
                                         <strong>Other Services</strong>
                                     </span>
@@ -174,7 +174,7 @@ class SplashServicePage extends React.Component {
                                         <li>Exhaust Upgrades</li>
                                     </ul>
                                 </td>
-                                <td className="splash-services-td">
+                                <td className="splash-services-td" style={{ borderRight: "none" }}>
                                     <ul>
                                         <li>Factory Scheduled Maintenance</li>
                                         <li>Preventive Maintenance</li>

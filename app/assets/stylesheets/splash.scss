@@ -254,6 +254,10 @@
 .splash-services-td {
     vertical-align: top;
     text-align: left;
+
+    // border-top: 1px solid #e7e7e7;
+    border-bottom: none;
+
     ul {
         list-style: circle;
     }
@@ -271,4 +275,11 @@
     // color: #333;
     font-size: 16px;
     line-height: 24px;
+    table {
+        border: 1px solid #e7e7e7;
+        // td {
+        //     border-top: 1px solid #e7e7e7;
+        // }
+    }
+    
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 
-
 class SplashServicePage extends React.Component {
     constructor(props) {
         super(props);
 
     }
+
     render() {
         return (
             <div className="splash-page-service-div">
@@ -32,22 +32,22 @@ class SplashServicePage extends React.Component {
                     <table border="1" cellSpacing="2" cellPadding="2" style={{width:"600px"}}>
                         <tbody>
                             <tr>
-                                <td width="162px" align="center" style={{width:"200px"}}>
+                                <td width="200px" align="center">
                                     <span className="splash-service-span-3">
                                         <strong>Standard Maintenance Services</strong>
                                     </span>
                                 </td>
-                                <td width= "162px" align="center" style={{width:"200px"}}> 
+                                <td width="162px" align="center"> 
                                     <span className="splash-service-span-3">
                                         <strong>Transmission</strong>
                                     </span>
                                 </td>
-                                <td width= "162px" align="center" style={{width:"162px"}}> 
+                                <td width="162px" align="center"> 
                                     <span className="splash-service-span-3">
                                         <strong>Engine Services</strong>
                                     </span>
                                 </td>
-                                <td width= "162px" align="center" style={{width:"162px"}}> 
+                                <td width="162px" align="center"> 
                                     <span className="splash-service-span-3">
                                         <strong>Heating &amp; Air Conditioner Repair</strong>
                                     </span>
@@ -122,22 +122,22 @@ class SplashServicePage extends React.Component {
                     <table border="1" cellSpacing="2" cellPadding="2" style={{ width:"600px"}}>
                         <tbody>
                             <tr>
-                                <td width="162px" align="center" style={{ width:"200px"}}> 
+                                <td width="200px" align="center" > 
                                     <span className="splash-service-span-3">
                                         <strong>Auto Electrical Services</strong>
                                     </span>
                                 </td>
-                                <td width="162px" align="center" style={{ width:"162px"}}> 
+                                <td width="162px" align="center"> 
                                     <span className="splash-service-span-3">
                                         <strong>Tire Services</strong>
                                     </span>
                                 </td>
-                                <td width="162px" align="center" style={{ width:"162px"}}> 
+                                <td width="162px" align="center"> 
                                     <span className="splash-service-span-3">
                                         <strong>Exhaust Services</strong>
                                     </span>
                                 </td>
-                                <td width="162px" align="center" style={{width:"162px"}}>
+                                <td width="162px" align="center">
                                     <span className="splash-service-span-3">
                                         <strong>Other Services</strong>
                                     </span>

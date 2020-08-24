@@ -1061,14 +1061,6 @@ var SplashNav = /*#__PURE__*/function (_React$Component) {
           return _this2.handleClick("services");
         }
       }, "Services")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        id: "specials",
-        className: this.state.active === "specials" ? "active" : "inactive"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/specials",
-        onClick: function onClick() {
-          return _this2.handleClick("specials");
-        }
-      }, "Specials")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "contactus",
         className: this.state.active === "contactus" ? "active" : "inactive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -1430,35 +1422,23 @@ var SplashServicePage = /*#__PURE__*/function (_React$Component) {
           width: "600px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        width: "162px",
-        align: "center",
-        style: {
-          width: "200px"
-        }
+        width: "200px",
+        align: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Standard Maintenance Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         width: "162px",
-        align: "center",
-        style: {
-          width: "200px"
-        }
+        align: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Transmission"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         width: "162px",
-        align: "center",
-        style: {
-          width: "162px"
-        }
+        align: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Engine Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         width: "162px",
-        align: "center",
-        style: {
-          width: "162px"
-        }
+        align: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Heating & Air Conditioner Repair")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
@@ -1477,35 +1457,23 @@ var SplashServicePage = /*#__PURE__*/function (_React$Component) {
           width: "600px"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        width: "162px",
-        align: "center",
-        style: {
-          width: "200px"
-        }
+        width: "200px",
+        align: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Auto Electrical Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         width: "162px",
-        align: "center",
-        style: {
-          width: "162px"
-        }
+        align: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Tire Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         width: "162px",
-        align: "center",
-        style: {
-          width: "162px"
-        }
+        align: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Exhaust Services"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         width: "162px",
-        align: "center",
-        style: {
-          width: "162px"
-        }
+        align: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "splash-service-span-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Other Services")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {

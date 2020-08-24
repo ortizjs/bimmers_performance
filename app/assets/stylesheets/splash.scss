@@ -2,7 +2,7 @@
     background-color: #999;
     border: 5px solid green;
     max-width: 75%;
-    min-height: 1150px;;
+    min-height: 1150px;
     // min-height: 500px;
     display: block;
     margin-left: auto;
@@ -138,7 +138,8 @@
     
     .splash-body-left {
         width: 60%;
-        left: 53px
+        margin-left: 51px;
+        // left: 53px
     }
     
     
@@ -237,6 +238,7 @@
     // min-height: 800px; 
     //cannot set determined height in this div.
     //keep in .splash-body-div to mantain grey background height(.splash-page-main-div)
+    height: 1740px;
     width: 95%;
     position: relative;
     top: 35px;
@@ -252,6 +254,9 @@
 .splash-services-td {
     vertical-align: top;
     text-align: left;
+    ul {
+        list-style: circle;
+    }
 }
 
 .entry-title {

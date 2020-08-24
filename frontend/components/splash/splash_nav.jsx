@@ -29,12 +29,7 @@ class SplashNav extends React.Component {
                         </Link>
                     </li>
 
-                    <li id="specials" className={this.state.active === "specials" ? "active" : "inactive"}>
-                        <Link to="/specials" onClick={() => this.handleClick("specials")} >
-                            {/* <a> Specials </a> */}
-                            Specials
-                        </Link>
-                    </li>
+                    
 
                     <li id="contactus" className={this.state.active === "contactus" ? "active" : "inactive"}>
                         <Link to="/contactus" onClick={() => this.handleClick("contactus")} >

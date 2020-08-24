@@ -46,6 +46,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def visitor_mailer_send
+    
+  end
+
 
   private
 

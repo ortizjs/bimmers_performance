@@ -1276,7 +1276,7 @@ var SplashRight = /*#__PURE__*/function (_React$Component) {
       }, "Call Us: (925) 682-3232", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         className: "splash-right-textwidget-strong"
       }, "Email Us at:  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "mailto:saulortiz40@gmail.com>?Subject=Thank%20you%20for%20emailing%20us",
+        href: "mailto:saulortiz40@gmail.com?Subject=Thank%20you%20for%20emailing%20us",
         target: "_top"
       }, "Bimmers Support"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
         className: "splash-right-textwidget-strong"

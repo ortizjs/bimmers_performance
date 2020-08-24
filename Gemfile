@@ -54,6 +54,7 @@ group :development do
   gem 'pry-rails'
   gem 'annotate'
   gem 'jquery-rails'
+  gem 'letter_opener'
 end
 
 

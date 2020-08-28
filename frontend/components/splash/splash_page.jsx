@@ -1,9 +1,10 @@
 import React from 'react';
 import SplashNav from './splash_nav';
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
-import SplashHome from './splash_home_page';
+import SplashHomePage from './splash_home_page';
 import SplashRight from './splash_right';
-import SplashService from './splash_service_page';
+import SplashServicePage from './splash_service_page';
+import SplashContactUsPage from './splash_contact_page'
 
 class Splash extends React.Component {
     constructor(props) {
@@ -48,8 +49,9 @@ class Splash extends React.Component {
                     />  */}
                     <div className="splash-body-left">
                         <Switch>
-                            <Route exact path="/" component={SplashHome} />
-                            <Route exact path="/services" component={SplashService} />
+                            <Route exact path="/" component={SplashHomePage} />
+                            <Route exact path="/services" component={SplashServicePage} />
+                            <Route exact path="/contactus" component={SplashContactUsPage} />
                         </Switch>
 
                         {/* <SplashService/> */}

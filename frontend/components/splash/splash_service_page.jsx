@@ -9,8 +9,8 @@ class SplashServicePage extends React.Component {
     render() {
         return (
             <div className="splash-page-service-div">
-                <h1 className="entry-title">Services</h1>
-                <div className="entry-content">
+                <h1 className="title">Services</h1>
+                <div className="content">
                     <p>
                         <strong>
                             <span style={{color:"#ff0000"}}>Bimmers </span>

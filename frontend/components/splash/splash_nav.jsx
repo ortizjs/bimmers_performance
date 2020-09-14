@@ -16,25 +16,30 @@ class SplashNav extends React.Component {
         return (
             <div className="splash-nav-main-div">
                 <ul className="splash-nav-ul">
-                    <li id="home" className={this.state.active === "home" ? "active" : "inactive"}>
+                    <li id="home" className={window.location.href.split("/")[4] === "" ? "active" : "inactive"}>
                         <Link to="/" onClick={() => this.handleClick("home")}>
                             Home
                         </Link>
                     </li>
                     
-                    <li id="services" className={this.state.active === "services" ? "active" : "inactive"}>
+                    <li id="services" className={window.location.href.split("/")[4] === "services" ? "active" : "inactive"}>
                         <Link to="/services" onClick={() => this.handleClick("services")} >
                             {/* <a> Services </a> */}
                             Services
                         </Link>
                     </li>
 
-                    
-
-                    <li id="contactus" className={this.state.active === "contactus" ? "active" : "inactive"}>
+                    <li id="contactus" className={window.location.href.split("/")[4] === "contactus" ? "active" : "inactive"}>
                         <Link to="/contactus" onClick={() => this.handleClick("contactus")} >
                             {/* <a> Contact Us </a> */}
                             Contact Us
+                        </Link>
+                    </li>
+
+                    <li id="contactus" className={window.location.href.split("/")[4] === "admin" ? "active" : "inactive"}>
+                        <Link to="/admin" onClick={() => this.handleClick("contactus")} >
+                            {/* <a> Contact Us </a> */}
+                            Admin
                         </Link>
                     </li>
                 </ul>

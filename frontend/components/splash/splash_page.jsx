@@ -41,7 +41,7 @@ class Splash extends React.Component {
                 </div>
                 <div className="splash-body-div">
                     <div className="splash-nav-container">
-                        <SplashNav/>
+                        <SplashNav />
                     </div>
                     {/* <SplashHome 
                     images={window.images}

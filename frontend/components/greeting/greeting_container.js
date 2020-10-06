@@ -3,16 +3,16 @@ import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
 import { withRouter } from 'react-router-dom';
 
-
 const mapStateToProps = (state, ownProps) => {
-    return({
+    return ({
         user_id: state.session.id,
         currentUser: state.entities.users[state.session.id]
     });
 };
 
 const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(lgout())
+    logout: () => dispatch(logout())
+
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Greeting));

@@ -23,11 +23,13 @@ const App = () => (
             </div>
         </header>
         <Switch>
-            <Route path="/" component={SplashContainer} />
+            <Route exact path="/" component={SplashContainer} />
+            <Route exact path="/services" component={SplashContainer} />
+            <Route exact path="/contactus" component={SplashContainer} />
             {/* <Route exact path="/" component={}/> */}
             {/* <ProtectedRoute path="/" component={} */}
-            <AuthRoute exact path="/login" component={LogInFormContainer}/>
-            <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
+            <AuthRoute exact path="/login" component={LogInFormContainer} />
+            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             {/* <ProtectedRoute exact path="/services/new" component={ServiceFormContainer}/> */}
         </Switch>
     </div>

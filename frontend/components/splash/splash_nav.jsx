@@ -37,7 +37,7 @@ class SplashNav extends React.Component {
                     </li>
 
                     <li id="contactus" className={window.location.href.split("/")[4] === "admin" ? "active" : "inactive"}>
-                        <Link to="/admin" onClick={() => this.handleClick("contactus")} >
+                        <Link to="/login" onClick={() => this.handleClick("contactus")} >
                             {/* <a> Contact Us </a> */}
                             Admin
                         </Link>

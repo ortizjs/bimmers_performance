@@ -14,7 +14,6 @@ class Splash extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         // let navbar = $(".splash-nav-ul .active")[0].id
         // this.setState({avtive: navbar});
         // this.componentToRender(navbar);

@@ -19,6 +19,7 @@ export const receiveErrors = (errors) => ({
     errors
     //errors to be an array
 });
+
 export const clearErrors = (errors) => ({
     type: CLEAR_ERRORS,
     errors

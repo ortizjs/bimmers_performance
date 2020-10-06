@@ -14,8 +14,9 @@ class SessionForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.clearErrrors();
+        this.props.clearErrors();
     }
+    
 
     update(field) {
         return (e) => this.setState({
@@ -33,9 +34,9 @@ class SessionForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <lil key={`error-${i}`}>
+                    <li key={`error-${i}`}>
                         {error}
-                    </lil>
+                    </li>
                 ))}
             </ul>
         );
@@ -52,16 +53,16 @@ class SessionForm extends React.Component {
                                 <br/>
                                 <label className="login-username-label"> Username:
                                     <input type="text"
+                                        className="login-input"/>
                                         value={this.state.username}
                                         onChange={this.update('username')}
-                                        className="login-input"/>
                                 </label>
                                 <br/>
                                 <label className="login-password-label">Password
                                     <input type="password"
+                                        className="login-input"
                                         value={this.state.password}
                                         onChange={this.update('password')}
-                                        className="login-input"
                                     />
                                 </label>
                                 <br/>

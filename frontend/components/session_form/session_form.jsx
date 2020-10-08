@@ -53,9 +53,10 @@ class SessionForm extends React.Component {
                                 <br/>
                                 <label className="login-username-label"> Username:
                                     <input type="text"
-                                        className="login-input"/>
+                                        className="login-input"
                                         value={this.state.username}
                                         onChange={this.update('username')}
+                                    />
                                 </label>
                                 <br/>
                                 <label className="login-password-label">Password
@@ -118,7 +119,7 @@ class SessionForm extends React.Component {
                                         />
                                 </label>
                                 <br/>
-                                <label className="signup-labels">
+                                <label className="signup-labels"> First Name:
                                     <input
                                         type="text"
                                         value={this.props.firs_name}
@@ -127,7 +128,7 @@ class SessionForm extends React.Component {
                                     />
                                 </label>
                                 <br/>
-                                <label className="signup-labels">
+                                <label className="signup-labels"> Last Name:
                                     <input
                                         type="text"
                                         value={this.props.last_name}
@@ -137,7 +138,7 @@ class SessionForm extends React.Component {
                                 </label>
                                 <br/>
                                 <input className="session-submit-button" type="submit" value="Sing Up" 
-                                       OnClick={() => this.props.processForm(this.state).the(() => this.props.history.push("/users"))}
+                                       onClick={() => this.props.processForm(this.state).then(() => this.props.history.push("/users"))}
                                 />
                                 <br/>
                                 <br/>

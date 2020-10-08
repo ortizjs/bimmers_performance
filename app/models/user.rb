@@ -4,7 +4,8 @@
 #
 #  id              :bigint           not null, primary key
 #  email           :string
-#  name            :string
+#  first_name      :string
+#  last_name       :string
 #  password_digest :string           not null
 #  session_token   :string           not null
 #  username        :string           not null
@@ -17,13 +18,13 @@
 #  index_users_on_username       (username) UNIQUE
 #
 class User < ApplicationRecord
-    attr_reader :password
-
+    
     validates :username, :email, :session_token, presence: true, uniqueness: true
-    validates :password_digest, presence: { message: 'Password can\'t be blank'}
-    validates :password, length: { minimum: 6, allow_nil: true};
-    # after_initialize :ensure_session_token
-
+    validates :password_digest, presence: true
+    validates :password, length: {minimum: 6, allow_nil: true};
+    attr_reader :password
+    after_initialize :ensure_session_token
+    
     has_many :cars,
         primary_key: :id,
         foreign_key: :user_id,
@@ -36,7 +37,7 @@ class User < ApplicationRecord
     
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
-        return nill unless user
+        return nil unless user
         user.is_password?(password) ? user : nil
     end
     
@@ -45,7 +46,7 @@ class User < ApplicationRecord
         self.password_digest = BCrypt::Password.create(password)
     end
 
-    def is_password(password)
+    def is_password?(password)
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end
 

@@ -4,13 +4,13 @@ class Api::UsersController < ApplicationController
   
   def new
     @user = User.new
-    render "api/users/new"
+    # render "api/users/new"
   end
   
-  # def index 
-  #   all_users = User.all
-  #   render json: all_users
-  # end 
+  def index 
+    all_users = User.all
+    return json: all_users
+  end 
 
   def show
     @user = User.find(params[:id])
@@ -19,15 +19,11 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
       login(@user)
       render "api/users/show"
-      # rederict_to user_url(@user)
     else
       render json: @user.errors.full_messages, status: 422
-      # flash.now[:errors] = @user.errors.full_messages
-      # render :new
     end
   end
 
@@ -50,7 +46,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :name, :password_digest, :session_token)
-    # params.require(:user).permit(:username, :password)
+    # params.require(:user).permit(:username, :email, :first_name, :last_name, :password_digest, :session_token)
+    params.require(:user).permit(:username, :email, :password, :first_name, :last_name)
   end
 end

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
+import LogInForm from './log_in_form';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -45,44 +46,64 @@ class SessionForm extends React.Component {
     render () {
         if (this.props.formType === "login") {
             return (
+                // <LogInForm 
+                //     renderErrors={this.renderErrors.bind(this)}
+                //     update={this.update} 
+                //     handleSubmit={this.handleSubmit.bind(this)}
+                //     clearErrors={this.props.clearErrors.bind(this)}
+                //     processForm={this.props.processForm.bind(this)}
+                //     formState={this.state}
+                // />
                 <div className="login-form-container">
-                    <form onSubmit={this.handleSubmit} className="login-form">
-                        <div>
-                            <h1 className="login-welcome">Log In to Bimmers Performance!</h1>
-                            <div className="form-entries"> 
-                                <br/>
-                                <label className="login-username-label"> Username:
-                                    <input type="text"
-                                        className="login-input"
-                                        value={this.state.username}
-                                        onChange={this.update('username')}
-                                    />
-                                </label>
-                                <br/>
-                                <label className="login-password-label">Password
-                                    <input type="password"
-                                        className="login-input"
-                                        value={this.state.password}
-                                        onChange={this.update('password')}
-                                    />
-                                </label>
-                                <br/>
-                                <input className="login-button" type="submit" value="Log In"
-                                    onClick={() => this.props.processForm(this.state).then(() => this.props.history.push("/users"))}
-                                />
-                                <br/>
-                                <br/>
-                                <div className="no-account-div">
-                                    <h5 className="no-account-msg">Don't have an account?</h5>
-                                    <Link to="/signup" className="no-account-signup-link">Sign Up</Link>
-                                </div>
-                                <div className="errors-div">
+                    < div className="login-form-inner-div">
+                        {/* <img src={window.images.splash_banner_logo} alt="Logo" className="site-banner-login"></img> */}
+                        <Link to="/">
+                            <img src="https://i.pinimg.com/originals/65/54/0b/65540b21bc9c02fae8a50143b3dfab8c.jpg" alt="Logo" className="site-banner-login"></img>
+                        </Link>
+                        <form onSubmit={this.handleSubmit} className="login-form">
+                            <div className="inner-login-form">
+                                <h1 className="login-welcome">Log In to Bimmers Performance!</h1>
+                                <div className="form-entries"> 
                                     <br/>
-                                    {this.renderErrors()}
+                                    <label className="login-username-label"> Username: &nbsp;
+                                    
+                                        <input type="text"
+                                            className="login-input"
+                                            value={this.state.username}
+                                            onChange={this.update('username')}
+                                        />
+                                    </label>
+                                    <br/>
+                                    <br/>
+                                    <label className="login-password-label">Password: &nbsp;
+                                        <input type="password"
+                                            className="login-input"
+                                            value={this.state.password}
+                                            onChange={this.update('password')}
+                                        />
+                                    </label>
+                                    <br/>
+                                    <br/>
+                                    <button className="large-log-inbutton" type="submit" value="Log In"
+                                        onClick={() => this.props.processForm(this.state).then(() => this.props.history.push("/users"))}> Log In </button>
+                        
+                                    {/* <input className="login-button" type="submit" value="Log In"
+                                         onClick={() => this.props.processForm(this.state).then(() => this.props.history.push("/users"))}
+                                    /> */}
+                                    <br/>
+                                    <br/>
+                                    {/* <div className="no-account-div">
+                                        <h5 className="no-account-msg">Don't have an account?</h5>
+                                        <Link to="/signup" className="no-account-signup-link">Sign Up</Link>
+                                    </div> */}
+                                    <div className="errors-div">
+                                        <br/>
+                                        {this.renderErrors()}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             )
         } else {

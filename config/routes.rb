@@ -60,6 +60,7 @@ Rails.application.routes.draw do
     resources :services_offered, only: [:index]
     resources :users
     resource :session, only: [:create, :destroy, :show]
+    resources :contactus, only: [:create]
   end
   root "static_pages#root"
 end

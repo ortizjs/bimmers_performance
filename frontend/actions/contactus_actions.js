@@ -1,4 +1,4 @@
-import * as CONTACTUSUtil from '../util/contactus_api_util';
+import * as CONTACTUSUtil from '../utils/contactus_api_util';
 
 export const MAKE_API_REQUEST_TO_SEND_EMAIL = "MAKE_API_REQUEST_TO_SEND_EMAIL"; 
 export const CLEAR_EMAIL_DETAILS = "CLEAR_EMAIL_DETAILS"; 

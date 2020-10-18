@@ -4,6 +4,7 @@ import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import SplashHome from './splash_home_page';
 import SplashRight from './splash_right';
 import SplashService from './splash_service_page';
+import SplashContactUsContainer from './splash_contact_container'
 
 class Splash extends React.Component {
     constructor(props) {
@@ -49,6 +50,7 @@ class Splash extends React.Component {
                         <Switch>
                             <Route exact path="/" component={SplashHome} />
                             <Route exact path="/services" component={SplashService} />
+                            <Route exact path="/contactus" component={SplashContactUsContainer} />
                         </Switch>
 
                         {/* <SplashService/> */}

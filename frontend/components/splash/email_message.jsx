@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 class EmailMessage extends React.Component {
     
     showInfo() {
-        debugger
         const { response, message, sendingEmail } = this.props
         return response === true ?
             (<div>
@@ -29,7 +28,6 @@ class EmailMessage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    debugger
     console.log(state.contacts)
     return {
         message: state.contactus.message,

@@ -27,10 +27,6 @@ export const error_email = () => ({
     type: ERROR_EMAIL
 });
 
-// export const submitContactReqToServer = (url, data) => (
-//     console.log(JSON.stringify({ data }))
-// )
-
 export function submitContactReqToServer(url, data) {
     console.log(JSON.stringify({ data }))
     return dispatch => {

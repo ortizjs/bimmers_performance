@@ -10,6 +10,7 @@ class SplashContactUs extends React.Component {
             email: '',
             message: ''
         };
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     update(field) {
@@ -21,7 +22,7 @@ class SplashContactUs extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const data = Object.assign({}, this.state);
-        this.props.submitContactReqToServer('api/contacus');
+        this.props.submitContactReqToServer('api/contactus', data);
         this.setState({name: '', email: '', message: ''});
     }
 

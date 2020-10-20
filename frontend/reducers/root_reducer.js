@@ -4,7 +4,7 @@ import errorsReducer from './errors_reducer';
 import sessionReducer from './session_reducer';
 import contactUsReducer from './contact_reducer';
 
-const rootReducer = combineReducers({
+const rootReducer = combineReducers({ 
     entities: entitiesReducer,
     session: sessionReducer,
     errors: errorsReducer,

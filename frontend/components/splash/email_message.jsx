@@ -6,15 +6,15 @@ class EmailMessage extends React.Component {
     showInfo() {
         const { response, message, sendingEmail } = this.props
         return response === true ?
-            (<div>
+            <div>
                 <h2 className="uk-text-center uk-position-center textDown">{message.message}</h2>
-            </div >) : sendingEmail === true ?
-            (<div> 
+            </div > : sendingEmail === true ?
+            <div> 
                 <h2 className="uk-text-center uk-position-center textDown" > Sending Your Email to Bimmers Performance… </h2>
-            </div >) :
-            (<div> 
+            </div > :
+            <div> 
 
-            </div>)
+            </div>
     }
 
 
@@ -32,7 +32,7 @@ function mapStateToProps(state) {
     return {
         message: state.contactus.message,
         sendingEmail: state.contactus.makeReq,
-        response: state.contactus.recvdResp
+        response: state.contactus.receivedResp
     }
 }
 

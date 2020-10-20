@@ -36,7 +36,7 @@ export function submitContactReqToServer(url, data) {
     return dispatch => {
         dispatch(make_api_request_to_send_email());
         dispatch(clear_email_details());
-        return fetch(CONTACTUSUtil + url, {
+        return fetch(url, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

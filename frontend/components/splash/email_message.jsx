@@ -10,7 +10,7 @@ class EmailMessage extends React.Component {
                 <h2 className="uk-text-center uk-position-center textDown">{message.message}</h2>
             </div >) : sendingEmail === true ?
             (<div> 
-                <h2 className="uk-text-center uk-position-center textDown" > Sending Your Email to Trushal Chitalia… </h2>
+                <h2 className="uk-text-center uk-position-center textDown" > Sending Your Email to Bimmers Performance… </h2>
             </div >) :
             (<div> 
 

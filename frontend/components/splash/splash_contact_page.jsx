@@ -31,30 +31,32 @@ class SplashContactUs extends React.Component {
         return (
             <div className="contact-us-form-container-div">
                 <div className="contact-us-form-inner-div">
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} className="contact-us-form">
                         <fieldset className="bgColor">
-                            <h2 className="uk-text-center">Get In Touch!</h2>
-                            <div className="uk-form-row">
+                            <h2 className="contact-us-top-h2">Get In Touch!</h2>
+                            <div className="contact-us-form-entry-field-div">
                                 <legend>Name</legend>
-                                <input className="uk-form-large" type="text" placeholder="Your Name" name="name" onChange={this.update("name")} value={this.state.name} />
+                                <input type="text" placeholder="Your Name" name="name" onChange={this.update("name")} value={this.state.name} />
                             </div>
-                            <div className="uk-form-row">
+                            <div className="contact-us-form-entry-field-div">
                                 <legend>Email</legend>
-                                <input className="uk-form-large" type="email" placeholder="Your Email" name="email" onChange={this.update("email")} value={this.state.email} />
+                                <input type="email" placeholder="Your Email" name="email" onChange={this.update("email")} value={this.state.email} />
                             </div>
-                            <div className=" uk-form-row">
+                            <div className="contact-us-form-entry-field-div">
                                 <legend>Message</legend>
-                                <textarea className="uk-form-large" type="txtArea" rows="10" cols="70" placeholder="Your Message" name="message" onChange={this.update("message")} value={this.state.message} >
+                                <textarea type="txtArea" rows="20" cols="70" placeholder="Your Message" name="message" onChange={this.update("message")} value={this.state.message} >
 
                                 </textarea>
                             </div >
-                            <input type="submit" value="Send Email"/>
+                            <div className="submit-buttom-div">
+                                <input type="submit" value="Send Email"/>
+                            </div>
                         </fieldset >
                     </form>
                     <div>
                         {< EmailMessage />}
                     </div>
-                    <div className="uk-text-center uk-position-bottom">
+                    <div className="contact-us-bottom-div">
                         <h5 > When it comes to problems with your bmw, Bimmers Performance has the solution!</h5>
                     </div>
                 </div>

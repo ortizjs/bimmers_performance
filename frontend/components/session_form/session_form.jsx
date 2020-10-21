@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
-
+ 
     renderErrors() {
         return (
             <ul>
@@ -46,14 +46,6 @@ class SessionForm extends React.Component {
     render () {
         if (this.props.formType === "login") {
             return (
-                // <LogInForm 
-                //     renderErrors={this.renderErrors.bind(this)}
-                //     update={this.update} 
-                //     handleSubmit={this.handleSubmit.bind(this)}
-                //     clearErrors={this.props.clearErrors.bind(this)}
-                //     processForm={this.props.processForm.bind(this)}
-                //     formState={this.state}
-                // />
                 <div className="login-form-container">
                     < div className="login-form-inner-div">
                         {/* <img src={window.images.splash_banner_logo} alt="Logo" className="site-banner-login"></img> */}

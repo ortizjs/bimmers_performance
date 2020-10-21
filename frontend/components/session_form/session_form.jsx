@@ -48,9 +48,8 @@ class SessionForm extends React.Component {
             return (
                 <div className="login-form-container">
                     < div className="login-form-inner-div">
-                        {/* <img src={window.images.splash_banner_logo} alt="Logo" className="site-banner-login"></img> */}
                         <Link to="/">
-                            <img src="https://i.pinimg.com/originals/65/54/0b/65540b21bc9c02fae8a50143b3dfab8c.jpg" alt="Logo" className="site-banner-login"></img>
+                            <img src={window.images.m_logo} alt="Logo" className="site-banner-login"></img>
                         </Link>
                         <form onSubmit={this.handleSubmit} className="login-form">
                             <div className="inner-login-form">

@@ -6,11 +6,11 @@ class EmailMessage extends React.Component {
     showInfo() {
         const { response, message, sendingEmail } = this.props
         return response === true ?
-            <div>
-                <h2 className="uk-text-center uk-position-center textDown">{message.message}</h2>
+            <div className="contact-us-email-re-message">
+                <h2 className="contact-us-email-re-message-h2">{message.message}</h2>
             </div > : sendingEmail === true ?
-            <div> 
-                <h2 className="uk-text-center uk-position-center textDown" > Sending Your Email to Bimmers Performance… </h2>
+            <div className="contact-us-email-re-message">> 
+                <h2 className="contact-us-email-re-message-h2" > Sending Your Email to Bimmers Performance… </h2>
             </div > :
             <div> 
 

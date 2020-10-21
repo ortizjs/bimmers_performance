@@ -32,7 +32,7 @@ class SplashContactUs extends React.Component {
             <div className="contact-us-form-container-div">
                 <div className="contact-us-form-inner-div">
                     <form onSubmit={this.handleSubmit} className="contact-us-form">
-                        <fieldset className="bgColor">
+                        <fieldset className="contact-us-fieldset">
                             <h2 className="contact-us-top-h2">Get In Touch!</h2>
                             <div className="contact-us-form-entry-field-div">
                                 <legend>Name</legend>
@@ -49,7 +49,7 @@ class SplashContactUs extends React.Component {
                                 </textarea>
                             </div >
                             <div className="submit-buttom-div">
-                                <input type="submit" value="Send Email"/>
+                                <input className="large-log-inbutton" type="submit" value="Send Email"/>
                             </div>
                         </fieldset >
                     </form>

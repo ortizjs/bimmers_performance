@@ -57,7 +57,7 @@ class SplashContactUs extends React.Component {
                         {< EmailMessage />}
                     </div>
                     <div className="contact-us-bottom-div">
-                        <h5 > When it comes to problems with your bmw, Bimmers Performance has the solution!</h5>
+                        <h5 > When it comes to problems with your vehicle, Bimmers Performance has the solution!</h5>
                     </div>
                 </div>
             </div>

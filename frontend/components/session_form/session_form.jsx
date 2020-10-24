@@ -150,7 +150,7 @@ class SessionForm extends React.Component {
                                 </label>
                                 <br/>
                                 <input className="session-submit-button" type="submit" value="Sing Up" 
-                                       onClick={() => this.props.processForm(this.state).then(() => this.props.history.push("/users"))}
+                                       onClick={() => this.props.processForm(this.state).then(() => this.props.history.push("/home"))}
                                 />
                                 <br/>
                                 <br/>

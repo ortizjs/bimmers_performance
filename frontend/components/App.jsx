@@ -6,6 +6,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import SplashContainer from './splash/splash_page';
 import GreetingContainer from './greeting/greeting_container';
+import HomeMasterContainerPage from './home/home_master_container';
 
 
 const App = () => (
@@ -22,8 +23,8 @@ const App = () => (
             <Route exact path="/" component={SplashContainer} />
             <Route exact path="/services" component={SplashContainer} />
             <Route exact path="/contactus" component={SplashContainer} />
-            {/* <Route exact path="/" component={}/> */}
-            <ProtectedRoute path="/home" component={GreetingContainer} />
+            {/* <ProtectedRoute path="/home" component={GreetingContainer} /> */}
+            <ProtectedRoute path="/home" component={HomeMasterContainerPage} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             {/* <ProtectedRoute exact path="/services/new" component={ServiceFormContainer}/> */}

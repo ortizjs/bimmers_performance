@@ -11,14 +11,6 @@ import HomeMasterContainerPage from './home/home_master_container';
 
 const App = () => (
     <div className="app-master-div">
-        <header>
-            <div className="banner-logo-div">
-                <Link to="/" className="header-link">
-                    {/* <h1>BIMMERS PERFORMANCE AUTO SERVICE!</h1> */}
-                    {/* <img src={window.images.splash_banner_logo} alt="Logo" className="site-banner-header"></img> */}
-                </Link>
-            </div>
-        </header>
         {/* <Switch> */}
             <Route exact path="/" component={SplashContainer} />
             <Route exact path="/services" component={SplashContainer} />

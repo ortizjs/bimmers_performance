@@ -15,9 +15,9 @@ class HomePageMasterContainer extends React.Component {
         return (
             <div className="home-master-container-div">
                 <div className="home_page_inner_div">
-                    <div className="greeting-container-div">
+                    {/* <div className="greeting-container-div">
                         <GreetingContainer/>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )

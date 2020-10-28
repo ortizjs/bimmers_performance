@@ -19,16 +19,15 @@ const App = () => (
                 </Link>
             </div>
         </header>
-        <Switch>
+        {/* <Switch> */}
             <Route exact path="/" component={SplashContainer} />
             <Route exact path="/services" component={SplashContainer} />
             <Route exact path="/contactus" component={SplashContainer} />
-            {/* <ProtectedRoute path="/home" component={GreetingContainer} /> */}
             <ProtectedRoute path="/home" component={HomeMasterContainerPage} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             {/* <ProtectedRoute exact path="/services/new" component={ServiceFormContainer}/> */}
-        </Switch>
+        {/* </Switch> */}
     </div>
 );
 export default App;

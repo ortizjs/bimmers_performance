@@ -43,31 +43,17 @@ class Splash extends React.Component {
                     <div className="splash-nav-container">
                         <SplashNav />
                     </div>
-                    {/* <SplashHome 
-                    images={window.images}
-                    />  */}
                     <div className="splash-body-left">
                         <Switch>
                             <Route exact path="/" component={SplashHome} />
                             <Route exact path="/services" component={SplashService} />
                             <Route exact path="/contactus" component={SplashContactUsContainer} />
                         </Switch>
-
-                        {/* <SplashService/> */}
-
                     </div>
                     <div className="splash-body-right">
                         <SplashRight/>
                     </div>
                 </div>
-                {/* <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis aliquam magni quis modi assumenda totam exercitationem odit maiores sed sapiente, mollitia voluptates, doloremque velit, eos nesciunt alias delectus quia a.</p> */}
-
-                {/* <div className="splash-nav-container">
-                    <SplashNav/>
-                </div>
-                <div className="splash-home-container">
-                    <SplashHome/>
-                </div> */}
                 <hr className="splash-page-main-div-hr" align="center"/>
             </div>
         )

@@ -76,7 +76,7 @@ class SessionForm extends React.Component {
                                     <br/>
                                     <br/>
                                     <button className="large-log-inbutton" type="submit" value="Log In"
-                                        onClick={() => this.props.processForm(this.state).then(() => this.props.history.push("/users"))}> Log In </button>
+                                        onClick={() => this.props.processForm(this.state).then(() => this.props.history.push("/home"))}> Log In </button>
                         
                                     {/* <input className="login-button" type="submit" value="Log In"
                                          onClick={() => this.props.processForm(this.state).then(() => this.props.history.push("/users"))}

@@ -56,10 +56,12 @@ class Greeting extends React.Component {
     render() {
         return (
             <div className="greeting-container">
-                <h1>Greeting Component!</h1>
+                {/* <h1>Greeting Component!</h1> */}
                 <div className="greeting-logo-container">
                     <img src={window.images.splash_banner_logo} alt="Logo" className="site-banner-greeting"></img>
-                    {this.logoutButton()}
+                    <div className="log-out-button-container">
+                        {this.logoutButton()}
+                    </div>
                 </div>
             </div>
         )

@@ -20,12 +20,3 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
-
-
-// window.currentUser = {
-//     id: 1,
-//     name: "Jonnatan",
-//     email: "jonnatano94@gmail.com",
-//     username: "brotiz_94",
-//     session_token: "svD9aDYwCKDLc6T6JKraQg",
-//     password_digest: "$2a$12$zPV9vni5fAKwoOdwsJ9/GOy4AODKc3kuQ4y.k.5aWo42unsQRACGy"}

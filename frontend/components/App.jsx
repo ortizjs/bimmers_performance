@@ -10,6 +10,16 @@ import TopNavBarContainer from './home_navs/top_nav_container';
 import HomeMasterContainerPage from './home/home_master_container';
 
 
+function determineLocationHack() {
+    let landingPages = ["services", "contactus"]
+    if (landingPages.includes(window.location.hash.slice(2))) {
+        return "no-render"
+    } else {
+        return window.location.hash.slice(2);
+    }
+    // let location = window.location.hash.slice(2);
+}
+// debugger
 const App = () => (
     <div className="app-master-div">
         {/* <Switch> */}
@@ -18,8 +28,8 @@ const App = () => (
             <Route exact path="/contactus" component={SplashContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <ProtectedRoute path="/" component={GreetingContainer} />
-            <ProtectedRoute path="/" component={TopNavBarContainer} />
+            <ProtectedRoute path={`/${determineLocationHack()}`} component={GreetingContainer} />
+            <ProtectedRoute path={`/${determineLocationHack()}`} component={TopNavBarContainer} />
             {/* <ProtectedRoute path="/home" component={HomeMasterContainerPage} /> */}
             {/* <ProtectedRoute exact path="/services/new" component={ServiceFormContainer}/> */}
         {/* </Switch> */}

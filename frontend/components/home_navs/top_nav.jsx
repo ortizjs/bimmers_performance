@@ -42,25 +42,6 @@ class TopNavBar extends React.Component {
                             <a href="#">Other</a>
                         </div>
                     </div>
-                    {/* <ul className="top-nav-ul">
-                        <li className="clients-li">
-                            <Link className="drop-down-link">
-                                Clients
-                            </Link>
-                        </li>
-
-                        <li className="invoices-li">
-                            <Link>
-                                Invoices
-                            </Link>
-                        </li>
-
-                        <li className="clients-li">
-                            <Link>
-                                Vehicles
-                            </Link>
-                        </li>
-                    </ul> */}
                 </div>
             </div>
         )

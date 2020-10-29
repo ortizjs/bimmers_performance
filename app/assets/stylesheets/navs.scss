@@ -158,3 +158,41 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown-button-container:hover .dropbutton {background-color: #ddd;}
+
+.side-nav-container {
+    background-color: #aaacaf;
+    width: 15%;
+    height: 500px;
+}
+
+.side-nav-ul {
+    // min-width: 90%;
+    display: block;
+    // float: left;
+    margin: 0 0 3em 1em;
+    padding: 0;
+    list-style: none;
+}
+
+.side-nav-ul li {
+    float: left;
+    margin-left: 1em;
+    &.active {
+        background: grey;
+    }
+}
+
+.side-nav-ul li a {
+    //this is the button text
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    
+    color: white;
+}
+.side-nav-ul li a:hover {
+    // background: grey;
+    -webkit-filter: brightness(50%);
+   
+}

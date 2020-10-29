@@ -17,9 +17,8 @@ function determineLocationHack() {
     } else {
         return window.location.hash.slice(2);
     }
-    // let location = window.location.hash.slice(2);
 }
-// debugger
+
 const App = () => (
     <div className="app-master-div">
         {/* <Switch> */}

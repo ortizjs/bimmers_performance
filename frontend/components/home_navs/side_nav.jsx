@@ -15,26 +15,11 @@ class SideNavBar extends React.Component {
     render() {
         return (
             <div className="side-nav-container">
-                <div className="sine-nav-inner-div">
-                    <ul className="side-nav-ul">
-                        <li className="client-li">
-                            <Link className="drop-down-link">
-                                New Client
-                            </Link>
-                        </li>
-
-                        <li className="invoice-li">
-                            <Link>
-                                new Invoice
-                            </Link>
-                        </li>
-
-                        <li className="client-li">
-                            <Link>
-                                New Vehicle
-                            </Link>
-                        </li>
-                    </ul>
+                <div className="side-nav-inner-div">
+                    <a href="#">New Client</a>
+                    <a href="#">New Invoice</a>
+                    <a href="#">New Vehicle</a>
+                    <a href="#">Other</a>
                 </div>
             </div>
         )

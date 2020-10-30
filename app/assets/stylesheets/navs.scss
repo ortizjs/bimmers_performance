@@ -81,38 +81,6 @@
     // justify-content: center;
 }
 
-// .top-nav-ul {
-//     min-width: 90%;
-//     display: block;
-//     float: left;
-//     margin: 0 0 3em 1em;
-//     padding: 0;
-//     list-style: none;
-// }
-
-// .top-nav-ul li {
-//     float: left;
-//     margin-left: 1em;
-//     &.active {
-//         background: grey;
-//     }
-// }
-
-// .top-nav-ul li a {
-//     //this is the button text
-//     display: block;
-//     padding: 8px 15px;
-//     text-decoration: none;
-//     font-weight: bold;
-    
-//     color: white;
-// }
-// .top-nav-ul li a:hover {
-//     // background: grey;
-//     -webkit-filter: brightness(50%);
-   
-// }
-
 /* Dropdown Buttons/menu */
 .dropbutton {
 //   background-color: #4CAF50;
@@ -130,6 +98,9 @@
   display: inline-block;
   width: 150px;
   border-right: 1px solid black;
+  button {
+        font-size: 25px;
+  }
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -140,6 +111,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  
 }
 
 /* Links inside the dropdown */
@@ -161,38 +133,41 @@
 
 .side-nav-container {
     background-color: #aaacaf;
-    width: 15%;
+    width: 11%;
     height: 500px;
+    // position: absolute;
 }
 
-.side-nav-ul {
-    // min-width: 90%;
-    display: block;
-    // float: left;
-    margin: 0 0 3em 1em;
-    padding: 0;
-    list-style: none;
+/* The sidebar menu */
+.side-nav-inner-div {
+    //   height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 11%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+//   z-index: 1; /* Stay on top */
+    //   top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #aaacaf; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
 }
 
-.side-nav-ul li {
-    float: left;
-    margin-left: 1em;
-    &.active {
-        background: grey;
-    }
+/* The navigation menu links */
+.side-nav-inner-div a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f1f1f1;
+  display: block;
+  border-bottom: 1px solid black;
 }
 
-.side-nav-ul li a {
-    //this is the button text
-    display: block;
-    padding: 8px 15px;
-    text-decoration: none;
-    font-weight: bold;
-    
-    color: white;
+/* When you mouse over the navigation links, change their color */
+.side-nav-inner-div a:hover {
+  background-color: #ddd;
 }
-.side-nav-ul li a:hover {
-    // background: grey;
-    -webkit-filter: brightness(50%);
-   
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .side-nav-inner-div {padding-top: 15px;}
+  .side-nav-inner-div a {font-size: 18px;}
 }

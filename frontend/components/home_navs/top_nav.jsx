@@ -32,6 +32,9 @@ class TopNavBar extends React.Component {
                 <div className="top-nav-dropdowns-container">
 
                     <div className="dropdown-button-container">
+                        <button onClick={() => this.props.history.push("/home")} className="dropbutton">Home</button>
+                    </div>
+                    <div className="dropdown-button-container">
                         <button className="dropbutton">Clients</button>
                         <div className="dropdown-content">
                             <a href="#">Add New client</a>

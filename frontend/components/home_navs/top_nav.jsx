@@ -12,6 +12,20 @@ class TopNavBar extends React.Component {
         return null;
     }
 
+    determineTitle() {
+        let location = window.location.hash.slice(2)
+        switch(location) {
+            case location === "clients":
+                return "Clients Dashboard"
+                break;
+            case location === "vehicles":
+                return "Vehicles Dashboard";
+                break;
+            default:
+                return "Home Dashboard"
+        }
+    }
+
     render() {
         return (
             <div className="top-nav-container">
@@ -42,6 +56,11 @@ class TopNavBar extends React.Component {
                             <a href="#">Other</a>
                         </div>
                     </div>
+                </div>
+                <div className="top-nav-divider">
+                    <h1>
+                        {this.determineTitle()}
+                    </h1>
                 </div>
             </div>
         )

@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
 
@@ -58,7 +58,9 @@ class Greeting extends React.Component {
             <div className="greeting-container">
                 {/* <h1>Greeting Component!</h1> */}
                 <div className="greeting-logo-container">
-                    <img src={window.images.splash_banner_logo} alt="Logo" className="site-banner-greeting"></img>
+                    <Link to="/">
+                        <img src={window.images.splash_banner_logo} alt="Logo" className="site-banner-greeting"></img>
+                    </Link>
                     <div className="log-out-button-container">
                         {this.logoutButton()}
                     </div>

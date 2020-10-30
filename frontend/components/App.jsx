@@ -12,7 +12,7 @@ import HomeMasterContainerPage from './home/home_master_container';
 
 
 function determineLocationHack() {
-    let landingPages = ["services", "contactus"]
+    let landingPages = ["", "services", "contactus"]
     if (landingPages.includes(window.location.hash.slice(2))) {
         return "no-render"
     } else {

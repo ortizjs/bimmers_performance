@@ -13,33 +13,17 @@
     left: 70px;
     background-color: #069;
     max-height: 34px;
-    // border: 2px solid yellow;
 }
 
-@media (min-width: 1600px) {
-    .splash-nav-main-div {
-        // width: 100%;
-        // top: 115px;
-        // left: 37px;
-        width: 90%;
-        height: 100px;
-        top: 115px;
-        left: 52.5px;
-        background-color: #069;
-    }
-}
+
 
 .splash-nav-ul {
     min-width: 90%;
     display: block;
-    // margin-left: auto;
-    // margin-right: auto;
-    // width: 100%;
     float: left;
     margin: 0 0 3em 1em;
     padding: 0;
     list-style: none;
-    // background-color: #069;
 }
 
 .splash-nav-ul li {
@@ -63,18 +47,9 @@
     // -webkit-filter: brightness(50%);
    
 }
-// .splash-nav-ul li a {
-//     display: block;
-//     padding: 8px 15px;
-//     text-decoration: none;
-//     font-weight: bold;
-//     // background-color: #069;
-//     color: white;
-// }
 
 
 .top-nav-container {
-    // background-color: lightsteelblue;
     background-color: #aaacaf;
     // width: 70%;
     // display: flex;
@@ -99,7 +74,7 @@
   width: 150px;
   border-right: 1px solid black;
   button {
-        font-size: 25px;
+        font-size: 20px;
   }
 }
 
@@ -131,6 +106,16 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown-button-container:hover .dropbutton {background-color: #ddd;}
 
+.top-nav-divider {
+    height:50px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+    h1 {
+        margin-top: 8px;
+    }
+}
+
 .side-nav-container {
     background-color: #aaacaf;
     width: 11%;
@@ -148,14 +133,14 @@
   left: 0;
   background-color: #aaacaf; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 /* The navigation menu links */
 .side-nav-inner-div a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: #f1f1f1;
   display: block;
   border-bottom: 1px solid black;
@@ -168,6 +153,20 @@
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .side-nav-inner-div {padding-top: 15px;}
+//   .side-nav-inner-div {padding-top: 15px;}
   .side-nav-inner-div a {font-size: 18px;}
+}
+
+@media (min-width: 1600px) {
+    .splash-nav-main-div {
+        width: 90%;
+        height: 100px;
+        top: 115px;
+        left: 52.5px;
+        background-color: #069;
+    }
+
+    .side-nav-container, .side-nav-inner-div {
+        width: 8%;
+    }
 }

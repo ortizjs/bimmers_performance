@@ -28,9 +28,12 @@ const App = () => (
             <Route exact path="/contactus" component={SplashContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <ProtectedRoute path={`/${determineLocationHack()}`} component={GreetingContainer} />
+            {/* <ProtectedRoute path={`/${determineLocationHack()}`} component={GreetingContainer} />
             <ProtectedRoute path={`/${determineLocationHack()}`} component={TopNavBarContainer} />
-            <ProtectedRoute path={`/${determineLocationHack()}`} component={SideNavBarContainer} />
+            <ProtectedRoute path={`/${determineLocationHack()}`} component={SideNavBarContainer} /> */}
+            <ProtectedRoute path="/home" component={GreetingContainer} />
+            <ProtectedRoute path="/home" component={TopNavBarContainer} />
+            <ProtectedRoute path="/home" component={SideNavBarContainer} />
             {/* <ProtectedRoute path="/home" component={HomeMasterContainerPage} /> */}
             {/* <ProtectedRoute exact path="/services/new" component={ServiceFormContainer}/> */}
         {/* </Switch> */}

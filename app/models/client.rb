@@ -24,8 +24,10 @@
 #  index_clients_on_registration  (registration) UNIQUE
 #
 class Client < ApplicationRecord
+    
     validates :first_name, :last_name, :make, :model, presence: true
     belongs_to :user,
     foreign_key: :creator_id,
     class_name: :User
+
 end

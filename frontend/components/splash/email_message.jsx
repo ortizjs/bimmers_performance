@@ -9,7 +9,7 @@ class EmailMessage extends React.Component {
             <div className="contact-us-email-re-message">
                 <h2 className="contact-us-email-re-message-h2">{message.message}</h2>
             </div > : sendingEmail === true ?
-            <div className="contact-us-email-re-message">> 
+            <div className="contact-us-email-re-message">
                 <h2 className="contact-us-email-re-message-h2" > Sending Your Email to Bimmers Performance… </h2>
             </div > :
             <div> 

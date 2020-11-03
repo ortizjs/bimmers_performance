@@ -7,7 +7,7 @@ class Api::CarsController < ApplicationController
             @cars = Car.all.where(client_id: current_user.id).includes(:client)
             render 'api/cars/index'
         else
-            render json: @client.errors.full_messages, status: 418
+            render json: @car.errors.full_messages, status: 418
         end
     end
 

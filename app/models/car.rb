@@ -13,13 +13,14 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  client_id    :integer          not null
-#
+#  user_id      :integer          not null
 # Indexes
 #
 #  index_cars_on_client_id  (client_id) UNIQUE
+#  index_cars_on_user_id    (user_id)
 #
 class Car < ApplicationRecord
-    validates :make, :model, :registration ,presence: true
+    validates :make, :model, :registration, presence: true
     belongs_to :client,
         primary_key: :id,
         foreign_key: :client_id,

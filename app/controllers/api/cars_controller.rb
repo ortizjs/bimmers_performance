@@ -1,10 +1,10 @@
 class Api::CarsController < ApplicationController
     def create
         @car = Car.new(car_params)
-        @car.client_id = current_user.id
+        @car.client_id = params[client_id].id
 
         if @car.save
-            @cars = Car.all.where(client_id: current_user.id).includes(:client)
+            @cars = Car.all.where(client_id: params[:client_id]).includes(:client)
             render 'api/cars/index'
         else
             render json: @car.errors.full_messages, status: 418
@@ -12,7 +12,7 @@ class Api::CarsController < ApplicationController
     end
 
     def index 
-        @cars = Car.all.where(client_id: current_user.id).includes(:client)
+        @cars = Car.all.where(user_id: current_user.id).includes(:client)
     end
 
     def update
@@ -22,7 +22,7 @@ class Api::CarsController < ApplicationController
     end
 
     def destroy
-        @car = current_user.cars.find(params[:id])
+        @car = params[client_id].cars.find(params[:id])
         @car.destroy
         render :json @car.id
     end

@@ -1,5 +1,4 @@
 export default function carouselLogic(slideIndex) {
-    //  debugger
     //  var i;
     //  var showSlides = document.getElementsByClassName("slides");
     //  var dots = document.getElementsByClassName("dot");

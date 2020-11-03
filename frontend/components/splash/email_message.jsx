@@ -28,7 +28,6 @@ class EmailMessage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state.contacts)
     return {
         message: state.contactus.message,
         sendingEmail: state.contactus.makeReq,

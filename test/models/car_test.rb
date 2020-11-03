@@ -13,10 +13,12 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  client_id    :integer          not null
+#  user_id      :integer          not null
 #
 # Indexes
 #
 #  index_cars_on_client_id  (client_id) UNIQUE
+#  index_cars_on_user_id    (user_id)
 #
 require 'test_helper'
 

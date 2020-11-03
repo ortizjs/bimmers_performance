@@ -10,20 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_31_183853) do
+ActiveRecord::Schema.define(version: 2020_11_03_223902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cars", force: :cascade do |t|
-    t.string "make"
-    t.string "model"
+    t.string "make", null: false
+    t.string "model", null: false
     t.integer "year"
     t.integer "mileage"
-    t.integer "user_id", null: false
+    t.integer "client_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_cars_on_user_id", unique: true
+    t.string "registration", null: false
+    t.string "vin"
+    t.string "last_service"
+    t.index ["client_id"], name: "index_cars_on_client_id", unique: true
   end
 
   create_table "clients", force: :cascade do |t|
@@ -36,13 +39,6 @@ ActiveRecord::Schema.define(version: 2020_10_31_183853) do
     t.integer "creator_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "make", null: false
-    t.string "model", null: false
-    t.string "registration"
-    t.integer "year"
-    t.string "vin"
-    t.string "last_service"
-    t.index ["registration"], name: "index_clients_on_registration", unique: true
   end
 
   create_table "jobs", force: :cascade do |t|

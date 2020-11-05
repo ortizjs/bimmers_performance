@@ -13,17 +13,8 @@ class TopNavBar extends React.Component {
     }
 
     determineTitle() {
-        let location = window.location.hash.slice(2)
-        switch(location) {
-            case location === "clients":
-                return "Clients Dashboard"
-                break;
-            case location === "vehicles":
-                return "Vehicles Dashboard";
-                break;
-            default:
-                return "Home Dashboard"
-        }
+        let location = window.location.hash.split("/")[1]
+        return location[0].toUpperCase() + location.slice(1) + " Dashboard"
     }
 
     render() {

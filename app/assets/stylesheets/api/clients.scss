@@ -1,0 +1,30 @@
+.client-form-div {
+    position: absolute;
+    top: 218px;
+    left: 160px;
+    // background-color: lightseagreen;
+    background-color: white;
+    width: 40%;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.client-upload-form {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.client-upload-form-input-container {
+    display: flex;
+    flex-direction: row;
+    // height: 30px;
+}
+
+.client-form-input-label {
+    margin-block-start: 5px;
+}
+
+.client-upload-form-input {
+    height: 20px;
+}

@@ -9,6 +9,7 @@ import GreetingContainer from './greeting/greeting_container';
 import TopNavBarContainer from './home_navs/top_nav_container';
 import SideNavBarContainer from './home_navs/side_nav_container';
 import HomeMasterContainerPage from './home/home_master_container';
+import ClientUploadFormContainer from './clients/client_upload_form_container';
 
 
 function determineLocationHack() {
@@ -34,8 +35,10 @@ const App = () => (
             <ProtectedRoute path="/home" component={GreetingContainer} />
             <ProtectedRoute path="/home" component={TopNavBarContainer} />
             <ProtectedRoute path="/home" component={SideNavBarContainer} />
-            {/* <ProtectedRoute path="/home" component={HomeMasterContainerPage} /> */}
-            {/* <ProtectedRoute exact path="/services/new" component={ServiceFormContainer}/> */}
+            <ProtectedRoute path="/clients" component={GreetingContainer} />
+            <ProtectedRoute path="/clients" component={TopNavBarContainer} />
+            <ProtectedRoute path="/clients" component={SideNavBarContainer} />
+            <ProtectedRoute path="/clients/new" component={ClientUploadFormContainer} />
         {/* </Switch> */}
     </div>
 );

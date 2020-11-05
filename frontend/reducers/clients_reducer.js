@@ -6,7 +6,7 @@ const clientsReducer = (oldState = {}, action) => {
     let newState;
     switch(action.type) {
         case RECEIVE_CLIENTS:
-            return action.photos;
+            return action.clients;
         case RECEIVE_CLIENT:
             newState = merge({}, oldState, {[action.client.id]: action.client});
             return newState

@@ -5,7 +5,8 @@ class Api::ClientsController < ApplicationController
     end
 
     def index
-        @clients = Client.all_clients
+        # @clients = Client.all
+        @clients = Client.where(:creator_id => current_user.id)
         render :index
     end
 

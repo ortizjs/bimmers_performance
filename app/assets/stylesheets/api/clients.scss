@@ -1,3 +1,27 @@
+.clients-index-container {
+    position: absolute;
+    top: 218px;
+    left: 160px;
+    // background-color: lightseagreen;
+    background-color: white;
+    width: 88.8%;
+    min-height: 500px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.clients-index-item-top-container :hover {
+    background-color: rgb(169, 190, 190);
+}
+
+// .clients-index-item-container {
+// }
+
+.clients-index-item-container {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+}
 .client-form-div {
     position: absolute;
     top: 218px;
@@ -27,4 +51,11 @@
 
 .client-upload-form-input {
     height: 20px;
+}
+
+@media (min-width: 1600px) {
+    .clients-index-container {
+        width: 91.8%;
+        left: 155px;
+    }
 }

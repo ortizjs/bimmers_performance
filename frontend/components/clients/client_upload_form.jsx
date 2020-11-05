@@ -59,6 +59,9 @@ class ClientUploadForm extends React.Component {
                         <h4 className="client-form-input-label">Client Email:</h4>
                         <input className="client-upload-form-input" type="text" placeHolder="Email" onChange={this.handleInput("email")}/>
                     </div>
+                    <div className="submit-button-container">
+                        <button className="upload-client-button">ADD</button>
+                    </div>
                 </form>
             </div>
         );

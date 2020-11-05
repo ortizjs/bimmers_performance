@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import ClientUploadForm from './client_upload_form';
 import { createClient } from '../../actions/client_actions';
+import ClientUploadForm from './client_upload_form';
 
 const mapStateToProps = (state, ownProps) => {
     let currentUserID = state.session.id;
@@ -14,12 +14,12 @@ const mapStateToProps = (state, ownProps) => {
         cell_phone: "",
         creator_id: currentUserID
     });
-}
+};
 
 const mapDispatchToProps = dispatch => {
     return ({
         createClient: (client) => dispatch(createClient(client))
     });
-};
+}
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ClientUploadForm));

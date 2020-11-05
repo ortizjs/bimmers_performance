@@ -28,26 +28,26 @@ class TopNavBar extends React.Component {
                     <div className="dropdown-button-container">
                         <button className="dropbutton">Clients</button>
                         <div className="dropdown-content">
-                            <a href="#">Add New client</a>
-                            <a href="#">Search Client</a>
-                            <a href="#">All Clients</a>
+                            <Link to="/clients/new">Add New Client</Link>
+                            <Link to="/clients">View All Clients</Link>
+                            <Link to="/clients">Search Clients</Link>
                         </div>
                     </div>
 
                     <div className="dropdown-button-container">
                         <button className="dropbutton">Invoices</button>
                         <div className="dropdown-content">
-                            <a href="#">Add New Invoice</a>
-                            <a href="#">View All Invoices</a>
-                            <a href="#">Paid All Invoices</a>
+                            <Link to="/invoices/new">Add New Invoice</Link>
+                            <Link to="/invoices">View All Invoices</Link>
+                            <Link to="/invoices">Paid All Invoices</Link>
                         </div>
                     </div>
                     <div className="dropdown-button-container">
                         <button className="dropbutton">Vehicles</button>
                         <div className="dropdown-content">
-                            <a href="#">Add New Vehicle</a>
-                            <a href="#">View All Vehicles</a>
-                            <a href="#">Other</a>
+                            <Link to="/cars/new">Add New Vehicle</Link>
+                            <Link to="/cars">View All Vehicles</Link>
+                            <Link to="/cars">Other</Link>
                         </div>
                     </div>
                 </div>

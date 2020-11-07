@@ -9,21 +9,29 @@ class ClientsIndex extends React.Component {
     render() {
         let clients = this.props.clients.reverse().map((client, i) => {
             return (
-                <div className="clients-index-item-top-container" key={i}>
+                // <div className="clients-index-item-top-container" key={i}>
                     <ClientsIndexItem 
                         key={client.id}
                         client={client}
+                        index={i}
                     />
-                </div>
+                // </div>
             );
         });
 
         return (
             <div className="clients-index-container">
                 <h1>All Clients</h1>
-                <div className="clients-index-items">
-                    {clients}
-                </div>
+                <table className="clients-index-table">
+                    <tbody id="clients-index-content">
+                        <tr>
+                            <th>Client Name</th>
+                            <th>Email</th>
+                            <th>Other</th>
+                        </tr>
+                        {clients}
+                    </tbody>
+                </table>
             </div>
         );
     }

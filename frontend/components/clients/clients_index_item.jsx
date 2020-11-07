@@ -4,19 +4,12 @@ import { connect } from 'react-redux';
 
 const ClientsIndexItem = (props) => {
     return (
-        <div className="clients-index-item-container">
+        <tr className="clients-index-item-row">
             <Link to={`/clients/${props.client.id}`}>
-                {props.client.first_name}
+                <td className="cleint-index-item-cell">{`${props.client.first_name} ${props.client.last_name}`}</td>
+                <td className="cleint-index-item-cell">{props.client.email}</td>
             </Link>
-            &nbsp;&nbsp;
-            <Link to={`/clients/${props.client.id}`}>
-                {props.client.last_name}
-            </Link>
-            &nbsp;&nbsp;
-            <Link to={`/clients/${props.client.id}`}>
-                {props.client.email}
-            </Link>
-        </div>
+        </tr>
     );
 };
 

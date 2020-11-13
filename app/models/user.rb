@@ -26,10 +26,12 @@ class User < ApplicationRecord
     
     after_initialize :ensure_session_token
     
-    # has_many :cars,
-    #     primary_key: :id,
-    #     foreign_key: :user_id,
-    #     class_name: 'Car'
+    has_many :cars
+
+    has_many :clients
+        # primary_key: :id,
+        # foreign_key: :client_id,
+        # class_name: 'Car'
         
     # has_many :services,
     #     primary_key: :id,

@@ -12,7 +12,13 @@ const mapStateToProps = (state, ownProps) => {
         adress: "",
         home_phone: "",
         cell_phone: "",
-        creator_id: currentUserID
+        creator_id: currentUserID,
+        make: "",
+        model: "",
+        year: 0,
+        registration: "",
+        vin: "",
+        last_service: ""
     });
 };
 

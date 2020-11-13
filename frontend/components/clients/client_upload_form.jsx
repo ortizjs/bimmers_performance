@@ -4,7 +4,7 @@ import React from 'react';
 class ClientUploadForm extends React.Component {
     constructor(props)  {
         super(props);
-        this.state = this.props.client;
+        this.state = this.props.clientCar;
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         // let user_id = this.state.creator_id;
@@ -12,6 +12,7 @@ class ClientUploadForm extends React.Component {
     }
 
     handleInput(field) {
+        // debugger
         return (e) => this.setState({
             [field]: e.currentTarget.value
         });
@@ -27,11 +28,17 @@ class ClientUploadForm extends React.Component {
         formData.append("client[cell_phone]", this.state.cell_phone);
         formData.append("client[home_phone]", this.state.home_phone);
         formData.append("client[creator_id]", this.state.creator_id);
+        formData.append("client[make]", this.state.make)
+        formData.append("client[model]", this.state.model)
+        formData.append("client[year]", this.state.year)
+        formData.append("client[registration]", this.state.registration)
+        formData.append("client[vin]", this.state.vin)
+        formData.append("client[last_service]", this.state.last_service)
         this.props.createClient(formData).then(() => this.props.history.push("/clients"))
     }
     
     render() {
-        // debugger
+        debugger
         return (
             <div className="client-form-div">
                 <form className="client-upload-form" onSubmit={this.handleSubmit}>
@@ -58,6 +65,33 @@ class ClientUploadForm extends React.Component {
                     <div className="client-upload-form-input-container">
                         <h4 className="client-form-input-label">Client Email:</h4>
                         <input className="client-upload-form-input" type="text" placeHolder="Email" onChange={this.handleInput("email")}/>
+                    </div>
+                   
+                    <div className="client-car-upload-form-container">
+                        <div className="client-car-upload-form-input-container">
+                            <h4 className="client-form-input-label">Make:</h4>
+                            <input className="client-upload-form-input" type="text" placeHolder="Make" onChange={this.handleInput("make")} />
+                        </div>
+                        <div className="client-car-upload-form-input-container">
+                            <h4 className="client-form-input-label">Model:</h4>
+                            <input className="client-upload-form-input" type="text" placeHolder="Model" onChange={this.handleInput("model")} />
+                        </div>
+                        <div className="client-car-upload-form-input-container">
+                            <h4 className="client-form-input-label">Year:</h4>
+                            <input className="client-upload-form-input" type="text" placeHolder="Year" onChange={this.handleInput("year")} />
+                        </div>
+                        <div className="client-car-upload-form-input-container">
+                            <h4 className="client-form-input-label">Registration:</h4>
+                            <input className="client-upload-form-input" type="text" placeHolder="Registration" onChange={this.handleInput("registration")} />
+                        </div>
+                        <div className="client-car-upload-form-input-container">
+                            <h4 className="client-form-input-label">VIN:</h4>
+                            <input className="client-upload-form-input" type="text" placeHolder="VIN" onChange={this.handleInput("vin")} />
+                        </div>
+                        <div className="client-car-upload-form-input-container">
+                            <h4 className="client-form-input-label">Last Service:</h4>
+                            <input className="client-upload-form-input" type="date" placeHolder="Last Service" onChange={this.handleInput("last_service")} />
+                        </div>
                     </div>
                     <div className="submit-button-container">
                         <button className="upload-client-button">ADD</button>

@@ -25,6 +25,7 @@ class Car < ApplicationRecord
         primary_key: :id,
         foreign_key: :client_id,
         class_name: 'Client'
+        
     belongs_to :user,
         primary_key: :id,
         foreign_key: :user_id,

@@ -28,10 +28,10 @@ class User < ApplicationRecord
     
     has_many :cars
 
-    has_many :clients
-        # primary_key: :id,
-        # foreign_key: :client_id,
-        # class_name: 'Car'
+    has_many :clients,
+        primary_key: :id,
+        foreign_key: :creator_id,
+        class_name: 'Client'
         
     # has_many :services,
     #     primary_key: :id,

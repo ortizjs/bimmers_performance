@@ -21,13 +21,13 @@
 #
 class Car < ApplicationRecord
     validates :make, :model, :registration, presence: true
-    belongs_to :client,
-        primary_key: :id,
-        foreign_key: :client_id,
-        class_name: 'Client'
-        
-    belongs_to :user,
-        primary_key: :id,
-        foreign_key: :user_id,
-        class_name: 'User'
+    belongs_to :client
+        # primary_key: :id,
+        # foreign_key: :client_id,
+        # class_name: 'Client'
+
+    belongs_to :user
+        # primary_key: :id,
+        # foreign_key: :user_id,
+        # class_name: 'User'
 end

@@ -19,6 +19,7 @@ class Client < ApplicationRecord
 
     belongs_to :user,
     foreign_key: :creator_id,
+    primary_key: :id,
     class_name: :User
 
     has_many :cars

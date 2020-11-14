@@ -1,6 +1,6 @@
 //Client Index CSS
 
-.clients-index-container {
+.clients-index-container, .clients-show-container {
     position: absolute;
     top: 218px;
     left: 160px;
@@ -53,7 +53,7 @@
     .client-form-div {
         width: 91.6%;
     }
-    .clients-index-container {
+    .clients-index-container, .clients-show-container {
         width: 91.8%;
         left: 155px;
     }

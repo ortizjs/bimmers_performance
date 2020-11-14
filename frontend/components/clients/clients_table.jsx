@@ -1,10 +1,6 @@
 import React from "react";
-// import ReactDOM from "react-dom";
-// import PropTypes from "prop-types";
-// import styled from "styled-components";
 import { useTable, useSortBy } from "react-table";
 import { Link, withRouter } from "react-router-dom";
-// import ClientsIndex from "./clients_index";
 
 function Table({columns, data }){
     const {
@@ -17,7 +13,6 @@ function Table({columns, data }){
         columns, 
         data 
     })
-
     return (
         <table {...getTableProps()}>
             <thead>
@@ -82,27 +77,31 @@ function ClientsIndexTable(props) {
                     },
                 ],
             },
-            // {
-            //     Header: 'Vehicle Info',
-            //     columns: [
-            //         {
-            //             Header: 'Make',
-            //             accessor: 'make',
-            //         },
-            //         {
-            //             Header: 'Model',
-            //             accessor: 'model',
-            //         },
-            //         {
-            //             Header: 'Year',
-            //             accessor: 'year',
-            //         },
-            //         {
-            //             Header: 'Registration',
-            //             accessor: 'registration',
-            //         },
-            //     ],
-            // },
+            {
+                Header: 'Vehicle Info',
+                columns: [
+                    {
+                        Header: 'Make',
+                        accessor: 'make',
+                    },
+                    {
+                        Header: 'Model',
+                        accessor: 'model',
+                    },
+                    {
+                        Header: 'Year',
+                        accessor: 'year',
+                    },
+                    {
+                        Header: 'Registration',
+                        accessor: 'registration',
+                    },
+                    {
+                        Header: 'Last Service',
+                        accessor: 'last_service',
+                    },
+                ],
+            },
         ],
         []
     )

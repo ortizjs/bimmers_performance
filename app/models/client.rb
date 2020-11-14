@@ -4,10 +4,10 @@
 #
 #  id         :bigint           not null, primary key
 #  address    :text
-#  cell_phone :string
+#  cell_phone :string           default(" ")
 #  email      :text
 #  first_name :string           not null
-#  home_phone :string
+#  home_phone :string           default(" ")
 #  last_name  :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

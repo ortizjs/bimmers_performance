@@ -26,6 +26,12 @@ function Table({columns, data }){
             </thead>
             <tbody {...getTableBodyProps()}>
                 {rows.map(row => {
+                    if (row.original.home_phone != " ") {
+                        row.values.home_phone = `(${row.values.home_phone.slice(0, 3)}) ${row.values.home_phone.slice(3, 6)}-${row.values.home_phone.slice(6)}`
+                    }
+                    if (row.original.cell_phone != " ") {
+                        row.values.cell_phone = `(${row.values.cell_phone.slice(0, 3)}) ${row.values.cell_phone.slice(3, 6)}-${row.values.cell_phone.slice(6)}`
+                    }
                     prepareRow(row)
                     return (
                         <tr {...row.getRowProps()}>

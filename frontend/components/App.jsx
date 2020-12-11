@@ -40,8 +40,10 @@ const App = () => (
             <ProtectedRoute path="/clients" component={TopNavBarContainer} />
             <ProtectedRoute path="/clients" component={SideNavBarContainer} />
             <ProtectedRoute exact path="/clients" component={ClientIndexContainer} />
-            <ProtectedRoute exact path="/clients/new" component={ClientUploadFormContainer} />
-            <ProtectedRoute exact path="/clients/:clientId" component={ClientShowContainer} />
+            <Switch>
+                <ProtectedRoute exact path="/clients/new" component={ClientUploadFormContainer} />
+                <ProtectedRoute exact path="/clients/:clientId" component={ClientShowContainer} />
+            </Switch>
 
         {/* </Switch> */}
     </div>

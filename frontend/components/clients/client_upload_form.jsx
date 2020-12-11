@@ -38,7 +38,6 @@ class ClientUploadForm extends React.Component {
     }
     
     render() {
-        debugger
         return (
             <div className="client-form-div">
                 <form className="client-upload-form" onSubmit={this.handleSubmit}>

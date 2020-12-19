@@ -3,10 +3,14 @@ import { fetchClient } from '../../actions/client_actions';
 import ClientShow from './client_show';
 
 const mapStateToProps = (state, ownProps) => {
-    let client_id = ownProps.match.params.clientId
-    let client = state.clients[client_id];
+    let client_id = ownProps.match.params.clientId;
+    let client = state.entities.clients[client_id];
+    // let car = client.cars[0]
+
     return ({
-        client: client
+        client: client,
+        client_id: client_id,
+        // cars = car
     });
 };
 

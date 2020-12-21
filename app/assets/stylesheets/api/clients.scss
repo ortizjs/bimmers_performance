@@ -105,6 +105,7 @@
     flex-direction: column;
     height: 400px;
     width: 400px;
+    left: 20px;
     // border: 1px solid black;
     color: #060606;
     border: 1px #999999 solid;
@@ -113,6 +114,16 @@
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     text-align: left;
+
+
+
+    // color: #060606;
+    // border: 1px #999999 solid;
+    // background: #efefef;
+    // border-radius: 7px;
+    // -webkit-border-radius: 7px;
+    // -moz-border-radius: 7px;
+    // text-align: left;
 }
 
 .client-info-header {
@@ -141,5 +152,12 @@
         display: table-row-group;
         vertical-align: middle;
         border-color: inherit;
+    }
+    .whitecell {
+        background: #FFF;
+        border-bottom: 1px #dfdfdf solid;
+    }
+    .greycell {
+        background: #fff;
     }
 }

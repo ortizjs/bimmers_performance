@@ -6,5 +6,4 @@
             json.car_id car.id
         end
     end
-
 end

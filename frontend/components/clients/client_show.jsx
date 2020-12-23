@@ -4,19 +4,23 @@ import { Link } from 'react-router-dom';
 class ClientShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.client;
+        this.state = { client: {} };
     }
+
+
 
     componentDidMount() {
         let clientId = this.props.match.params.clientId
-        this.props.fetchClient(clientId);
+        var client = this.props.fetchClient(clientId);
     }
 
     render() {
         if (this.props.client === undefined) {
-            return (null)
+            return (
+                <div>
+                </div>
+            )
         } else {
-            // debugger
             return (
                 <div className="clients-show-container">
                     <div className="client-page-separator">
@@ -28,18 +32,18 @@ class ClientShow extends React.Component {
                                 <tr>
                                     <td valign="top"><strong><nobr>Select Vehicle:</nobr></strong></td>
                                     <td bgcolor="#ffffcf">
-                                        <a href="/app/action?action=Account&amp;task=SEARCH&amp;client_id=166" style={{ color: "#951C1C" }}><nobr><b>{`${this.props.client.cars[0].make} ${this.props.client.cars[0].model} ${this.props.client.cars[0].year}`}</b></nobr></a>
+                                        {/* <a href="/app/action?action=Account&amp;task=SEARCH&amp;client_id=166" style={{ color: "#951C1C" }}><nobr><b>{`${this.props.client.cars[0].make} ${this.props.client.cars[0].model} ${this.props.client.cars[0].year}`}</b></nobr></a> */}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="44%">Licence Plate:</td><td className="whitecell"><strong>{this.props.client.cars[0].registration}</strong></td>
+                                    <td width="44%">Licence Plate:</td><td className="whitecell"><strong>{this.props.client.registration}</strong></td>
                                 </tr>
                                 <tr>
                                     <td width="44%">VIN:</td>
 
                                     <td className="whitecell">
                                         <strong>
-                                            <a style={{ textDecoration: "underline", color: "#0033cc", fontWeight: "bold", fontSize: "15px" }}>{this.props.client.cars[0].vin}</a>
+                                            <a style={{ textDecoration: "underline", color: "#0033cc", fontWeight: "bold", fontSize: "15px" }}>{this.props.client.vin}</a>
                                         </strong>
                                     </td>
 
@@ -52,13 +56,13 @@ class ClientShow extends React.Component {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Make:</td><td className="whitecell"><strong>{this.props.client.cars[0].make}</strong></td>
+                                    <td>Make:</td><td className="whitecell"><strong>{this.props.client.make}</strong></td>
                                 </tr>
                                 <tr>
-                                    <td>Model:</td><td className="whitecell"><strong>{this.props.client.cars[0].model}</strong></td>
+                                    <td>Model:</td><td className="whitecell"><strong>{this.props.client.model}</strong></td>
                                 </tr>
                                 <tr>
-                                    <td>Year:</td><td className="whitecell"><strong>{this.props.client.cars[0].year}</strong></td>
+                                    <td>Year:</td><td className="whitecell"><strong>{this.props.client.year}</strong></td>
                                 </tr>
                                 <tr>
                                     <td>Phone:</td><td className="whitecell"><strong>{this.props.client.home_phone}</strong></td>

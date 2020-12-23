@@ -1,8 +1,8 @@
 export const fetchClients = () => (
-  $.ajax({
-      method: "GET",
-      url: "api/clients"
-  })  
+    $.ajax({
+        method: "GET",
+        url: "api/clients"
+    })
 );
 
 export const fetchClient = (id) => (

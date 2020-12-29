@@ -2,16 +2,16 @@ import React from "react";
 import { useTable, useSortBy } from "react-table";
 import { Link, withRouter } from "react-router-dom";
 
-function Table({columns, data }){
+function Table({ columns, data }) {
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
         rows,
         prepareRow,
-    } = useTable({ 
-        columns, 
-        data 
+    } = useTable({
+        columns,
+        data
     })
     return (
         <table {...getTableProps()}>
@@ -26,10 +26,14 @@ function Table({columns, data }){
             </thead>
             <tbody {...getTableBodyProps()}>
                 {rows.map(row => {
-                    if (row.original.home_phone != " ") {
+                    if (row.original.home_phone === " " || row.original.home_phone === "undefined") {
+                        row.values.home_phone = " "
+                    } else {
                         row.values.home_phone = `(${row.values.home_phone.slice(0, 3)}) ${row.values.home_phone.slice(3, 6)}-${row.values.home_phone.slice(6)}`
                     }
-                    if (row.original.cell_phone != " ") {
+                    if (row.original.cell_phone === " " || row.original.cell_phone === "undefined") {
+                        row.original.cell_phone = " "
+                    } else {
                         row.values.cell_phone = `(${row.values.cell_phone.slice(0, 3)}) ${row.values.cell_phone.slice(3, 6)}-${row.values.cell_phone.slice(6)}`
                     }
                     prepareRow(row)
@@ -113,7 +117,7 @@ function ClientsIndexTable(props) {
     )
     return (
         <div className="top-clients-table-container">
-            <Table columns={columns} data={data}/>
+            <Table columns={columns} data={data} />
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 
 class ClientUploadForm extends React.Component {
-    constructor(props)  {
+    constructor(props) {
         super(props);
         this.state = this.props.clientCar;
         this.handleInput = this.handleInput.bind(this);
@@ -36,60 +36,60 @@ class ClientUploadForm extends React.Component {
         formData.append("client[last_service]", this.state.last_service)
         this.props.createClient(formData).then(() => this.props.history.push("/clients"))
     }
-    
+
     render() {
         return (
             <div className="client-form-div">
                 <form className="client-upload-form" onSubmit={this.handleSubmit}>
                     <div className="client-upload-form-input-container">
                         <h4 className="client-form-input-label">Client First Name (Required):</h4>
-                        <input className="client-upload-form-input" type="text" placeHolder="First Name" onChange={this.handleInput("first_name")}/>
+                        <input className="client-upload-form-input" type="text" placeHolder="First Name" onChange={this.handleInput("first_name")} />
                     </div>
                     <div className="client-upload-form-input-container">
                         <h4 className="client-form-input-label">Client Last Name (Required):</h4>
-                        <input className="client-upload-form-input" type="text" placeHolder="Last Name" onChange={this.handleInput("last_name")}/>
+                        <input className="client-upload-form-input" type="text" placeHolder="Last Name" onChange={this.handleInput("last_name")} />
                     </div>
                     <div className="client-upload-form-input-container">
                         <h4 className="client-form-input-label">Client Address:</h4>
-                        <input className="client-upload-form-input" type="text" placeHolder="Address" onChange={this.handleInput("address")}/>
+                        <input className="client-upload-form-input" type="text" placeholder="Address" onChange={this.handleInput("address")} />
                     </div>
                     <div className="client-upload-form-input-container">
                         <h4 className="client-form-input-label">Client Cell Phone:</h4>
-                        <input className="client-upload-form-input" type="text" placeHolder="Cell phone" onChange={this.handleInput("cell_phone")}/>
+                        <input className="client-upload-form-input" type="text" placeholder="Cell phone" onChange={this.handleInput("cell_phone")} />
                     </div>
                     <div className="client-upload-form-input-container">
                         <h4 className="client-form-input-label">Client Home Phone:</h4>
-                        <input className="client-upload-form-input" type="text" placeHolder="Home phone" onChange={this.handleInput("home_phone")}/>
+                        <input className="client-upload-form-input" type="text" placeholder="Home phone" onChange={this.handleInput("home_phone")} />
                     </div>
                     <div className="client-upload-form-input-container">
                         <h4 className="client-form-input-label">Client Email:</h4>
-                        <input className="client-upload-form-input" type="text" placeHolder="Email" onChange={this.handleInput("email")}/>
+                        <input className="client-upload-form-input" type="text" placeholder="Email" onChange={this.handleInput("email")} />
                     </div>
-                   
+
                     <div className="client-car-upload-form-container">
                         <div className="client-car-upload-form-input-container">
                             <h4 className="client-form-input-label">Make:</h4>
-                            <input className="client-upload-form-input" type="text" placeHolder="Make" onChange={this.handleInput("make")} />
+                            <input className="client-upload-form-input" type="text" placeholder="Make" onChange={this.handleInput("make")} />
                         </div>
                         <div className="client-car-upload-form-input-container">
                             <h4 className="client-form-input-label">Model:</h4>
-                            <input className="client-upload-form-input" type="text" placeHolder="Model" onChange={this.handleInput("model")} />
+                            <input className="client-upload-form-input" type="text" placeholder="Model" onChange={this.handleInput("model")} />
                         </div>
                         <div className="client-car-upload-form-input-container">
                             <h4 className="client-form-input-label">Year:</h4>
-                            <input className="client-upload-form-input" type="text" placeHolder="Year" onChange={this.handleInput("year")} />
+                            <input className="client-upload-form-input" type="text" placeholder="Year" onChange={this.handleInput("year")} />
                         </div>
                         <div className="client-car-upload-form-input-container">
                             <h4 className="client-form-input-label">Registration:</h4>
-                            <input className="client-upload-form-input" type="text" placeHolder="Registration" onChange={this.handleInput("registration")} />
+                            <input className="client-upload-form-input" type="text" placeholder="Registration" onChange={this.handleInput("registration")} />
                         </div>
                         <div className="client-car-upload-form-input-container">
                             <h4 className="client-form-input-label">VIN:</h4>
-                            <input className="client-upload-form-input" type="text" placeHolder="VIN" onChange={this.handleInput("vin")} />
+                            <input className="client-upload-form-input" type="text" placeholder="VIN" onChange={this.handleInput("vin")} />
                         </div>
                         <div className="client-car-upload-form-input-container">
                             <h4 className="client-form-input-label">Last Service:</h4>
-                            <input className="client-upload-form-input" type="date" placeHolder="Last Service" onChange={this.handleInput("last_service")} />
+                            <input className="client-upload-form-input" type="date" placeholder="Last Service" onChange={this.handleInput("last_service")} />
                         </div>
                     </div>
                     <div className="submit-button-container">

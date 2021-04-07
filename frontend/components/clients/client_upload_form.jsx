@@ -12,7 +12,6 @@ class ClientUploadForm extends React.Component {
     }
 
     handleInput(field) {
-        // debugger
         return (e) => this.setState({
             [field]: e.currentTarget.value
         });
@@ -42,11 +41,11 @@ class ClientUploadForm extends React.Component {
             <div className="client-form-div">
                 <form className="client-upload-form" onSubmit={this.handleSubmit}>
                     <div className="client-upload-form-input-container">
-                        <h4 className="client-form-input-label">Client First Name (Required):</h4>
+                        <h4 className="client-form-input-label">Client First Name (Required): </h4>
                         <input className="client-upload-form-input" type="text" placeHolder="First Name" onChange={this.handleInput("first_name")} />
                     </div>
                     <div className="client-upload-form-input-container">
-                        <h4 className="client-form-input-label">Client Last Name (Required):</h4>
+                        <h4 className="client-form-input-label">Client Last Name (Required): </h4>
                         <input className="client-upload-form-input" type="text" placeHolder="Last Name" onChange={this.handleInput("last_name")} />
                     </div>
                     <div className="client-upload-form-input-container">

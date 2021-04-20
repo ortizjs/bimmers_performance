@@ -33,7 +33,7 @@ class ClientUploadForm extends React.Component {
         formData.append("client[registration]", this.state.registration)
         formData.append("client[vin]", this.state.vin)
         formData.append("client[last_service]", this.state.last_service)
-        this.props.createClient(formData).then(() => this.props.history.push("/clients"))
+        this.props.createClient(formData).then((client) => this.props.history.push(`/clients/${client.client.id}`))
     }
 
     render() {

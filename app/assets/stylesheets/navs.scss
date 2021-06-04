@@ -1,64 +1,59 @@
-
 .splash-nav-container {
-    height: 35px;
-    // border: 1px solid pink;
+  height: 35px;
+  // border: 1px solid pink;
 }
 
 .splash-nav-main-div {
-    // width: 96.8%; if not working revert back to this
-    // left: 54px;
-    width: 87%;
-    position: absolute;
-    top: 115px;
-    left: 70px;
-    background-color: #069;
-    max-height: 34px;
+  // width: 96.8%; if not working revert back to this
+  // left: 54px;
+  width: 87%;
+  position: absolute;
+  top: 115px;
+  left: 70px;
+  background-color: #069;
+  max-height: 34px;
 }
 
-
-
 .splash-nav-ul {
-    min-width: 90%;
-    display: block;
-    float: left;
-    margin: 0 0 3em 1em;
-    padding: 0;
-    list-style: none;
+  min-width: 90%;
+  display: block;
+  float: left;
+  margin: 0 0 3em 1em;
+  padding: 0;
+  list-style: none;
 }
 
 .splash-nav-ul li {
-    float: left;
-    margin-left: 1em;
-    &.active {
-        background: grey;
-    }
+  float: left;
+  margin-left: 1em;
+  &.active {
+    background: grey;
+  }
 }
 
 .splash-nav-ul li a {
-    display: block;
-    padding: 8px 15px;
-    text-decoration: none;
-    font-weight: bold;
-    
-    color: white;
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+
+  color: white;
 }
 .splash-nav-ul li a:hover {
-    background: grey;
-    // -webkit-filter: brightness(50%);
-   
+  background: grey;
+  // -webkit-filter: brightness(50%);
 }
 
-
 .top-nav-container {
-    background-color: #aaacaf;
-    // width: 70%;
-    // display: flex;
-    // justify-content: center;
+  background-color: #aaacaf;
+  // width: 70%;
+  // display: flex;
+  // justify-content: center;
 }
 
 /* Dropdown Buttons/menu */
 .dropbutton {
-//   background-color: #4CAF50;
+  //   background-color: #4CAF50;
   background-color: #bec4cc;
   color: white;
   padding: 16px;
@@ -74,10 +69,9 @@
   width: 150px;
   border-right: 1px solid black;
   button {
-        font-size: 20px;
+    font-size: 20px;
   }
 }
-
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -85,9 +79,8 @@
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  
 }
 
 /* Links inside the dropdown */
@@ -99,38 +92,50 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
 /* Show the dropdown menu on hover */
-.dropdown-button-container:hover .dropdown-content {display: block;}
+.dropdown-button-container:hover .dropdown-content {
+  display: block;
+}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown-button-container:hover .dropbutton {background-color: #ddd;}
+.dropdown-button-container:hover .dropbutton {
+  background-color: #ddd;
+}
 
 .top-nav-divider {
-    height:50px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    text-align: center;
-    h1 {
-        margin-top: 8px;
-    }
+  height: 50px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+  h1 {
+    margin-top: 8px;
+  }
 }
 
 .side-nav-container {
-    background-color: #aaacaf;
-    width: 11%;
-    height: 500px;
-    // position: absolute;
+  background-color: #aaacaf;
+  width: 11%;
+  height: 500px;
+  // position: absolute;
 }
+
+/*
+Commenting out position absolute along with changing .side-nav-inner-div below from position fixed to absolute 
+helps keep side nav bar in place at the top as we scroll down. 
+*/
 
 /* The sidebar menu */
 .side-nav-inner-div {
-    //   height: 100%; /* Full-height: remove this if you want "auto" height */
+  // height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 11%; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-//   z-index: 1; /* Stay on top */
-    //   top: 0; /* Stay at the top */
+  // position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  position: absolute;
+  // z-index: 1; /* Stay on top */
+  // top: 0; /* Stay at the top */
   left: 0;
   background-color: #aaacaf; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
@@ -154,20 +159,23 @@
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-//   .side-nav-inner-div {padding-top: 15px;}
-  .side-nav-inner-div a {font-size: 18px;}
+  //   .side-nav-inner-div {padding-top: 15px;}
+  .side-nav-inner-div a {
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 1600px) {
-    .splash-nav-main-div {
-        width: 90%;
-        height: 100px;
-        top: 115px;
-        left: 52.5px;
-        background-color: #069;
-    }
+  .splash-nav-main-div {
+    width: 90%;
+    height: 100px;
+    top: 115px;
+    left: 52.5px;
+    background-color: #069;
+  }
 
-    .side-nav-container, .side-nav-inner-div {
-        width: 8%;
-    }
+  .side-nav-container,
+  .side-nav-inner-div {
+    width: 8%;
+  }
 }

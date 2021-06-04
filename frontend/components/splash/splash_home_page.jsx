@@ -1,21 +1,13 @@
 import React from 'react';
 import { Route, Redirect, Switch, Link, HashRoutes} from 'react-router-dom';
-import CarouselPhotos from './photo_carousel/carousel';
-// import "css-loader!react-responsive-carousel/lib/styles/carousel.min.css";
+import ReactPlayer from 'react-player';
 
-class SplashHomePage extends React.Component {
-    constructor(props) {
-        super(props);
-        
-    }
+const SplashHomePage = (props) => {
 
-    render() {
         return (
             <div className="splash-page-home-div">
-                {/* <div className="splash-page-home-left"> */}
-                {/* <CarouselPhotos /> */}
                 <div className="temp-car">
-                    <img src={window.images.carousel_images_array[0]} />
+                    <ReactPlayer url="https://www.youtube.com/watch?v=pn5DYP32w_w" playing={true} width="590px" height="300px"/>
                 </div>
                 <span className="splash-home-welcome-span">
                     <span style={{fontSize:"24px"}}>
@@ -41,11 +33,7 @@ class SplashHomePage extends React.Component {
                         </em>
                     </span>
                 </span>
-                {/* <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                    Blanditiis assumenda laborum ipsam soluta molestiae iste, 
-                    sapiente maiores repellendus ipsa dicta eligendi quasi minus? 
-                    Deserunt et eius sit excepturi reprehenderit minus. 
-                </p> */}
+
                 <p>
                     &nbsp;
                     <span className="splash-home-business-intro">
@@ -89,16 +77,8 @@ class SplashHomePage extends React.Component {
                     <img alt="car_logos" src={window.images.car_logos} className="cars-logo-centered"></img>
                 
                 </div>
-                {/* </div> */}
-                {/* <div className="splash-page-home-right">
-
-                </div> */}
             </div>
         )
-    }
 }
-
-
-
 
 export default SplashHomePage;

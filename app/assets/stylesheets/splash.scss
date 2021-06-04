@@ -1,98 +1,98 @@
 .splash-page-main-div {
-    background-color: #999;
-    // border: 5px solid green;
-    max-width: 75%;
-    min-height: 1150px;
-    // min-height: 500px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    position: relative;
-    // overflow:auto; 
+  background-color: #999;
+  // border: 5px solid green;
+  max-width: 75%;
+  min-height: 1150px;
+  // min-height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  position: relative;
+  // overflow:auto;
 }
 @media (min-width: 1600px) {
-    .splash-page-main-div {
-        max-width: 55%;
-    }
-    .login-form-inner-div {
-        left: 575px;
-    }
+  .splash-page-main-div {
+    max-width: 55%;
+  }
+  .login-form-inner-div {
+    left: 575px;
+  }
 }
 
 .splash-body-div {
-    min-height: 1000px;
-    overflow: hidden;
-    // border: 2px solid purple;
+  min-height: 1000px;
+  overflow: hidden;
+  // border: 2px solid purple;
 }
 
 .splash-body-left {
-    // border: 2px solid lime;
-    width: 59%;
-    min-height: 1000px;
-    margin-left: 68px;
-    // position: absolute; //removing this makes the splash-page-main-div grey backgound to resize based on content?
-    // left: 70px // max-width: 640px;
-    // max-height: 933px;
+  // border: 2px solid lime;
+  width: 59%;
+  min-height: 1000px;
+  margin-left: 68px;
+  // position: absolute; //removing this makes the splash-page-main-div grey backgound to resize based on content?
+  // left: 70px // max-width: 640px;
+  // max-height: 933px;
 }
 
 .splash-body-right {
-    // border: 2px solid lightseagreen;
-    width: 300px;
-    height: 1000px;
-    position: absolute;
-    right: 66px;
-    top: 115px; // add this for repositioning to remove position:absolute on splash-body-left as it makes links unclickable? adding position to that 
-    // div makes the links unclickable messes up css.
+  // border: 2px solid lightseagreen;
+  width: 300px;
+  height: 1000px;
+  position: absolute;
+  right: 66px;
+  top: 115px; // add this for repositioning to remove position:absolute on splash-body-left as it makes links unclickable? adding position to that
+  // div makes the links unclickable messes up css.
 }
 
 .hours-location-container {
-    margin-top: 50px;
-    overflow: hidden;
-    width: 305px;
-    float: right;
-    font-family: Georgia,"Bitstream Charter",serif;
+  margin-top: 50px;
+  overflow: hidden;
+  width: 305px;
+  float: right;
+  font-family: Georgia, "Bitstream Charter", serif;
 }
 
 .hours-location-hr {
-    height: 2px;
-    border-width: 0;
-    color: gray;
-    background-color: gray;
-    margin-bottom: 15px;
+  height: 2px;
+  border-width: 0;
+  color: gray;
+  background-color: gray;
+  margin-bottom: 15px;
 }
 
 .splash-right-textwidget-strong,
 .splash-right-textwidget-strong-days {
-    color: black;
-    // line-height: 25px;
+  color: black;
+  // line-height: 25px;
 }
 
 .splash-right-textwidget-strong-days {
-    line-height: 25px;
+  line-height: 25px;
 }
 
 .widget-container {
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
-    margin: 0 0 18px 0;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  margin: 0 0 18px 0;
 }
 .shuttle-img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .widget-container .wp-caption img {
-    margin: auto;
+  margin: auto;
 }
 
 .map-container {
-    position: relative;
-    overflow: hidden;
-    height: 270px;
-    width: 260px;
+  position: relative;
+  overflow: hidden;
+  height: 270px;
+  width: 260px;
 }
 
 // .widget-container img {
@@ -102,222 +102,203 @@
 //     /* Override height to match resized width for correct aspect ratio. */
 // }
 
-
 .widget-title {
-    color: #222;
-    font-weight: bold;
-    margin-bottom: 0;
-    // color: #666;
-    font-size: 15px;
-    line-height: 18px;
+  color: #222;
+  font-weight: bold;
+  margin-bottom: 0;
+  // color: #666;
+  font-size: 15px;
+  line-height: 18px;
 }
 
 .widget-title,
 .wp-caption-text {
-    font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+  font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
 }
 
 .splash-page-home-div {
-    // min-height: 800px; 
-    //cannot set determined height in this div.
-    //keep in .splash-body-div to mantain grey background height(.splash-page-main-div)
-    width: 95%;
-    // position: relative;
-    // top: 35px;
-    // left: 30px; removing positioning makes grand-parent grey div expand to cover all content;
-    margin-top: 35px;
-    margin-left: 30px;
-    background-color: transparent;
-    // border: 1px solid red;
+  // min-height: 800px;
+  //cannot set determined height in this div.
+  //keep in .splash-body-div to mantain grey background height(.splash-page-main-div)
+  width: 95%;
+  // position: relative;
+  // top: 35px;
+  // left: 30px; removing positioning makes grand-parent grey div expand to cover all content;
+  margin-top: 35px;
+  margin-left: 30px;
+  background-color: transparent;
+  // border: 1px solid red;
 
-    p {
-        margin-bottom: 24px;
-    }
+  p {
+    margin-bottom: 24px;
+  }
 }
-
 
 @media (min-width: 1600px) {
+  .splash-body-left {
+    width: 60%;
+    margin-left: 51px;
+    // left: 53px
+  }
 
-    
-    .splash-body-left {
-        width: 60%;
-        margin-left: 51px;
-        // left: 53px
-    }
-    
-    
-    .splash-body-right {
-        width: 29.3%;
-        // height: 1000px;
-        // position: absolute;
-        right: 54px;
-    }
+  .splash-body-right {
+    width: 29.3%;
+    // height: 1000px;
+    // position: absolute;
+    right: 54px;
+  }
 
-    .splash-page-home-div {
-        width: 95%;
-        top: 35px;
-        // left: 52.5px;
-        // border: 1px solid red;
-    }
+  .splash-page-home-div {
+    width: 95%;
+    top: 35px;
+    // left: 52.5px;
+    // border: 1px solid red;
+  }
 }
 
-
-
 .logo-inbody-container-div {
-    // border: 2px solid pink;
+  // border: 2px solid pink;
 }
 
 .slideshow-container {
-   img {
+  img {
     // width: 640px;
     width: 600px;
-    height: 265px;;   
-   } 
+    height: 265px;
+  }
 }
 
 .splash-home-business-intro {
-    color: #000000;
-    font-family: Tahoma,
-        tahoma-w01-regular,
-        tahoma-w02-regular,
-        tahoma-w10-regular,
-        tahoma-w15--regular,
-        tahoma-w99-regular,
-        sans-serif;
-    line-height: 20.8px
+  color: #000000;
+  font-family: Tahoma, tahoma-w01-regular, tahoma-w02-regular,
+    tahoma-w10-regular, tahoma-w15--regular, tahoma-w99-regular, sans-serif;
+  line-height: 20.8px;
 }
 
 .splash-home-business-intro-2 {
-    color: black;
-    font-family: Tahoma,sans-serif;
-    line-height: 1.5;
+  color: black;
+  font-family: Tahoma, sans-serif;
+  line-height: 1.5;
 }
 
 .cars-logo-centered {
-    // display: block;
-    margin-left: auto;
-    margin-right: auto;
-    // width: 50%;
+  // display: block;
+  margin-left: auto;
+  margin-right: auto;
+  // width: 50%;
 }
 .temp-car {
-    margin: 50px 0 30px;
-    img {
-        width: 100%;
-    }
+  margin: 50px 0 30px;
+  img {
+    width: 100%;
+  }
 }
 
 .splash-page-main-div-hr {
-    // border-width: 2.5px;
-    height: 5px;
-    border-width: 0;
-    color: black;
-    background-color: black;
-    width: 87%;
+  // border-width: 2.5px;
+  height: 5px;
+  border-width: 0;
+  color: black;
+  background-color: black;
+  width: 87%;
 }
 
 .splash-service-span-1 {
-    color: #000000;
-    font-family: 'Lucida Sans Unicode',
-    'Lucida Grande',
-    Arial;
-    font-size: 14px;
-    line-height: 20px
+  color: #000000;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Arial;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .splash-service-span-2 {
-    color: #000000;
-    font-family: 'Lucida Sans Unicode',
-    'Lucida Grande',
-    Arial;
-    line-height: 20px;
-    font-size:16px
+  color: #000000;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Arial;
+  line-height: 20px;
+  font-size: 16px;
 }
 .splash-service-span-3 {
-    font-size:14px;
-    color:#0000ff;
+  font-size: 14px;
+  color: #0000ff;
 }
 
 .splash-page-service-div {
-    // min-height: 800px; 
-    //cannot set determined height in this div.
-    //keep in .splash-body-div to mantain grey background height(.splash-page-main-div)
-    height: 1740px;
-    width: 95%;
-    position: relative;
-    top: 35px;
-    left: 30px;
-    background-color: transparent;
-    // border: 1px solid red;
+  // min-height: 800px;
+  //cannot set determined height in this div.
+  //keep in .splash-body-div to mantain grey background height(.splash-page-main-div)
+  height: 1740px;
+  width: 95%;
+  position: relative;
+  top: 35px;
+  left: 30px;
+  background-color: transparent;
+  // border: 1px solid red;
 
-    // p {
-    //     margin-bottom: 24px;
-    // }
+  // p {
+  //     margin-bottom: 24px;
+  // }
 }
 
 .splash-services-td {
-    vertical-align: top;
-    text-align: left;
+  vertical-align: top;
+  text-align: left;
 
-    // border-top: 1px solid #e7e7e7;
-    border-bottom: none;
+  // border-top: 1px solid #e7e7e7;
+  border-bottom: none;
 
-    ul {
-        list-style: circle;
-        padding-inline-start: 20px;
-    }
+  ul {
+    list-style: circle;
+    padding-inline-start: 20px;
+  }
 }
 
 .entry-title {
-    color: #000;
-    font-size: 21px;
-    font-weight: bold;
-    line-height: 1.3em;
-    margin-bottom: 0;
-    margin-top: 10px;
+  color: #000;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.3em;
+  margin-bottom: 0;
+  margin-top: 10px;
 }
 .entry-content {
-    font-size: 16px;
-    line-height: 24px;
-    table {
-        border: 1px solid #e7e7e7;
-        // td {
-        //     border-top: 1px solid #e7e7e7;
-        // }
-    }
-    
+  font-size: 16px;
+  line-height: 24px;
+  table {
+    border: 1px solid #e7e7e7;
+    // td {
+    //     border-top: 1px solid #e7e7e7;
+    // }
+  }
 }
 
 .contact-us-form-inner-div {
-    font-family: 'Lucida Sans Unicode',
-    'Lucida Grande',
-    Arial;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Arial;
 }
 .contact-us-fieldset {
-    margin-top: 45px;
+  margin-top: 45px;
 }
 
 .contact-us-top-h2 {
-    margin-left: 10px;
-    text-align: center;
+  margin-left: 10px;
+  text-align: center;
 }
 
 .contact-us-form-entry-field-div {
-    margin: 10px;
+  margin: 10px;
 
-    legend {
-        margin-bottom: 8px;
-    }
+  legend {
+    margin-bottom: 8px;
+  }
 }
 
 .submit-buttom-div {
-    text-align: center;
+  text-align: center;
 }
 
 .contact-us-bottom-div {
-    text-align: center;
+  text-align: center;
 }
 
 .contact-us-email-re-message {
-    text-align: center;
-    font-size: 12px;
+  text-align: center;
+  font-size: 12px;
 }

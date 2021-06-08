@@ -26,13 +26,15 @@ const App = () => (
     <div className="app-master-div">
         {/* <Switch> */}
             <Route exact path="/" component={SplashContainer} />
-            <Route exact path="/services" component={SplashContainer} />
+            <Route exact path="/services_offered" component={SplashContainer} />
             <Route exact path="/contactus" component={SplashContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             {/* <ProtectedRoute path={`/${determineLocationHack()}`} component={GreetingContainer} />
             <ProtectedRoute path={`/${determineLocationHack()}`} component={TopNavBarContainer} />
             <ProtectedRoute path={`/${determineLocationHack()}`} component={SideNavBarContainer} /> */}
+       
+
             <ProtectedRoute path="/home" component={GreetingContainer} />
             <ProtectedRoute path="/home" component={TopNavBarContainer} />
             <ProtectedRoute path="/home" component={SideNavBarContainer} />

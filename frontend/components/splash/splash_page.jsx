@@ -46,7 +46,7 @@ class Splash extends React.Component {
                     <div className="splash-body-left">
                         <Switch>
                             <Route exact path="/" component={SplashHome} />
-                            <Route exact path="/services" component={SplashService} />
+                            <Route exact path="/services_offered" component={SplashService} />
                             <Route exact path="/contactus" component={SplashContactUsContainer} />
                         </Switch>
                     </div>

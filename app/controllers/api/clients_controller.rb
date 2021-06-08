@@ -1,4 +1,4 @@
-# require_relative "../../moedels/Vehicle"
+# require_relative "../../models/Vehicle"
 class Api::ClientsController < ApplicationController
 
     def new

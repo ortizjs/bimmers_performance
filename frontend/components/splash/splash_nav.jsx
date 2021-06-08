@@ -9,10 +9,12 @@ class SplashNav extends React.Component {
     }
 
     handleClick(menuItem) {
+        // debugger
         this.setState({active: menuItem});
     }
 
     render() {
+        // debugger
         return (
             <div className="splash-nav-main-div">
                 <ul className="splash-nav-ul">
@@ -22,8 +24,8 @@ class SplashNav extends React.Component {
                         </Link>
                     </li>
                     
-                    <li id="services" className={window.location.href.split("/")[4] === "services" ? "active" : "inactive"}>
-                        <Link to="/services" onClick={() => this.handleClick("services")} >
+                    <li id="services" className={window.location.href.split("/")[4] === "services_offered" ? "active" : "inactive"}>
+                        <Link to="/services_offered" onClick={() => this.handleClick("services_offered")} >
                             Services
                         </Link>
                     </li>

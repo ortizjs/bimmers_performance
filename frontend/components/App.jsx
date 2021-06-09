@@ -13,41 +13,26 @@ import ClientUploadFormContainer from './clients/client_upload_form_container';
 import ClientIndexContainer from './clients/clients_index_container';
 import ClientShowContainer from './clients/client_show_container'
 
-function determineLocationHack() {
-    let landingPages = ["", "services", "contactus"]
-    if (landingPages.includes(window.location.hash.slice(2))) {
-        return "no-render"
-    } else {
-        return window.location.hash.slice(2);
-    }
-}
-
 const App = () => (
     <div className="app-master-div">
-        {/* <Switch> */}
             <Route exact path="/" component={SplashContainer} />
             <Route exact path="/services_offered" component={SplashContainer} />
             <Route exact path="/contactus" component={SplashContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            {/* <ProtectedRoute path={`/${determineLocationHack()}`} component={GreetingContainer} />
-            <ProtectedRoute path={`/${determineLocationHack()}`} component={TopNavBarContainer} />
-            <ProtectedRoute path={`/${determineLocationHack()}`} component={SideNavBarContainer} /> */}
        
-
             <ProtectedRoute path="/home" component={GreetingContainer} />
             <ProtectedRoute path="/home" component={TopNavBarContainer} />
             <ProtectedRoute path="/home" component={SideNavBarContainer} />
             <ProtectedRoute path="/clients" component={GreetingContainer} />
             <ProtectedRoute path="/clients" component={TopNavBarContainer} />
             <ProtectedRoute path="/clients" component={SideNavBarContainer} />
+
             <ProtectedRoute exact path="/clients" component={ClientIndexContainer} />
             <Switch>
                 <ProtectedRoute exact path="/clients/new" component={ClientUploadFormContainer} />
                 <ProtectedRoute exact path="/clients/:clientId" component={ClientShowContainer} />
             </Switch>
-
-        {/* </Switch> */}
     </div>
 );
 export default App;

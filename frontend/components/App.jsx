@@ -12,6 +12,7 @@ import HomeMasterContainerPage from './home/home_master_container';
 import ClientUploadFormContainer from './clients/client_upload_form_container';
 import ClientIndexContainer from './clients/clients_index_container';
 import ClientShowContainer from './clients/client_show_container'
+import ServiceUploadFormContainer from './services/service_upload_form_container';
 
 const App = () => (
     <div className="app-master-div">
@@ -28,8 +29,17 @@ const App = () => (
             <ProtectedRoute path="/clients" component={TopNavBarContainer} />
             <ProtectedRoute path="/clients" component={SideNavBarContainer} />
 
+            <ProtectedRoute path="/services" component={GreetingContainer} />
+            <ProtectedRoute path="/services" component={TopNavBarContainer} />
+            <ProtectedRoute path="/services" component={SideNavBarContainer} />
+
             <ProtectedRoute exact path="/clients" component={ClientIndexContainer} />
+
+
             <Switch>
+                <ProtectedRoute exact path="/services/new" component={ServiceUploadFormContainer} />
+                {/* <ProtectedRoute exact path="/clients/:clientId" component={ServiceShowContainer} /> */}
+
                 <ProtectedRoute exact path="/clients/new" component={ClientUploadFormContainer} />
                 <ProtectedRoute exact path="/clients/:clientId" component={ClientShowContainer} />
             </Switch>

@@ -3,7 +3,8 @@ import React from "react";
 
 class ServiceUploadForm extends React.Component {
     constructor(props) {
-        this.state = {};
+        super(props)
+        this.state = this.props.service;
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -25,11 +26,12 @@ class ServiceUploadForm extends React.Component {
         return(
             <div className ="service-form-div">
                 <form className="service-upload-form" onSubmit={this.handleSubmit}>
-                    
+
 
                 </form>
             </div>
         )
     }
-
 }
+
+export default ServiceUploadForm;

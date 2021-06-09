@@ -17,6 +17,7 @@ class SideNavBar extends React.Component {
             <div className="side-nav-container">
                 <div className="side-nav-inner-div">
                     <Link to="/clients/new">New Client</Link>
+                    <Link to="/services/new">New Quote/Estimate</Link>
                     <Link to="/invoices/new">New Invoice</Link>
                     <Link to="/cars/new">New Vehicle</Link>
                     <Link to="/other">Other</Link>

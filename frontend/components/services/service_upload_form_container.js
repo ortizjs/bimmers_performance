@@ -19,14 +19,14 @@ const mapStateToProps = (state, ownProps) => {
         registration: "",
         vin: "",
         last_service: "",
-        bussinessInfo: {
+        businessInfo: {
             name: "BIMMERS PERFORMANCE AUTO SERVICE",
             address: "1090 DETROIT AVE SUIT D CONCORD CA 94518",
             phone: "(925) 682-3232",
             email: "ifixbmwnow@gmail.com",
             tax_number: "1",
             bar: "#ARD00274146",
-            EPA: "CAL 000270039"
+            epa: "CAL 000270039"
         }
     });
 };

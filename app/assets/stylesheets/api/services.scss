@@ -10,6 +10,64 @@
   // background-color: lightseagreen;
   background-color: white;
   width: 88.8%;
-  height: 500px;
+  min-height: 500px;
   border: 1px solid black;
+}
+
+.service-form-container-div {
+  position: relative;
+  //   left: calc(100%-50px);
+  left: 18%;
+  border: 2px solid rgb(51, 51, 51);
+  margin: 20px 0 20px 0;
+  width: 800px;
+  border-radius: 26px;
+  background: rgb(233, 239, 254);
+  min-height: 600px;
+  min-width: 500px;
+}
+
+.services-business-info {
+  display: flex;
+  align-items: row;
+  img {
+    position: relative;
+    // left: 100px;
+    margin: 25px 0 25px 25px;
+    height: 150px;
+    width: 250px;
+  }
+}
+
+.business-info {
+  position: relative;
+  margin: 25px 0 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150px;
+  width: 450px;
+  border: 1px solid grey;
+  text-align: center;
+}
+
+.licenses {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70%;
+  h6 {
+    // max-height: 25px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1600px) {
+  .service-form-div {
+    width: 91.6%;
+  }
+  .service-form-container-div {
+    width: 81.8%;
+    left: 155px;
+  }
 }

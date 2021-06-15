@@ -1,7 +1,7 @@
 import merge from 'lodash/merge';
-import { RECEIVE_SERVICES, RECEIVE_SERVICE, REMOVE_SERVICE} from 'actions/service_actions';
+import { RECEIVE_SERVICES, RECEIVE_SERVICE, REMOVE_SERVICE} from '../actions/service_actions';
 
-const servicesReducer = (oldState = {}, actions) => {
+const servicesReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState;
     switch(action.type) {

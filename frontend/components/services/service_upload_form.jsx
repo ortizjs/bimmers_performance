@@ -1,4 +1,5 @@
 import React from "react";
+import SelectClientModalContainer from '../clients/select_client_modal_container';
 
 
 class ServiceUploadForm extends React.Component {
@@ -22,6 +23,18 @@ class ServiceUploadForm extends React.Component {
         this.props.createService(formData).then((service) => this.props.history.push(`/services/${service.service.id}`))
     }
 
+    handleClientModal(e){
+        e.preventDefault();
+        const modal = document.getElementsByClassName("client-select-modal-div")[0]
+        if (e.currentTarget.classList[0]
+ === "client-selec-modal-button") {
+            modal.style.display ="block";
+        } else {
+            modal.style.display ="none"
+        }
+    }
+
+
     render() {
         var businfo = this.props.businessInfo
         return(
@@ -44,8 +57,11 @@ class ServiceUploadForm extends React.Component {
                     </div>
                     <form className="service-upload-form" onSubmit={this.handleSubmit}>
                         <input className="date-input" type="date" placeholder="Today's date" onChange={this.handleInput("service-date")} />
-                        <button className="client-selec-modal-button">Select Client</button>
-
+                        <button className="client-selec-modal-button" onClick={this.handleClientModal}>Select Client</button>
+                        <div className ="client-modal-container">
+                            <SelectClientModalContainer 
+                            handleClientModal={this.handleClientModal}/>
+                        </div>
                     </form>
                 </div>
             </div>

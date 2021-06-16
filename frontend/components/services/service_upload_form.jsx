@@ -43,7 +43,8 @@ class ServiceUploadForm extends React.Component {
                         </div>
                     </div>
                     <form className="service-upload-form" onSubmit={this.handleSubmit}>
-
+                        <input className="date-input" type="date" placeholder="Today's date" onChange={this.handleInput("service-date")} />
+                        <button className="client-selec-modal-button">Select Client</button>
 
                     </form>
                 </div>

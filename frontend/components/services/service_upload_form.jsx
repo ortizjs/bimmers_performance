@@ -25,7 +25,7 @@ class ServiceUploadForm extends React.Component {
     render() {
         var businfo = this.props.businessInfo
         return(
-            <div className="service-form-div">
+            <div className="new-service-page-div">
                 <div className="service-form-container-div">
                     <div className="services-business-info">
                         <img src={window.images.m4}>

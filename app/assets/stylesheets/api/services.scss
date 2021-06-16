@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //Service Form CSS
-.service-form-div {
+.new-service-page-div {
   position: absolute;
   top: 218px;
   left: 160px;
@@ -62,7 +62,7 @@
 }
 
 @media (min-width: 1600px) {
-  .service-form-div {
+  .new-service-page-div {
     width: 91.6%;
   }
   .service-form-container-div {
@@ -71,7 +71,6 @@
   }
 
   .services-business-info {
-    width: 88.1%;
     position: relative;
   }
 }

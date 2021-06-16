@@ -17,10 +17,10 @@
 .service-form-container-div {
   position: relative;
   //   left: calc(100%-50px);
-  left: 15%;
+  left: 5%;
   border: 2px solid rgb(51, 51, 51);
   margin: 20px 0 20px 0;
-  width: 900px;
+  width: 90%;
   border-radius: 26px;
   background: rgb(233, 239, 254);
   min-height: 600px;
@@ -58,6 +58,16 @@
   height: 70%;
   h6 {
     margin: 0 auto;
+  }
+}
+
+.service-upload-form {
+  margin: 10px;
+  border: 1px solid black;
+  min-height: 500px; // temp height - remove later
+
+  .date-input {
+    margin: 25px;
   }
 }
 

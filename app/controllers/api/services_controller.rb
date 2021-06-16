@@ -22,7 +22,7 @@ class Api::ServicesController < ApplicationController
     end
 
     def create
-        @service = Client.new(service_params)
+        @service = Service.new(service_params)
         if @service.save
             render :show
             # render "api/services/show"

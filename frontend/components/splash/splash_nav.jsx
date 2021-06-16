@@ -9,12 +9,10 @@ class SplashNav extends React.Component {
     }
 
     handleClick(menuItem) {
-        // debugger
         this.setState({active: menuItem});
     }
 
     render() {
-        // debugger
         return (
             <div className="splash-nav-main-div">
                 <ul className="splash-nav-ul">

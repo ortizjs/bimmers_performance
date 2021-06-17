@@ -1,3 +1,4 @@
+import merge from 'lodash';
 import React from "react";
 import SelectClientModalContainer from '../clients/select_client_modal_container';
 
@@ -5,9 +6,13 @@ import SelectClientModalContainer from '../clients/select_client_modal_container
 class ServiceUploadForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {};
+        this.state = {
+            searchParams: ""
+        };
+
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        // this.updateSearch = this.updateSearch.bind(this);
     }
 
     handleInput(field) {
@@ -33,6 +38,12 @@ class ServiceUploadForm extends React.Component {
             modal.style.display ="none"
         }
     }
+
+    // updateSearch(e) {
+    //     e.preventDefault();
+    //     let searchParams = {}
+    //     this.setState({search: e.target.value.substr(0, 20)})
+    // }
 
 
     render() {
@@ -60,7 +71,9 @@ class ServiceUploadForm extends React.Component {
                         <button className="client-selec-modal-button" onClick={this.handleClientModal}>Select Client</button>
                         <div className ="client-modal-container">
                             <SelectClientModalContainer 
-                            handleClientModal={this.handleClientModal}/>
+                            handleClientModal={this.handleClientModal}
+                            // updateSearch={this.updateSearch}
+                            />
                         </div>
                     </form>
                 </div>

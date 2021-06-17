@@ -62,6 +62,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :contactus, only: [:create]
     resources :clients, only: [:index, :show, :create, :new, :update, :destroy]
+    get 'filtered_clients', :to => 'clients#filtered_clients'
   end
   root "static_pages#root"
 end

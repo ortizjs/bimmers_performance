@@ -33,6 +33,11 @@ class Api::ClientsController < ApplicationController
         @car.save!
     end
 
+    def filtered_clients
+        debugger
+        render :filtered_clients
+    end
+
     private
 
 

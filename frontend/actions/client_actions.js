@@ -31,8 +31,9 @@ export const fetchClients = () => dispatch => (
 export const fetchClient = (id) => dispatch => (
     ClientAPIUtil.fetchClient(id).then(client => dispatch(receiveClient(client)))
 );
-export const fetchFilteredClients = (id) => dispatch => (
-    ClientAPIUtil.fetchFilteredClients(id).then(client => dispatch(receiveClient(client)))
+
+export const fetchFilteredClients = (params) => dispatch => (
+    ClientAPIUtil.fetchFilteredClients(params).then(clients => dispatch(receiveClients(clients)))
 );/// needs work
 
 export const createClient = (client) => dispatch => (

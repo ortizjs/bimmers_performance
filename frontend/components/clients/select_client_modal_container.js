@@ -4,19 +4,19 @@ import { fetchFilteredClients } from '../../actions/client_actions';
 import ClientSelectModal from './select_client_modal'
 
 const mapStateToProps = (state, ownProps) => {
-    let client_id = ownProps.match.params.client_id;
-    let client_params = ownProps.match.params.client_params;
-    // let filteredClients = Object.values(state.entities.filteredClients)
-    let filteredClients = {}
+    // let client_id = ownProps.match.params.client_id;
+    // let client_params = ownProps.match.params.client_params;
+    // let filteredClients = {}
+    let clients = Object.values(state.entities.clients)
     return ({
-        filteredClients: filteredClients
-        // filteredClients: ""
+        searchParams: "",
+        clients: clients
     });
 }
 
 const mapDispatchToProps = (dispatch) => {
     return({
-        fetchFilteredClients: () => dispatch(fetchFilteredClients())
+        fetchFilteredClients: (clients) => dispatch(fetchFilteredClients(clients))
     });
 };
 

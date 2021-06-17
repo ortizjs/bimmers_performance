@@ -165,4 +165,19 @@
 
 .client-select-modal-div {
   display: none;
+  border: 1px black;
+  border-radius: 25px;
+  background-color: lightgray;
+  min-height: 300px;
+  min-width: 50px;
+}
+
+.client-search-bar-continer {
+  display: flex;
+  justify-content: center;
+  // margin-top: 25px;
+  input,
+  button {
+    margin-top: 25px;
+  }
 }

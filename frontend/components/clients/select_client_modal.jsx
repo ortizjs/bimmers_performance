@@ -5,15 +5,14 @@ class SelectClientModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchParams: ""
+            searchParams: "",
+            clients: []
         };
         this.updateSearch = this.updateSearch.bind(this);
     }
 
     updateSearch(e) {
         e.preventDefault();
-        // let searchParams = {}
-        // debugger
         var input = e.target.value.substr(0, 40)
         this.setState({searchParams: input}, () => {
             console.log(this.state)
@@ -23,7 +22,6 @@ class SelectClientModal extends React.Component {
     
     render() {
         let filteredClients = this.props.clients;
-
         return (
             <div className="client-select-modal-div">
                 <div className="client-search-bar-continer">
@@ -37,9 +35,7 @@ class SelectClientModal extends React.Component {
                         {filteredClients.map((client) => {
                             return (
                             <ClientItem
-                            clientFirstName="Jonnatan"
-                            clientLastName="Ortiz"
-                            clientVehice="BMW"
+                            client={client}
                             />
                             )
                         })}

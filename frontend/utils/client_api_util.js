@@ -11,14 +11,13 @@ export const fetchClient = (id) => (
         url: `api/clients/${id}`
     })
 );
-export const fetchFilteredClients = (params) => {
-    return (
+export const fetchFilteredClients = (params) => (
     $.ajax({
         method: "GET",
         url: `api/filtered_clients`,
         data: {client: params},
     })
-)};
+);
 
 export const createClient = (client) => (
     $.ajax({

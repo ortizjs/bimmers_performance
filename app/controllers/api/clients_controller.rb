@@ -34,11 +34,18 @@ class Api::ClientsController < ApplicationController
     end
 
     def filtered_clients
-        @clients = Client.where("first_name like :s or last_name like :s or first_name || ' ' || last_name like :s", :s => "%#{params['client']}")
+
+        
+        if params['client'] == ""
+            @clients = []
+        else
+            @clients = Client.where("first_name like :s or last_name like :s or first_name || ' ' || last_name like :s", :s => "%#{params['client']}")
+        end
+
         if @clients.length > 0
             render :filtered_clients
         else
-            render json: "No records found"
+            render json: ["No records found!"]
         end
     end
 

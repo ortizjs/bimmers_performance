@@ -165,19 +165,21 @@
 
 .client-select-modal-div {
   display: none;
-  border: 1px black;
+  // border: 1px black;
   border-radius: 25px;
   background-color: lightgray;
-  min-height: 300px;
+  min-height: 125px;
   min-width: 50px;
+  // overflow: auto;
 }
 
 .client-search-bar-continer {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   // margin-top: 25px;
 
-  height: 25px;
+  height: 60px;
 
   input,
   button {
@@ -187,6 +189,12 @@
 }
 
 .filtered-clients-result-div {
-  border: 1px solid black;
-  min-height: 0;
+  // border: 1px solid black;
+  min-height: 80px;
+  overflow: auto;
+  ul {
+    // margin: 0 auto;
+    margin: auto;
+    padding-left: 0;
+  }
 }

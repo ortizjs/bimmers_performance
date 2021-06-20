@@ -49,8 +49,8 @@ class SelectClientModal extends React.Component {
                             placeholder="Search Client"
                             onChange={this.updateSearch}/>
                     <button className="client-select-close-modal-button" onClick={this.props.handleClientModal}>Add</button>
-                    {this.renderResuls(this.props.clients)}
                 </div>
+                {this.renderResuls(this.props.clients)}
             </div>
         )
     }

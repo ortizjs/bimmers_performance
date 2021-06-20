@@ -31,6 +31,7 @@
 
 /app/assets/javascripts/bundle.js
 /app/assets/javascripts/bundle.js.map
+/bundle.js*
 
 #Ignore .env file
 .env

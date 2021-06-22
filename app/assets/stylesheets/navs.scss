@@ -175,13 +175,43 @@ helps keep side nav bar in place at the top as we scroll down.
   }
 
   // Tentative need to revise/remeasure with both monitors
-  .splash-nav-ul li a {
-    // display: block;
-    padding: 5px 55px;
-    // text-decoration: none;
-    // font-weight: bold;
+  // .splash-nav-ul li a {
+  //   // display: block;
+  //   padding: 5px 55px;
+  //   // text-decoration: none;
+  //   // font-weight: bold;
 
-    // color: white;
+  //   // color: white;
+  // }
+  .splash-nav-ul {
+    min-width: 90%;
+    display: block;
+    float: left;
+    margin: 0 0 3em 1em;
+    padding: 0;
+    list-style: none;
+  }
+
+  .splash-nav-ul li {
+    float: left;
+    margin-left: 1em;
+    &.active {
+      background: grey;
+    }
+  }
+
+  .splash-nav-ul li a {
+    display: block;
+    padding: 5px 5px;
+    text-decoration: none;
+    font-weight: bold;
+
+    color: white;
+  }
+
+  .splash-nav-ul li a:hover {
+    background: grey;
+    // -webkit-filter: brightness(50%);
   }
 
   .side-nav-container,

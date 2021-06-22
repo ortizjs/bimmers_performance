@@ -11,9 +11,20 @@
   position: relative;
   // overflow:auto;
 }
+
+// revert back to this if needed
+// @media (min-width: 1600px) {
+//   .splash-page-main-div {
+//     max-width: 55%;
+//   }
+//   .login-form-inner-div {
+//     left: 575px;
+//   }
+// }
+
 @media (min-width: 1600px) {
   .splash-page-main-div {
-    max-width: 55%;
+    max-width: 64.2%;
   }
   .login-form-inner-div {
     left: 575px;

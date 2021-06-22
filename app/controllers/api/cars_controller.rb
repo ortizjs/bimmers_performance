@@ -24,7 +24,7 @@ class Api::CarsController < ApplicationController
     def destroy
         @car = params[client_id].cars.find(params[:id])
         @car.destroy
-        render :json @car.id
+        render json: @car.id
     end
 
     def show

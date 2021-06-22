@@ -3,7 +3,7 @@
 @import "react-responsive-carousel/lib/styles/carousel.css";
 
 .app-master-div {
-    display: flex;
-    height: 100%;
-    width: 100%;
+  // display: flex; // breaks when live?
+  height: 100%;
+  width: 100%;
 }

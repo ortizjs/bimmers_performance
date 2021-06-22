@@ -27,7 +27,7 @@ class Api::ServicesController < ApplicationController
             render :show
             # render "api/services/show"
         else
-            render json: @service.errors.full_messages, status :422
+            render json: @service.errors.full_messages, status: 422
         # Service.create!(service_params)
         end
     end

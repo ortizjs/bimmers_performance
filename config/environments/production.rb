@@ -63,9 +63,9 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "bimmers_performance_#{Rails.env}"
 
-  config.action_mailer.default_url_options = { :host => ‘yoursite.herokuapp.com’ }
+  config.action_mailer.default_url_options = { :host => 'tranquil-coast-88098.herokuapp.com' }
 
-  Rails.application.routes.default_url_options[:host] = ‘yoursite.herokuapp.com’
+  Rails.application.routes.default_url_options[:host] = 'tranquil-coast-88098.herokuapp.com'
 
   config.action_mailer.delivery_method = :smtp
 

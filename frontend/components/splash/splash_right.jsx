@@ -51,15 +51,15 @@ class SplashRight extends React.Component {
                         </strong>
                         <div className="textwidget">
                             <hr className="hours-location-hr" />
-                            <strong className="splash-right-textwidget-strong-days" >Monday: 8:00 AM - 6:00 PM</strong>
+                            <strong className="splash-right-textwidget-strong-days" >Monday: 8:30 AM - 6:00 PM</strong>
                             <br />
-                            <strong className="splash-right-textwidget-strong-days" >Tuesday: 8:00 AM - 6:00 PM</strong>
+                            <strong className="splash-right-textwidget-strong-days" >Tuesday: 8:30 AM - 6:00 PM</strong>
                             <br />
-                            <strong className="splash-right-textwidget-strong-days" >Wednesday: 8:00 AM - 6:00 PM</strong>
+                            <strong className="splash-right-textwidget-strong-days" >Wednesday: 8:30 AM - 6:00 PM</strong>
                             <br />
-                            <strong className="splash-right-textwidget-strong-days" >Thursday: 8:00 AM - 6:00 PM</strong>
+                            <strong className="splash-right-textwidget-strong-days" >Thursday: 8:30 AM - 6:00 PM</strong>
                             <br />
-                            <strong className="splash-right-textwidget-strong-days" >Friday: 8:00 AM - 6:00 PM</strong>
+                            <strong className="splash-right-textwidget-strong-days" >Friday: 8:30 AM - 6:00 PM</strong>
                             <br />
                             <strong className="splash-right-textwidget-strong-days" >Saturday: 9:00 AM - 3:00 PM</strong>
                             <br />

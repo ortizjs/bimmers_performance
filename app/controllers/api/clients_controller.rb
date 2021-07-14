@@ -33,9 +33,7 @@ class Api::ClientsController < ApplicationController
         @car.save!
     end
 
-    def filtered_clients
-
-        
+    def filtered_clients        
         if params['client'] == ""
             @clients = []
         else
